@@ -1,0 +1,23 @@
+[
+    {
+        "model": "dbschema.tipotitulacion",
+        "pk": 4,
+        "fields": {
+            "nombre": "Estudios propios"
+        }
+    },
+    {
+        "model": "dbschema.tipotitulacion",
+        "pk": 5,
+        "fields": {
+            "nombre": "Grado"
+        }
+    },
+    {
+        "model": "dbschema.tipotitulacion",
+        "pk": 6,
+        "fields": {
+            "nombre": "Máster Universitario"
+        }
+    }
+]

@@ -1,0 +1,39 @@
+python3 manage.py dumpdata --indent 4 dbschema.universidad
+
+python3 manage.py migrate 
+
+python3 manage.py loaddata universidades
+python3 manage.py loaddata campus
+python3 manage.py loaddata areas
+python3 manage.py loaddata tipos_titulaciones
+
+python3 script_cargar_modelo.py
+
+
+
+
+
+
+
+ALTER TABLE `ceu_tipos_titulaciones` AUTO_INCREMENT=1;
+ALTER TABLE `ceu_titulaciones` AUTO_INCREMENT=1;
+ALTER TABLE `ceu_cursos_asignaturas` AUTO_INCREMENT=1;
+ALTER TABLE `ceu_asignatura_idiomas` AUTO_INCREMENT=1;
+ALTER TABLE `ceu_asignaturas` AUTO_INCREMENT=1;
+ALTER TABLE `ceu_cursos` AUTO_INCREMENT=1;
+ALTER TABLE `ceu_planes_estudios` AUTO_INCREMENT=1;
+
+
+select t.id, t.codigo, ti.nombre, ti.idioma, tt.nombre, pe.*
+from ceu_titulaciones t
+inner join ceu_titulacion_idiomas ti on ti.titulacion_id = t.id
+inner join ceu_tipos_titulaciones tt on tt.id = t.tipo_titulacion_id
+left join planes_estudios_view pe on pe.titulacion_id = t.id
+where t.codigo = '112'
+
+select pe.titulacion_id, pe.ciclo_lectivo, c.nombre plan, ai.nombre asignatura, ai.idioma, ca.periodo, ca.creditos, ca.tipo
+from ceu_planes_estudios pe
+inner join ceu_cursos c on c.plan_estudio_id = pe.id
+inner join ceu_cursos_asignaturas ca on ca.curso_id = c.id
+inner join ceu_asignaturas a on a.id = ca.asignatura_id
+inner join ceu_asignatura_idiomas ai on ai.asignatura_id = a.id

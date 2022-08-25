@@ -1,0 +1,23 @@
+[
+    {
+        "model": "dbschema.universidad",
+        "pk": 1,
+        "fields": {
+            "nombre": "San Pablo"
+        }
+    },
+    {
+        "model": "dbschema.universidad",
+        "pk": 2,
+        "fields": {
+            "nombre": "Cardenal Herrera"
+        }
+    },
+    {
+        "model": "dbschema.universidad",
+        "pk": 3,
+        "fields": {
+            "nombre": "Abat Oliba"
+        }
+    }
+]

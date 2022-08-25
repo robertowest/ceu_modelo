@@ -1,0 +1,26 @@
+[
+    {
+        "model": "dbschema.campus",
+        "pk": 1,
+        "fields": {
+            "universidad_id": 2,
+            "nombre": "Valencia"
+        }
+    },
+    {
+        "model": "dbschema.campus",
+        "pk": 2,
+        "fields": {
+            "universidad_id": 2,
+            "nombre": "Elche"
+        }
+    },
+    {
+        "model": "dbschema.campus",
+        "pk": 3,
+        "fields": {
+            "universidad_id": 2,
+            "nombre": "Castellón"
+        }
+    }
+]

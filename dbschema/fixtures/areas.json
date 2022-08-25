@@ -1,0 +1,79 @@
+[
+    {
+        "model": "dbschema.area",
+        "pk": 1,
+        "fields": {
+            "nombre": "Ciencias de la Salud"
+        }
+    },
+    {
+        "model": "dbschema.area",
+        "pk": 2,
+        "fields": {
+            "nombre": "Comunicación"
+        }
+    },
+    {
+        "model": "dbschema.area",
+        "pk": 3,
+        "fields": {
+            "nombre": "Derecho y Política"
+        }
+    },
+    {
+        "model": "dbschema.area",
+        "pk": 4,
+        "fields": {
+            "nombre": "Diseño"
+        }
+    },
+    {
+        "model": "dbschema.area",
+        "pk": 5,
+        "fields": {
+            "nombre": "Educación"
+        }
+    },
+    {
+        "model": "dbschema.area",
+        "pk": 6,
+        "fields": {
+            "nombre": "Empresa y Marketing"
+        }
+    },
+    {
+        "model": "dbschema.area",
+        "pk": 7,
+        "fields": {
+            "nombre": "Deporte"
+        }
+    },
+    {
+        "model": "dbschema.area",
+        "pk": 8,
+        "fields": {
+            "nombre": "Ingeniería"
+        }
+    },
+    {
+        "model": "dbschema.area",
+        "pk": 9,
+        "fields": {
+            "nombre": "Arquitectura"
+        }
+    },
+    {
+        "model": "dbschema.area",
+        "pk": 10,
+        "fields": {
+            "nombre": "Veterinaria"
+        }
+    },
+    {
+        "model": "dbschema.area",
+        "pk": 11,
+        "fields": {
+            "nombre": "Gastronomía"
+        }
+    }
+]
