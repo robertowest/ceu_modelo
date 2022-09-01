@@ -1,8 +1,9 @@
 ---------------------------------------
 -- dev_marketing2 --
--- reemplazar ceu_ por ceu_ --
+-- reemplazar dbschema_ceu. por ceu_ --
 ---------------------------------------
 CREATE SCHEMA dbschema_ceu;
+
 
 CREATE  TABLE ceu_areas ( 
 	id                   INT  NOT NULL  AUTO_INCREMENT  PRIMARY KEY,
@@ -22,6 +23,12 @@ CREATE  TABLE ceu_diccionarios (
 	texto                VARCHAR(50)  NOT NULL    
  ) engine=InnoDB;
 
+CREATE  TABLE ceu_funciones ( 
+	id                   INT  NOT NULL  AUTO_INCREMENT  PRIMARY KEY,
+	nombre               VARCHAR(80)      ,
+	principal            BOOLEAN      
+ ) engine=InnoDB;
+
 CREATE  TABLE ceu_personas ( 
 	id                   INT  NOT NULL  AUTO_INCREMENT  PRIMARY KEY,
 	nombre               VARCHAR(50)      ,
@@ -33,6 +40,12 @@ CREATE  TABLE ceu_profesores (
 	persona_id           INT  NOT NULL    ,
 	foto                 VARCHAR(50)      ,
 	CONSTRAINT unq_profesores UNIQUE ( persona_id ) 
+ ) engine=InnoDB;
+
+CREATE  TABLE ceu_profesores_funciones ( 
+	id                   INT  NOT NULL  AUTO_INCREMENT  PRIMARY KEY,
+	profesor_id          INT      ,
+	funcion_id           INT      
  ) engine=InnoDB;
 
 CREATE  TABLE ceu_tipos_titulaciones ( 
@@ -84,13 +97,6 @@ CREATE  TABLE ceu_competencias (
 	titulacion_id        INT      ,
 	grupo                VARCHAR(30)      ,
 	texto                TEXT      
- ) engine=InnoDB;
-
-CREATE  TABLE ceu_funciones ( 
-	id                   INT  NOT NULL  AUTO_INCREMENT  PRIMARY KEY,
-	profesor_id          INT      ,
-	nombre               VARCHAR(80)      ,
-	principal            BOOLEAN      
  ) engine=InnoDB;
 
 CREATE  TABLE ceu_planes_estudios ( 
@@ -148,11 +154,13 @@ ALTER TABLE ceu_cursos_asignaturas ADD CONSTRAINT fk_curso_asignatura_cursos FOR
 
 ALTER TABLE ceu_cursos_asignaturas ADD CONSTRAINT fk_cursos_asignaturas_profesores FOREIGN KEY ( profesor_id ) REFERENCES ceu_profesores( id ) ON DELETE NO ACTION ON UPDATE CASCADE;
 
-ALTER TABLE ceu_funciones ADD CONSTRAINT fk_funciones_profesores FOREIGN KEY ( profesor_id ) REFERENCES ceu_profesores( id ) ON DELETE NO ACTION ON UPDATE CASCADE;
-
 ALTER TABLE ceu_planes_estudios ADD CONSTRAINT fk_plan_estudios_titulaciones FOREIGN KEY ( titulacion_id ) REFERENCES ceu_titulaciones( id ) ON DELETE NO ACTION ON UPDATE CASCADE;
 
 ALTER TABLE ceu_profesores ADD CONSTRAINT fk_profesores_personas FOREIGN KEY ( persona_id ) REFERENCES ceu_personas( id ) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+ALTER TABLE ceu_profesores_funciones ADD CONSTRAINT fk_profesores_funciones_profesores FOREIGN KEY ( profesor_id ) REFERENCES ceu_profesores( id ) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+ALTER TABLE ceu_profesores_funciones ADD CONSTRAINT fk_profesores_funciones_funciones FOREIGN KEY ( funcion_id ) REFERENCES ceu_funciones( id ) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 ALTER TABLE ceu_salidas_profesionales ADD CONSTRAINT fk_salidas_profesionales_titulaciones FOREIGN KEY ( titulacion_id ) REFERENCES ceu_titulaciones( id ) ON DELETE NO ACTION ON UPDATE CASCADE;
 
@@ -169,6 +177,10 @@ ALTER TABLE ceu_asignaturas MODIFY codigo VARCHAR(8)     COMMENT 'código origin
 ALTER TABLE ceu_asignaturas MODIFY nombre VARCHAR(160)     COMMENT 'solo para referencia, utilizar asignatura_idiomas.nombre';
 
 ALTER TABLE ceu_diccionarios COMMENT 'tabla utilizada como diccionario para los campos descriptivos';
+
+ALTER TABLE ceu_funciones COMMENT 'funciones y cargos de los docentes';
+
+ALTER TABLE ceu_funciones MODIFY principal BOOLEAN     COMMENT 'función o cargo principal';
 
 ALTER TABLE ceu_profesores MODIFY foto VARCHAR(50)     COMMENT 'ruta de la imagen';
 
@@ -187,10 +199,6 @@ ALTER TABLE ceu_titulaciones MODIFY creditos SMALLINT     COMMENT 'sumatoria de 
 ALTER TABLE ceu_titulaciones MODIFY insercion_laboral DECIMAL(5,1)     COMMENT 'tasa de inserción laboral según ranking BBVA e IVIE';
 
 ALTER TABLE ceu_asignatura_idiomas MODIFY idioma CHAR(2)   DEFAULT ('es')  COMMENT 'idioma en el que se impartirá la asignatura (es, en, fr)';
-
-ALTER TABLE ceu_funciones COMMENT 'funciones y cargos de los docentes';
-
-ALTER TABLE ceu_funciones MODIFY principal BOOLEAN     COMMENT 'función o cargo principal';
 
 ALTER TABLE ceu_planes_estudios MODIFY ciclo_lectivo INT     COMMENT 'año correspondiente al plan de estudio';
 

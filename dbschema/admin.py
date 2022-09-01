@@ -1,3 +1,4 @@
+import string
 from django.contrib import admin
 
 # from django.forms import TextInput
@@ -8,11 +9,46 @@ from .models import \
     Area, Asignatura, AsignaturaIdioma, \
     Campus, CampusTitulacion, Competencia, Curso, CursoAsignatura, \
     Funcion, \
-    PlanEstudio, Persona, Profesor, \
+    PlanEstudio, Persona, Profesor, ProfesorFuncion, \
     SalidaProfesional, \
     TipoTitulacion, Titulacion, TitulacionIdioma, \
     Universidad
 
+
+# ordenamos la lista de aplicaciones según el orden definido de los modelos
+from config.admin import my_get_app_list
+admin.AdminSite.get_app_list = my_get_app_list
+
+
+class FirstLetterListFilter(admin.SimpleListFilter):
+    """
+    Filtro definido por la primera letra del campo 'nombre' de la tabla
+    """
+    title = 'Índice'
+
+    # parámetro para el filtro que se utilizará en la URL
+    parameter_name = 'letra'
+    letters = list(string.ascii_uppercase)
+
+    def lookups(self, request, model_admin):
+        qs = model_admin.get_queryset(request)
+        lookups = []
+        for letter in self.letters:
+            count = qs.filter(nombre__istartswith=letter).count()
+            if count:
+                lookups.append((letter, '{} ({})'.format(letter, count)))
+        return lookups
+
+    def queryset(self, request, queryset):
+        """
+        Returns the filtered queryset based on the value
+        provided in the query string and retrievable via
+        `self.value()`.
+        """
+        filter_val = self.value()
+        if filter_val in self.letters:
+            return queryset.filter(nombre__istartswith=self.value())
+    
 
 @admin.register(Universidad)
 class UniversidadAdmin(admin.ModelAdmin):
@@ -83,10 +119,17 @@ class TitulacionAdmin(admin.ModelAdmin):
     inlines = [TitulacionIdiomaInLine, CompetenciaInLine, SalidaProfesionalInLine, PlanEstudioProfesionalInLine]
 
 
+class CursoInLine(admin.TabularInline):
+    model = Curso
+    fields = ['nombre']
+    ordering = ['nombre']
+    extra = 0
+    can_delete = False
+    view_on_site = True
+
 @admin.register(PlanEstudio)
 class PlanEstudioAdmin(admin.ModelAdmin):
-    view_on_site = True
-    pass
+    inlines = [CursoInLine]
 
 
 class AsignaturaIdiomaInLine(admin.StackedInline):
@@ -124,18 +167,18 @@ class PersonaAdmin(admin.ModelAdmin):
         return form
 
 
-class FuncionInLine(admin.StackedInline):
-    model = Funcion
-    fields = ['nombre', 'principal']
-    ordering = ['nombre']
+class FuncionesInLine(admin.TabularInline):
+    # def get_formset(self, request, obj=None, **kwargs):
+    #     form = super(FuncionesInLine, self).get_formset(request, obj, **kwargs)
+    #     form.form.base_fields['nombre'].widget.attrs['style'] = 'width: 45em;'
+    #     return form
+
+    model = ProfesorFuncion
+    # fields = ['id', 'funcion', 'prioridad', 'principal']
+    ordering = ['prioridad']
     extra = 0
     can_delete = False
-    view_on_site = False
-
-    def get_formset(self, request, obj=None, **kwargs):
-        form = super(FuncionInLine, self).get_formset(request, obj, **kwargs)
-        form.form.base_fields['nombre'].widget.attrs['style'] = 'width: 45em;'
-        return form
+    view_on_site = True
 
 
 @admin.register(Profesor)
@@ -153,10 +196,23 @@ class ProfesorAdmin(admin.ModelAdmin):
 
     list_display = ['id', 'nombre_apellidos']
     list_display_links = ['nombre_apellidos']
+    search_fields = ['persona__nombre', 'persona__apellidos']
     ordering = ['persona__nombre', 'persona__apellidos']
-    inlines = [FuncionInLine]
+    inlines = [FuncionesInLine]
 
     def get_formsets_with_inlines(self, request, obj=None):
         for inline in self.get_inline_instances(request, obj):
-            if not isinstance(inline, FuncionInLine) or obj is not None:
+            if not isinstance(inline, FuncionesInLine) or obj is not None:
                 yield inline.get_formset(request, obj), inline
+
+    class Media:
+        css = { 'all': ['/static/admin/css/custom_admin.css'], }
+
+
+@admin.register(Funcion)
+class FuncionAdmin(admin.ModelAdmin):
+    list_display = ['id', 'nombre']
+    list_display_links = ['nombre']
+    list_filter = [FirstLetterListFilter]
+    search_fields = ['nombre']
+    ordering = ['nombre']

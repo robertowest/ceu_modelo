@@ -1,0 +1,1901 @@
+[
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 1,
+    "fields": {
+        "asignatura": 1,
+        "idioma": "en",
+        "nombre": "Biología"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 2,
+    "fields": {
+        "asignatura": 1,
+        "idioma": "es",
+        "nombre": "Biología"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 3,
+    "fields": {
+        "asignatura": 2,
+        "idioma": "en",
+        "nombre": "Estructura y Función Cuerpo Humano I"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 4,
+    "fields": {
+        "asignatura": 2,
+        "idioma": "es",
+        "nombre": "Estructura y Función Cuerpo Humano I"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 5,
+    "fields": {
+        "asignatura": 3,
+        "idioma": "en",
+        "nombre": "Matemáticas y Estadística"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 6,
+    "fields": {
+        "asignatura": 3,
+        "idioma": "es",
+        "nombre": "Matemáticas y Estadística"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 7,
+    "fields": {
+        "asignatura": 4,
+        "idioma": "en",
+        "nombre": "Química"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 8,
+    "fields": {
+        "asignatura": 4,
+        "idioma": "es",
+        "nombre": "Química"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 9,
+    "fields": {
+        "asignatura": 5,
+        "idioma": "en",
+        "nombre": "Introduction To Pharmacy"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 10,
+    "fields": {
+        "asignatura": 5,
+        "idioma": "es",
+        "nombre": "Introducción a la Farmacia"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 11,
+    "fields": {
+        "asignatura": 6,
+        "idioma": "es",
+        "nombre": "Introducción a la Gestión y Marketing Farmacéutico"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 12,
+    "fields": {
+        "asignatura": 7,
+        "idioma": "en",
+        "nombre": "Bioquímica"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 13,
+    "fields": {
+        "asignatura": 7,
+        "idioma": "es",
+        "nombre": "Bioquímica"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 14,
+    "fields": {
+        "asignatura": 8,
+        "idioma": "en",
+        "nombre": "Estructura y Función Cuerpo Humano II"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 15,
+    "fields": {
+        "asignatura": 8,
+        "idioma": "es",
+        "nombre": "Estructura y Función Cuerpo Humano II"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 16,
+    "fields": {
+        "asignatura": 9,
+        "idioma": "en",
+        "nombre": "Física"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 17,
+    "fields": {
+        "asignatura": 9,
+        "idioma": "es",
+        "nombre": "Física"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 18,
+    "fields": {
+        "asignatura": 10,
+        "idioma": "en",
+        "nombre": "Historia de la Ciencia"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 19,
+    "fields": {
+        "asignatura": 10,
+        "idioma": "es",
+        "nombre": "Historia de la Ciencia"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 20,
+    "fields": {
+        "asignatura": 11,
+        "idioma": "en",
+        "nombre": "Fisiopatología I"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 21,
+    "fields": {
+        "asignatura": 11,
+        "idioma": "es",
+        "nombre": "Fisiopatología I"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 22,
+    "fields": {
+        "asignatura": 12,
+        "idioma": "en",
+        "nombre": "Química Inorgánica"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 23,
+    "fields": {
+        "asignatura": 12,
+        "idioma": "es",
+        "nombre": "Química Inorgánica"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 24,
+    "fields": {
+        "asignatura": 13,
+        "idioma": "en",
+        "nombre": "Técnicas Analíticas"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 25,
+    "fields": {
+        "asignatura": 13,
+        "idioma": "es",
+        "nombre": "Técnicas Analíticas"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 26,
+    "fields": {
+        "asignatura": 14,
+        "idioma": "en",
+        "nombre": "Microbiología I"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 27,
+    "fields": {
+        "asignatura": 14,
+        "idioma": "es",
+        "nombre": "Microbiología I"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 28,
+    "fields": {
+        "asignatura": 15,
+        "idioma": "en",
+        "nombre": "Parasitología"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 29,
+    "fields": {
+        "asignatura": 15,
+        "idioma": "es",
+        "nombre": "Parasitología"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 30,
+    "fields": {
+        "asignatura": 16,
+        "idioma": "en",
+        "nombre": "Físico Química"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 31,
+    "fields": {
+        "asignatura": 16,
+        "idioma": "es",
+        "nombre": "Físico Química"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 32,
+    "fields": {
+        "asignatura": 17,
+        "idioma": "en",
+        "nombre": "Química Orgánica I"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 33,
+    "fields": {
+        "asignatura": 17,
+        "idioma": "es",
+        "nombre": "Química Orgánica I"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 34,
+    "fields": {
+        "asignatura": 18,
+        "idioma": "en",
+        "nombre": "Microbiología II"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 35,
+    "fields": {
+        "asignatura": 18,
+        "idioma": "es",
+        "nombre": "Microbiología II"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 36,
+    "fields": {
+        "asignatura": 19,
+        "idioma": "en",
+        "nombre": "Nutrición"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 37,
+    "fields": {
+        "asignatura": 19,
+        "idioma": "es",
+        "nombre": "Nutrición"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 38,
+    "fields": {
+        "asignatura": 20,
+        "idioma": "en",
+        "nombre": "Sistemas de Calidad de Laboratorio"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 39,
+    "fields": {
+        "asignatura": 20,
+        "idioma": "es",
+        "nombre": "Sistemas de Calidad de Laboratorio"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 40,
+    "fields": {
+        "asignatura": 21,
+        "idioma": "es",
+        "nombre": "El Equipo Humano en la Farmacia: Gestión de los Recursos Humanos"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 41,
+    "fields": {
+        "asignatura": 22,
+        "idioma": "es",
+        "nombre": "Química Orgánica II"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 42,
+    "fields": {
+        "asignatura": 23,
+        "idioma": "es",
+        "nombre": "Análisis Biológicos y de Diagnóstico de Laboratorio I"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 43,
+    "fields": {
+        "asignatura": 24,
+        "idioma": "es",
+        "nombre": "Biofarmacia y Farmacocinética I"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 44,
+    "fields": {
+        "asignatura": 25,
+        "idioma": "es",
+        "nombre": "Farmacología"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 45,
+    "fields": {
+        "asignatura": 26,
+        "idioma": "es",
+        "nombre": "Fisiopatología II"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 46,
+    "fields": {
+        "asignatura": 27,
+        "idioma": "es",
+        "nombre": "Inmunología"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 47,
+    "fields": {
+        "asignatura": 28,
+        "idioma": "es",
+        "nombre": "Análisis Biológicos y de Diagnóstico de Laboratorio II"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 48,
+    "fields": {
+        "asignatura": 29,
+        "idioma": "es",
+        "nombre": "Biofarmacia y Farmacocinética II"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 49,
+    "fields": {
+        "asignatura": 30,
+        "idioma": "es",
+        "nombre": "Botánica Farmacéutica"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 50,
+    "fields": {
+        "asignatura": 31,
+        "idioma": "es",
+        "nombre": "Doctrina Social de la Iglesia"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 51,
+    "fields": {
+        "asignatura": 32,
+        "idioma": "es",
+        "nombre": "Tecnología Farmacéutica I"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 52,
+    "fields": {
+        "asignatura": 33,
+        "idioma": "es",
+        "nombre": "Marketing Farmacéutico"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 53,
+    "fields": {
+        "asignatura": 34,
+        "idioma": "es",
+        "nombre": "Farmacognosia"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 54,
+    "fields": {
+        "asignatura": 35,
+        "idioma": "es",
+        "nombre": "Farmacología y Farmacia Clínica I"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 55,
+    "fields": {
+        "asignatura": 36,
+        "idioma": "es",
+        "nombre": "Química Farmacéutica I"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 56,
+    "fields": {
+        "asignatura": 37,
+        "idioma": "es",
+        "nombre": "Salud Pública "
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 57,
+    "fields": {
+        "asignatura": 38,
+        "idioma": "es",
+        "nombre": "Tecnología Farmacéutica II"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 58,
+    "fields": {
+        "asignatura": 39,
+        "idioma": "es",
+        "nombre": "Farmacología y Farmacia Clínica II"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 59,
+    "fields": {
+        "asignatura": 40,
+        "idioma": "es",
+        "nombre": "Fitoterapia"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 60,
+    "fields": {
+        "asignatura": 41,
+        "idioma": "es",
+        "nombre": "Habilidades de Comunicación"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 61,
+    "fields": {
+        "asignatura": 42,
+        "idioma": "es",
+        "nombre": "Química Farmacéutica II"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 62,
+    "fields": {
+        "asignatura": 43,
+        "idioma": "es",
+        "nombre": "Tecnología Farmacéutica IIi"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 63,
+    "fields": {
+        "asignatura": 44,
+        "idioma": "es",
+        "nombre": "Toxicología"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 64,
+    "fields": {
+        "asignatura": 45,
+        "idioma": "es",
+        "nombre": "Logística, Compras, Ventas y Servicios"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 65,
+    "fields": {
+        "asignatura": 46,
+        "idioma": "es",
+        "nombre": "Atención Farmacéutica"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 66,
+    "fields": {
+        "asignatura": 47,
+        "idioma": "es",
+        "nombre": "Biotecnología Farmacéutica"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 67,
+    "fields": {
+        "asignatura": 48,
+        "idioma": "es",
+        "nombre": "Gestión y Planificación"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 68,
+    "fields": {
+        "asignatura": 49,
+        "idioma": "es",
+        "nombre": "Historia, Legislación y Deontología Farmacéutica"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 69,
+    "fields": {
+        "asignatura": 50,
+        "idioma": "es",
+        "nombre": "Productos Sanitarios y Cosméticos"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 70,
+    "fields": {
+        "asignatura": 51,
+        "idioma": "es",
+        "nombre": "Farmacia Hospitalaria"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 71,
+    "fields": {
+        "asignatura": 52,
+        "idioma": "es",
+        "nombre": "Prácticas Tuteladas"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 72,
+    "fields": {
+        "asignatura": 53,
+        "idioma": "es",
+        "nombre": "Trabajo Fin de Grado"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 73,
+    "fields": {
+        "asignatura": 54,
+        "idioma": "es",
+        "nombre": "Farmacogenética y Farmacogenómica"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 74,
+    "fields": {
+        "asignatura": 55,
+        "idioma": "es",
+        "nombre": "Metodología Científica"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 75,
+    "fields": {
+        "asignatura": 56,
+        "idioma": "es",
+        "nombre": "Gestión Legal y Económico-Financiera de Una Oficina de Farmacia"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 76,
+    "fields": {
+        "asignatura": 57,
+        "idioma": "es",
+        "nombre": "Antropología Filosófica"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 77,
+    "fields": {
+        "asignatura": 58,
+        "idioma": "es",
+        "nombre": "Bioética"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 78,
+    "fields": {
+        "asignatura": 59,
+        "idioma": "es",
+        "nombre": "Historia de la Ciencia"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 79,
+    "fields": {
+        "asignatura": 60,
+        "idioma": "es",
+        "nombre": "Sociedad e Historia"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 80,
+    "fields": {
+        "asignatura": 61,
+        "idioma": "en",
+        "nombre": "Anatomía e Histología"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 81,
+    "fields": {
+        "asignatura": 61,
+        "idioma": "es",
+        "nombre": "Anatomía e Histología"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 82,
+    "fields": {
+        "asignatura": 61,
+        "idioma": "xi",
+        "nombre": "Anatomía e Histología"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 83,
+    "fields": {
+        "asignatura": 62,
+        "idioma": "en",
+        "nombre": "Biología"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 84,
+    "fields": {
+        "asignatura": 62,
+        "idioma": "es",
+        "nombre": "Biología"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 85,
+    "fields": {
+        "asignatura": 62,
+        "idioma": "xi",
+        "nombre": "Biología"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 86,
+    "fields": {
+        "asignatura": 63,
+        "idioma": "en",
+        "nombre": "Bioquímica"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 87,
+    "fields": {
+        "asignatura": 63,
+        "idioma": "es",
+        "nombre": "Bioquímica"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 88,
+    "fields": {
+        "asignatura": 63,
+        "idioma": "xi",
+        "nombre": "Bioquímica"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 89,
+    "fields": {
+        "asignatura": 64,
+        "idioma": "en",
+        "nombre": "Fisiología General"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 90,
+    "fields": {
+        "asignatura": 64,
+        "idioma": "es",
+        "nombre": "Fisiología General"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 91,
+    "fields": {
+        "asignatura": 64,
+        "idioma": "xi",
+        "nombre": "Fisiología General"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 92,
+    "fields": {
+        "asignatura": 65,
+        "idioma": "en",
+        "nombre": "Historia de la Ciencia"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 93,
+    "fields": {
+        "asignatura": 65,
+        "idioma": "es",
+        "nombre": "Historia de la Ciencia"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 94,
+    "fields": {
+        "asignatura": 65,
+        "idioma": "xi",
+        "nombre": "Historia de la Ciencia"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 95,
+    "fields": {
+        "asignatura": 66,
+        "idioma": "co",
+        "nombre": "Anatomía Especial"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 96,
+    "fields": {
+        "asignatura": 66,
+        "idioma": "en",
+        "nombre": "Anatomía Especial"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 97,
+    "fields": {
+        "asignatura": 66,
+        "idioma": "es",
+        "nombre": "Anatomía Especial"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 98,
+    "fields": {
+        "asignatura": 66,
+        "idioma": "xi",
+        "nombre": "Anatomía Especial"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 99,
+    "fields": {
+        "asignatura": 67,
+        "idioma": "en",
+        "nombre": "Fisiología Especial para Odontólogos"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 100,
+    "fields": {
+        "asignatura": 67,
+        "idioma": "es",
+        "nombre": "Fisiología Especial para Odontólogos"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 101,
+    "fields": {
+        "asignatura": 67,
+        "idioma": "xi",
+        "nombre": "Fisiología Especial para Odontólogos"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 102,
+    "fields": {
+        "asignatura": 68,
+        "idioma": "en",
+        "nombre": "Introducción a la Clínica Odontológica"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 103,
+    "fields": {
+        "asignatura": 68,
+        "idioma": "es",
+        "nombre": "Introducción a la Clínica Odontológica"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 104,
+    "fields": {
+        "asignatura": 68,
+        "idioma": "xi",
+        "nombre": "Introducción a la Clínica Odontológica"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 105,
+    "fields": {
+        "asignatura": 69,
+        "idioma": "en",
+        "nombre": "Psicología "
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 106,
+    "fields": {
+        "asignatura": 69,
+        "idioma": "es",
+        "nombre": "Psicología "
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 107,
+    "fields": {
+        "asignatura": 69,
+        "idioma": "xi",
+        "nombre": "Psicología "
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 108,
+    "fields": {
+        "asignatura": 70,
+        "idioma": "en",
+        "nombre": "Estadística"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 109,
+    "fields": {
+        "asignatura": 70,
+        "idioma": "es",
+        "nombre": "Estadística"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 110,
+    "fields": {
+        "asignatura": 70,
+        "idioma": "xi",
+        "nombre": "Estadística"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 111,
+    "fields": {
+        "asignatura": 71,
+        "idioma": "en",
+        "nombre": "Microbiología y Virología"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 112,
+    "fields": {
+        "asignatura": 71,
+        "idioma": "es",
+        "nombre": "Microbiología y Virología"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 113,
+    "fields": {
+        "asignatura": 72,
+        "idioma": "en",
+        "nombre": "Farmacología"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 114,
+    "fields": {
+        "asignatura": 72,
+        "idioma": "es",
+        "nombre": "Farmacología"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 115,
+    "fields": {
+        "asignatura": 73,
+        "idioma": "en",
+        "nombre": "Fundamentos Físicos de la Imagen y Radiología"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 116,
+    "fields": {
+        "asignatura": 73,
+        "idioma": "es",
+        "nombre": "Fundamentos Físicos de la Imagen y Radiología"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 117,
+    "fields": {
+        "asignatura": 74,
+        "idioma": "en",
+        "nombre": "Introducción a la Investigación"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 118,
+    "fields": {
+        "asignatura": 74,
+        "idioma": "es",
+        "nombre": "Introducción a la Investigación"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 119,
+    "fields": {
+        "asignatura": 75,
+        "idioma": "en",
+        "nombre": "Nutrición"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 120,
+    "fields": {
+        "asignatura": 75,
+        "idioma": "es",
+        "nombre": "Nutrición"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 121,
+    "fields": {
+        "asignatura": 76,
+        "idioma": "en",
+        "nombre": "Patología General I"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 122,
+    "fields": {
+        "asignatura": 76,
+        "idioma": "es",
+        "nombre": "Patología General I"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 123,
+    "fields": {
+        "asignatura": 77,
+        "idioma": "en",
+        "nombre": "Anatomía Patológica"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 124,
+    "fields": {
+        "asignatura": 77,
+        "idioma": "es",
+        "nombre": "Anatomía Patológica"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 125,
+    "fields": {
+        "asignatura": 78,
+        "idioma": "en",
+        "nombre": "Biomateriales e Instrumentación"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 126,
+    "fields": {
+        "asignatura": 78,
+        "idioma": "es",
+        "nombre": "Biomateriales e Instrumentación"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 127,
+    "fields": {
+        "asignatura": 79,
+        "idioma": "en",
+        "nombre": "Doctrina Social de la Iglesia"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 128,
+    "fields": {
+        "asignatura": 79,
+        "idioma": "es",
+        "nombre": "Doctrina Social de la Iglesia"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 129,
+    "fields": {
+        "asignatura": 80,
+        "idioma": "en",
+        "nombre": "Manifestaciones Orales de la Patología Sistémica"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 130,
+    "fields": {
+        "asignatura": 80,
+        "idioma": "es",
+        "nombre": "Manifestaciones Orales de la Patología Sistémica"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 131,
+    "fields": {
+        "asignatura": 81,
+        "idioma": "en",
+        "nombre": "Patología General II"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 132,
+    "fields": {
+        "asignatura": 81,
+        "idioma": "es",
+        "nombre": "Patología General II"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 133,
+    "fields": {
+        "asignatura": 82,
+        "idioma": "en",
+        "nombre": "Patología Quirúrgica y Reanimación"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 134,
+    "fields": {
+        "asignatura": 82,
+        "idioma": "es",
+        "nombre": "Patología Quirúrgica y Reanimación"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 135,
+    "fields": {
+        "asignatura": 83,
+        "idioma": "en",
+        "nombre": "Cirugía Bucal I"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 136,
+    "fields": {
+        "asignatura": 83,
+        "idioma": "es",
+        "nombre": "Cirugía Bucal I"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 137,
+    "fields": {
+        "asignatura": 84,
+        "idioma": "en",
+        "nombre": "Medicina Bucal I"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 138,
+    "fields": {
+        "asignatura": 84,
+        "idioma": "es",
+        "nombre": "Medicina Bucal I"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 139,
+    "fields": {
+        "asignatura": 85,
+        "idioma": "en",
+        "nombre": "Odontología Preventiva y Comunitaria"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 140,
+    "fields": {
+        "asignatura": 85,
+        "idioma": "es",
+        "nombre": "Odontología Preventiva y Comunitaria"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 141,
+    "fields": {
+        "asignatura": 86,
+        "idioma": "en",
+        "nombre": "Patología y Terapéutica Dental I"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 142,
+    "fields": {
+        "asignatura": 86,
+        "idioma": "es",
+        "nombre": "Patología y Terapéutica Dental I"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 143,
+    "fields": {
+        "asignatura": 87,
+        "idioma": "en",
+        "nombre": "Prótesis I"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 144,
+    "fields": {
+        "asignatura": 87,
+        "idioma": "es",
+        "nombre": "Prótesis I"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 145,
+    "fields": {
+        "asignatura": 88,
+        "idioma": "en",
+        "nombre": "Cirugía Bucal II"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 146,
+    "fields": {
+        "asignatura": 88,
+        "idioma": "es",
+        "nombre": "Cirugía Bucal II"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 147,
+    "fields": {
+        "asignatura": 89,
+        "idioma": "en",
+        "nombre": "Medicina Bucal II"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 148,
+    "fields": {
+        "asignatura": 89,
+        "idioma": "es",
+        "nombre": "Medicina Bucal II"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 149,
+    "fields": {
+        "asignatura": 90,
+        "idioma": "en",
+        "nombre": "Patología y Terapéutica Dental II"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 150,
+    "fields": {
+        "asignatura": 90,
+        "idioma": "es",
+        "nombre": "Patología y Terapéutica Dental II"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 151,
+    "fields": {
+        "asignatura": 91,
+        "idioma": "en",
+        "nombre": "Prótesis II"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 152,
+    "fields": {
+        "asignatura": 91,
+        "idioma": "es",
+        "nombre": "Prótesis II"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 153,
+    "fields": {
+        "asignatura": 92,
+        "idioma": "es",
+        "nombre": "Inglés "
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 154,
+    "fields": {
+        "asignatura": 93,
+        "idioma": "en",
+        "nombre": "Nuevas Tecnologías "
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 155,
+    "fields": {
+        "asignatura": 93,
+        "idioma": "es",
+        "nombre": "Nuevas Tecnologías "
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 156,
+    "fields": {
+        "asignatura": 94,
+        "idioma": "en",
+        "nombre": "Epidemiología y Salud Pública"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 157,
+    "fields": {
+        "asignatura": 94,
+        "idioma": "es",
+        "nombre": "Epidemiología y Salud Pública"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 158,
+    "fields": {
+        "asignatura": 95,
+        "idioma": "en",
+        "nombre": "Odontopediatría I"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 159,
+    "fields": {
+        "asignatura": 95,
+        "idioma": "es",
+        "nombre": "Odontopediatría I"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 160,
+    "fields": {
+        "asignatura": 96,
+        "idioma": "en",
+        "nombre": "Ortodoncia I"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 161,
+    "fields": {
+        "asignatura": 96,
+        "idioma": "es",
+        "nombre": "Ortodoncia I"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 162,
+    "fields": {
+        "asignatura": 97,
+        "idioma": "en",
+        "nombre": "Patología y Terapéutica Dental IIi"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 163,
+    "fields": {
+        "asignatura": 97,
+        "idioma": "es",
+        "nombre": "Patología y Terapéutica Dental IIi"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 164,
+    "fields": {
+        "asignatura": 98,
+        "idioma": "en",
+        "nombre": "Periodoncia I"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 165,
+    "fields": {
+        "asignatura": 98,
+        "idioma": "es",
+        "nombre": "Periodoncia I"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 166,
+    "fields": {
+        "asignatura": 99,
+        "idioma": "en",
+        "nombre": "Prótesis IIi"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 167,
+    "fields": {
+        "asignatura": 99,
+        "idioma": "es",
+        "nombre": "Prótesis IIi"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 168,
+    "fields": {
+        "asignatura": 100,
+        "idioma": "en",
+        "nombre": "Odontología Mínimamente Invasiva"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 169,
+    "fields": {
+        "asignatura": 100,
+        "idioma": "es",
+        "nombre": "Odontología Mínimamente Invasiva"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 170,
+    "fields": {
+        "asignatura": 101,
+        "idioma": "en",
+        "nombre": "Odontopediatría II"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 171,
+    "fields": {
+        "asignatura": 101,
+        "idioma": "es",
+        "nombre": "Odontopediatría II"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 172,
+    "fields": {
+        "asignatura": 102,
+        "idioma": "en",
+        "nombre": "Ortodoncia II"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 173,
+    "fields": {
+        "asignatura": 102,
+        "idioma": "es",
+        "nombre": "Ortodoncia II"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 174,
+    "fields": {
+        "asignatura": 103,
+        "idioma": "en",
+        "nombre": "Patología y Terapéutica Dental IV"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 175,
+    "fields": {
+        "asignatura": 103,
+        "idioma": "es",
+        "nombre": "Patología y Terapéutica Dental IV"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 176,
+    "fields": {
+        "asignatura": 104,
+        "idioma": "en",
+        "nombre": "Periodoncia II"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 177,
+    "fields": {
+        "asignatura": 104,
+        "idioma": "es",
+        "nombre": "Periodoncia II"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 178,
+    "fields": {
+        "asignatura": 105,
+        "idioma": "en",
+        "nombre": "Prótesis IV"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 179,
+    "fields": {
+        "asignatura": 105,
+        "idioma": "es",
+        "nombre": "Prótesis IV"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 180,
+    "fields": {
+        "asignatura": 106,
+        "idioma": "en",
+        "nombre": "Gerodontología"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 181,
+    "fields": {
+        "asignatura": 106,
+        "idioma": "es",
+        "nombre": "Gerodontología"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 182,
+    "fields": {
+        "asignatura": 107,
+        "idioma": "en",
+        "nombre": "Implantología"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 183,
+    "fields": {
+        "asignatura": 107,
+        "idioma": "es",
+        "nombre": "Implantología"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 184,
+    "fields": {
+        "asignatura": 108,
+        "idioma": "en",
+        "nombre": "Odontología para Pacientes Especiales"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 185,
+    "fields": {
+        "asignatura": 108,
+        "idioma": "es",
+        "nombre": "Odontología para Pacientes Especiales"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 186,
+    "fields": {
+        "asignatura": 109,
+        "idioma": "en",
+        "nombre": "Ortodoncia IIi"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 187,
+    "fields": {
+        "asignatura": 109,
+        "idioma": "es",
+        "nombre": "Ortodoncia IIi"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 188,
+    "fields": {
+        "asignatura": 110,
+        "idioma": "en",
+        "nombre": "Practicum Adultos I"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 189,
+    "fields": {
+        "asignatura": 110,
+        "idioma": "es",
+        "nombre": "Practicum Adultos I"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 190,
+    "fields": {
+        "asignatura": 111,
+        "idioma": "en",
+        "nombre": "Practicum Infantil I"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 191,
+    "fields": {
+        "asignatura": 111,
+        "idioma": "es",
+        "nombre": "Practicum Infantil I"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 192,
+    "fields": {
+        "asignatura": 112,
+        "idioma": "en",
+        "nombre": "Urgencias y Farmacología Aplicadas a la Práctica Odontológica"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 193,
+    "fields": {
+        "asignatura": 112,
+        "idioma": "es",
+        "nombre": "Urgencias y Farmacología Aplicadas a la Práctica Odontológica"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 194,
+    "fields": {
+        "asignatura": 113,
+        "idioma": "en",
+        "nombre": "Odontología Legal y Protección Radiologica"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 195,
+    "fields": {
+        "asignatura": 113,
+        "idioma": "es",
+        "nombre": "Odontología Legal y Protección Radiologica"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 196,
+    "fields": {
+        "asignatura": 114,
+        "idioma": "en",
+        "nombre": "Organización y Gestión de la Clínica Dental"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 197,
+    "fields": {
+        "asignatura": 114,
+        "idioma": "es",
+        "nombre": "Organización y Gestión de la Clínica Dental"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 198,
+    "fields": {
+        "asignatura": 115,
+        "idioma": "en",
+        "nombre": "Ortodoncia IV"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 199,
+    "fields": {
+        "asignatura": 115,
+        "idioma": "es",
+        "nombre": "Ortodoncia IV"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 200,
+    "fields": {
+        "asignatura": 116,
+        "idioma": "en",
+        "nombre": "Practicum Adultos II"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 201,
+    "fields": {
+        "asignatura": 116,
+        "idioma": "es",
+        "nombre": "Practicum Adultos II"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 202,
+    "fields": {
+        "asignatura": 117,
+        "idioma": "en",
+        "nombre": "Practicum Infantil II"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 203,
+    "fields": {
+        "asignatura": 117,
+        "idioma": "es",
+        "nombre": "Practicum Infantil II"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 204,
+    "fields": {
+        "asignatura": 118,
+        "idioma": "en",
+        "nombre": "Trabajo Fin de Grado"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 205,
+    "fields": {
+        "asignatura": 118,
+        "idioma": "es",
+        "nombre": "Trabajo Fin de Grado"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 206,
+    "fields": {
+        "asignatura": 119,
+        "idioma": "es",
+        "nombre": "Antropología Filosófica"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 207,
+    "fields": {
+        "asignatura": 120,
+        "idioma": "es",
+        "nombre": "Bioética"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 208,
+    "fields": {
+        "asignatura": 121,
+        "idioma": "es",
+        "nombre": "Biomateriales y Ergonomía"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 209,
+    "fields": {
+        "asignatura": 122,
+        "idioma": "es",
+        "nombre": "Ciencia y Sociedad"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 210,
+    "fields": {
+        "asignatura": 123,
+        "idioma": "es",
+        "nombre": "Historia General de Europa y de la Civilizacion Occidental"
+    }
+},
+{
+    "model": "dbschema.asignaturaidioma",
+    "pk": 211,
+    "fields": {
+        "asignatura": 124,
+        "idioma": "es",
+        "nombre": "Psicología "
+    }
+}
+]

@@ -1,0 +1,2767 @@
+[
+{
+    "model": "dbschema.funcion",
+    "pk": 1,
+    "fields": {
+        "nombre": "Adjunta al Secretario General"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 2,
+    "fields": {
+        "nombre": "Adjunto al Secretario General"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 3,
+    "fields": {
+        "nombre": "Adjunto al Vicerrector de Desarrollo Estratégico y Comunicación"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 4,
+    "fields": {
+        "nombre": "Adjunto al Vicerrector de Internacionalización"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 5,
+    "fields": {
+        "nombre": "Adjunto al Vicerrector de Ordenación Académica y Profesorado"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 6,
+    "fields": {
+        "nombre": "Apoyo Técnico de Administración"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 7,
+    "fields": {
+        "nombre": "Apoyo Técnico de FP"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 8,
+    "fields": {
+        "nombre": "Apoyo Técnico de Gestión de Infraestructuras"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 9,
+    "fields": {
+        "nombre": "Apoyo Técnico de Secretaria Académica"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 10,
+    "fields": {
+        "nombre": "Apoyo Técnico de Sigma"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 11,
+    "fields": {
+        "nombre": "Apoyo Ténico de Publicaciones"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 12,
+    "fields": {
+        "nombre": "Área de Prensa"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 13,
+    "fields": {
+        "nombre": "Asesor de Información al Alumno"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 14,
+    "fields": {
+        "nombre": "Asesor de Orientación Universitaria"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 15,
+    "fields": {
+        "nombre": "Asesora de Carreras Profesionales"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 16,
+    "fields": {
+        "nombre": "Asesora de Información al Alumno"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 17,
+    "fields": {
+        "nombre": "Asesora de Orientación Universitaria"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 18,
+    "fields": {
+        "nombre": "Asistente Administrativo"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 19,
+    "fields": {
+        "nombre": "Asistente administrativo de Atención al Alumno"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 20,
+    "fields": {
+        "nombre": "Asistente administrativo en Microcredenciales"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 21,
+    "fields": {
+        "nombre": "Auditor Interno"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 22,
+    "fields": {
+        "nombre": "Auditora Interna"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 23,
+    "fields": {
+        "nombre": "Auxiliar Administrativo"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 24,
+    "fields": {
+        "nombre": "Auxiliar de Biblioteca"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 25,
+    "fields": {
+        "nombre": "Auxiliar Técnico Veterinario"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 26,
+    "fields": {
+        "nombre": "Ayudante de Biblioteca"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 27,
+    "fields": {
+        "nombre": "Ayudante de Investigación"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 28,
+    "fields": {
+        "nombre": "Capellán"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 29,
+    "fields": {
+        "nombre": "Colaborador equipo de promoción y comunicación"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 30,
+    "fields": {
+        "nombre": "Colaborador equipo difusión titulación en internet"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 31,
+    "fields": {
+        "nombre": "Colaborador Investigador"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 32,
+    "fields": {
+        "nombre": "Colaboradora equipo de promoción y comunicación"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 33,
+    "fields": {
+        "nombre": "Colaboradora equipo difusión titulación en internet"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 34,
+    "fields": {
+        "nombre": "Community Manager"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 35,
+    "fields": {
+        "nombre": "Conserje"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 36,
+    "fields": {
+        "nombre": "Coordinador"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 37,
+    "fields": {
+        "nombre": "Coordinador adjunto del programa"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 38,
+    "fields": {
+        "nombre": "Coordinador Clínico de Prácticas Externas"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 39,
+    "fields": {
+        "nombre": "Coordinador de actividades de Vida Universitaria"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 40,
+    "fields": {
+        "nombre": "Coordinador de área docente o sección departamental"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 41,
+    "fields": {
+        "nombre": "Coordinador de Asignatura"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 42,
+    "fields": {
+        "nombre": "Coordinador de COILs"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 43,
+    "fields": {
+        "nombre": "Coordinador de curso"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 44,
+    "fields": {
+        "nombre": "Coordinador de Embajadores Digitales"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 45,
+    "fields": {
+        "nombre": "Coordinador de Gestión de Servicios TI"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 46,
+    "fields": {
+        "nombre": "Coordinador de Laboratorios"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 47,
+    "fields": {
+        "nombre": "Coordinador de Módulo Posgrado"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 48,
+    "fields": {
+        "nombre": "Coordinador de Movilidad"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 49,
+    "fields": {
+        "nombre": "Coordinador de Prácticas"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 50,
+    "fields": {
+        "nombre": "Coordinador de Programa Internacional"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 51,
+    "fields": {
+        "nombre": "Coordinador de Proyectos TI"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 52,
+    "fields": {
+        "nombre": "Coordinador de Relaciones Internacionales"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 53,
+    "fields": {
+        "nombre": "Coordinador de Titulación (Educación Infantil y Primaria)"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 54,
+    "fields": {
+        "nombre": "Coordinador de Titulación (Enfermería)"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 55,
+    "fields": {
+        "nombre": "Coordinador de Titulación (Farmacia)"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 56,
+    "fields": {
+        "nombre": "Coordinador de Titulación (Fisioterapia)"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 57,
+    "fields": {
+        "nombre": "Coordinador de Titulación (Medicina)"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 58,
+    "fields": {
+        "nombre": "Coordinador de Titulación (Veterinaria)"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 59,
+    "fields": {
+        "nombre": "Coordinador de Titulación de Grado"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 60,
+    "fields": {
+        "nombre": "Coordinador de Titulación de Posgrado"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 61,
+    "fields": {
+        "nombre": "Coordinador de Titulación Facultad de Ciencias de la Salud"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 62,
+    "fields": {
+        "nombre": "Coordinador de Titulación Facultad de Humanidades y Ciencias de la Comunicación"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 63,
+    "fields": {
+        "nombre": "Coordinador de Titulación Grados Educación Infantil y Primaria"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 64,
+    "fields": {
+        "nombre": "Coordinador de Titulación Posgrado"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 65,
+    "fields": {
+        "nombre": "Coordinador del Servicio de Deportes"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 66,
+    "fields": {
+        "nombre": "Coordinador Orfeón Universitario"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 67,
+    "fields": {
+        "nombre": "Coordinador Técnico de Compras TI"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 68,
+    "fields": {
+        "nombre": "Coordinador Técnico de Investigación y Producción Multimedia"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 69,
+    "fields": {
+        "nombre": "Coordinador Técnico de la Unidad de Avicultura"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 70,
+    "fields": {
+        "nombre": "Coordinador Técnico de la Unidad de Cunicultura"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 71,
+    "fields": {
+        "nombre": "Coordinador Técnico de la Unidad de Pequeños Animales"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 72,
+    "fields": {
+        "nombre": "Coordinador Técnico de la Unidad de Pequeños Rumiantes"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 73,
+    "fields": {
+        "nombre": "Coordinador Técnico de la Unidad de Vacuno"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 74,
+    "fields": {
+        "nombre": "Coordinador Técnico de Laboratorios"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 75,
+    "fields": {
+        "nombre": "Coordinadora adjunta del programa"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 76,
+    "fields": {
+        "nombre": "Coordinadora Clínica de Prácticas Externas"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 77,
+    "fields": {
+        "nombre": "Coordinadora de actividades de extensión universitaria"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 78,
+    "fields": {
+        "nombre": "Coordinadora de área docente o sección departamental"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 79,
+    "fields": {
+        "nombre": "Coordinadora de Asignatura"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 80,
+    "fields": {
+        "nombre": "Coordinadora de curso"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 81,
+    "fields": {
+        "nombre": "Coordinadora de Igualdad"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 82,
+    "fields": {
+        "nombre": "Coordinadora de Módulo Posgrado"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 83,
+    "fields": {
+        "nombre": "Coordinadora de Movilidad"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 84,
+    "fields": {
+        "nombre": "Coordinadora de Prácticas"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 85,
+    "fields": {
+        "nombre": "Coordinadora de Producción Audiovisual"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 86,
+    "fields": {
+        "nombre": "Coordinadora de Proyectos Desarrollo de Aplicaciones"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 87,
+    "fields": {
+        "nombre": "Coordinadora de Titulación (Dirección de Empresas)"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 88,
+    "fields": {
+        "nombre": "Coordinadora de Titulación (Enfermería y Fisioterapia)"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 89,
+    "fields": {
+        "nombre": "Coordinadora de Titulación (Enfermería)"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 90,
+    "fields": {
+        "nombre": "Coordinadora de Titulación (Medicina)"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 91,
+    "fields": {
+        "nombre": "Coordinadora de Titulación (Nutrición Humana y Dietética)"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 92,
+    "fields": {
+        "nombre": "Coordinadora de Titulación (Óptica y Optometría)"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 93,
+    "fields": {
+        "nombre": "Coordinadora de Titulación (Veterinaria)"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 94,
+    "fields": {
+        "nombre": "Coordinadora de Titulación de Grado"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 95,
+    "fields": {
+        "nombre": "Coordinadora de Titulación de Posgrado"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 96,
+    "fields": {
+        "nombre": "Coordinadora de Titulación Facultad de Derecho, Empresa y Ciencias Políticas"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 97,
+    "fields": {
+        "nombre": "Coordinadora de Titulación Posgrado"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 98,
+    "fields": {
+        "nombre": "Coordinadora del Centro de Producción Audiovisual Bartolomé Serra"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 99,
+    "fields": {
+        "nombre": "Coordinadora Doctorado CEINDO"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 100,
+    "fields": {
+        "nombre": "Coordinadora Grados Educación"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 101,
+    "fields": {
+        "nombre": "Coordinadora Responsable"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 102,
+    "fields": {
+        "nombre": "Coordinadora Técnica de Campus Life"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 103,
+    "fields": {
+        "nombre": "Coordinadora Técnica de CEU Emprende"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 104,
+    "fields": {
+        "nombre": "Coordinadora Técnica de Proyectos Desarrollo de Aplicaciones"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 105,
+    "fields": {
+        "nombre": "Coordinadora Técnica de Transformación Digital"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 106,
+    "fields": {
+        "nombre": "Decana Facultad de Ciencias de la Salud"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 107,
+    "fields": {
+        "nombre": "Decana Facultad de Derecho, Empresa y CC Políticas"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 108,
+    "fields": {
+        "nombre": "Decano Facultad de Humanidades y Ciencias de la Comunicación"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 109,
+    "fields": {
+        "nombre": "Decano Facultad de Veterinaria"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 110,
+    "fields": {
+        "nombre": "Delegada de CEU Alumni (UCH)"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 111,
+    "fields": {
+        "nombre": "Delegado del Director del Instituto CEU de Humanidades Ángel Ayala (UCH)"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 112,
+    "fields": {
+        "nombre": "Delineante - Oficina Técnica"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 113,
+    "fields": {
+        "nombre": "Desarrollador Aplicaciones, AWS y Microsoft"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 114,
+    "fields": {
+        "nombre": "Desarrollador CRM"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 115,
+    "fields": {
+        "nombre": "Desarrollador ERP Académico"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 116,
+    "fields": {
+        "nombre": "Desarrollador Sharepoint e Intranet"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 117,
+    "fields": {
+        "nombre": "Desarrolladora Aplicaciones y AWS"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 118,
+    "fields": {
+        "nombre": "Desarrolladora en Integraciones de Procesos y Datos de Aplicaciones"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 119,
+    "fields": {
+        "nombre": "Director"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 120,
+    "fields": {
+        "nombre": "Director Centro de Castellón"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 121,
+    "fields": {
+        "nombre": "Director Centro de Elche"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 122,
+    "fields": {
+        "nombre": "Director de CEU Música"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 123,
+    "fields": {
+        "nombre": "Director de Departamento de Ciencias de la Educación"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 124,
+    "fields": {
+        "nombre": "Director de Departamento de Ciencias Políticas, Ética y Sociología"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 125,
+    "fields": {
+        "nombre": "Director de Departamento de Comunicación Audiovisual y Publicidad"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 126,
+    "fields": {
+        "nombre": "Director de Departamento de Comunicación e Información Periodística"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 127,
+    "fields": {
+        "nombre": "Director de Departamento de Economía y Empresa"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 128,
+    "fields": {
+        "nombre": "Director de Departamento de Farmacia"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 129,
+    "fields": {
+        "nombre": "Director de Departamento de Humanidades"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 130,
+    "fields": {
+        "nombre": "Director de Departamento de Matemáticas, Física y Ciencias Tecnológicas"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 131,
+    "fields": {
+        "nombre": "Director de Departamento de Medicina y Cirugía Animal"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 132,
+    "fields": {
+        "nombre": "Director de Observatorios de la Universidad, Cátedras y órganos de investigación"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 133,
+    "fields": {
+        "nombre": "Director del Hospital Clínico Veterinario"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 134,
+    "fields": {
+        "nombre": "Director del Servicio de Deportes"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 135,
+    "fields": {
+        "nombre": "Director Granja Docente y de Investigación Veterinaria"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 136,
+    "fields": {
+        "nombre": "Director Instituto de Diseño, Innovación y Tecnología"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 137,
+    "fields": {
+        "nombre": "Director ISEP Comunidad de Valencia"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 138,
+    "fields": {
+        "nombre": "Directora Clínica Odontológica"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 139,
+    "fields": {
+        "nombre": "Directora de Departamento de Ciencias Biomédicas"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 140,
+    "fields": {
+        "nombre": "Directora de Departamento de Ciencias Jurídicas"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 141,
+    "fields": {
+        "nombre": "Directora de Departamento de Enfermería y Fisioterapia"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 142,
+    "fields": {
+        "nombre": "Directora de Departamento de Medicina y Cirugía"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 143,
+    "fields": {
+        "nombre": "Directora de Departamento de Producción y Sanidad Animal, Salud Pública Veterinaria y Ciencia y Tecnología de los Alimentos (PASAPTA)"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 144,
+    "fields": {
+        "nombre": "Directora de Departamento Odontología"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 145,
+    "fields": {
+        "nombre": "Directora de Departamento Proyectos, Teoría y Técnica del Diseño y Arquitectura"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 146,
+    "fields": {
+        "nombre": "Directora Escuela Superior de Enseñanzas Técnicas"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 147,
+    "fields": {
+        "nombre": "Directora Radio CEU"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 148,
+    "fields": {
+        "nombre": "Diseñador de Contenidos y Redes Sociales"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 149,
+    "fields": {
+        "nombre": "Diseñadora Web"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 150,
+    "fields": {
+        "nombre": "Docente Posgrado"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 151,
+    "fields": {
+        "nombre": "Embajador Digital"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 152,
+    "fields": {
+        "nombre": "Entrevistador"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 153,
+    "fields": {
+        "nombre": "Entrevistadora"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 154,
+    "fields": {
+        "nombre": "Gerente"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 155,
+    "fields": {
+        "nombre": "Gerente Adjunta"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 156,
+    "fields": {
+        "nombre": "Gestora Posgrado"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 157,
+    "fields": {
+        "nombre": "Gobernanta"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 158,
+    "fields": {
+        "nombre": "Higienista Dental"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 159,
+    "fields": {
+        "nombre": "HR Data Scientist"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 160,
+    "fields": {
+        "nombre": "Instructor"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 161,
+    "fields": {
+        "nombre": "Investigador"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 162,
+    "fields": {
+        "nombre": "Jardinero"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 163,
+    "fields": {
+        "nombre": "Jefa de Estudios"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 164,
+    "fields": {
+        "nombre": "Jefa de la Secretaría Técnica del Comité de Ética de Investigación"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 165,
+    "fields": {
+        "nombre": "Jefa de Servicio de Cirugía de Pequeños Animales y Exóticos"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 166,
+    "fields": {
+        "nombre": "Jefa de Servicio de Reproducción de Équidos"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 167,
+    "fields": {
+        "nombre": "Jefe de Servicio de Anestesiología"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 168,
+    "fields": {
+        "nombre": "Jefe de Servicio de Diagnóstico"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 169,
+    "fields": {
+        "nombre": "Jefe de Servicio de Especies Exóticas"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 170,
+    "fields": {
+        "nombre": "Jefe de Servicio de Neurología y Neurocirugía de Pequeños Animales y Exóticos"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 171,
+    "fields": {
+        "nombre": "Jefe de Servicio de Reproducción de Équidos"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 172,
+    "fields": {
+        "nombre": "Jefe del Servicio del Área de Equinos"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 173,
+    "fields": {
+        "nombre": "Jefe Técnico de Mantenimiento"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 174,
+    "fields": {
+        "nombre": "Miembro de Comisión de Garantía de Calidad"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 175,
+    "fields": {
+        "nombre": "Miembro de la comisión académica"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 176,
+    "fields": {
+        "nombre": "Miembro de un Grupo de Mejora"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 177,
+    "fields": {
+        "nombre": "NULL"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 178,
+    "fields": {
+        "nombre": "Odontóloga"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 179,
+    "fields": {
+        "nombre": "Odontólogo general/ 1ª visita"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 180,
+    "fields": {
+        "nombre": "Odontopediatra"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 181,
+    "fields": {
+        "nombre": "Oficial de Biblioteca"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 182,
+    "fields": {
+        "nombre": "Oficial de Mantenimiento"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 183,
+    "fields": {
+        "nombre": "Oficial de Taller"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 184,
+    "fields": {
+        "nombre": "Orientador Ciencias Políticas y de la Administración"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 185,
+    "fields": {
+        "nombre": "Orientador Dirección de Empresas + Derecho"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 186,
+    "fields": {
+        "nombre": "Orientador Marketing"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 187,
+    "fields": {
+        "nombre": "Orientadora"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 188,
+    "fields": {
+        "nombre": "Orientadora ADE"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 189,
+    "fields": {
+        "nombre": "Orientadora ADE + Informática de Gestión"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 190,
+    "fields": {
+        "nombre": "Orientadora ADE + Publicidad y Relaciones Públicas"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 191,
+    "fields": {
+        "nombre": "Orientadora Arquitectura"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 192,
+    "fields": {
+        "nombre": "Orientadora Ciencias Políticas y de la Administración"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 193,
+    "fields": {
+        "nombre": "Orientadora Derecho, Derecho + ADE"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 194,
+    "fields": {
+        "nombre": "Orientadora Dirección de Empresas + Derecho"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 195,
+    "fields": {
+        "nombre": "Orientadora Dirección Empresas"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 196,
+    "fields": {
+        "nombre": "Orientadora Diseño Industrial"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 197,
+    "fields": {
+        "nombre": "Orientadora Diseño Industrial y Desarrollo de Productos"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 198,
+    "fields": {
+        "nombre": "Orientadora Educación Infantil y Primaria, Valencia y Castellón"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 199,
+    "fields": {
+        "nombre": "Orientadora Enfermería Castellón"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 200,
+    "fields": {
+        "nombre": "Orientadora Enfermería Valencia"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 201,
+    "fields": {
+        "nombre": "Orientadora Informática de Gestión"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 202,
+    "fields": {
+        "nombre": "Orientadora Marketing"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 203,
+    "fields": {
+        "nombre": "Orientadora Sistemas de Información"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 204,
+    "fields": {
+        "nombre": "Orientadora Veterinaria"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 205,
+    "fields": {
+        "nombre": "PECS"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 206,
+    "fields": {
+        "nombre": "Personal Experto Clínica o Simulación (PECS)"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 207,
+    "fields": {
+        "nombre": "Profesor Adjunto"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 208,
+    "fields": {
+        "nombre": "Profesor Asociado"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 209,
+    "fields": {
+        "nombre": "Profesor Bachillerato"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 210,
+    "fields": {
+        "nombre": "Profesor Catedrático"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 211,
+    "fields": {
+        "nombre": "Profesor CEINDO"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 212,
+    "fields": {
+        "nombre": "Profesor Ciclos Formativos"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 213,
+    "fields": {
+        "nombre": "Profesor Colaborador"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 214,
+    "fields": {
+        "nombre": "Profesor Colaborador Doctor"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 215,
+    "fields": {
+        "nombre": "Profesor de FP"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 216,
+    "fields": {
+        "nombre": "Profesor de Idiomas"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 217,
+    "fields": {
+        "nombre": "Profesor Emérito"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 218,
+    "fields": {
+        "nombre": "Profesor ESO/Bachillerato"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 219,
+    "fields": {
+        "nombre": "Profesor FP"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 220,
+    "fields": {
+        "nombre": "Profesor Posgrado"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 221,
+    "fields": {
+        "nombre": "Profesor Primaria"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 222,
+    "fields": {
+        "nombre": "Profesor Titular"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 223,
+    "fields": {
+        "nombre": "Profesora Adjunta"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 224,
+    "fields": {
+        "nombre": "Profesora Asociada"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 225,
+    "fields": {
+        "nombre": "Profesora Catedrática"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 226,
+    "fields": {
+        "nombre": "Profesora CEINDO"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 227,
+    "fields": {
+        "nombre": "Profesora Ciclos Formativos"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 228,
+    "fields": {
+        "nombre": "Profesora Colaboradora"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 229,
+    "fields": {
+        "nombre": "Profesora Colaboradora Doctora"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 230,
+    "fields": {
+        "nombre": "Profesora de FP"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 231,
+    "fields": {
+        "nombre": "Profesora de Idiomas"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 232,
+    "fields": {
+        "nombre": "Profesora FP"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 233,
+    "fields": {
+        "nombre": "Profesora Titular"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 234,
+    "fields": {
+        "nombre": "Programador Web de Universidad"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 235,
+    "fields": {
+        "nombre": "Protésico Dental"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 236,
+    "fields": {
+        "nombre": "Recepcionista"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 237,
+    "fields": {
+        "nombre": "Rector Universidad Cardenal Herrera CEU"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 238,
+    "fields": {
+        "nombre": "Responsable de acreditaciones de calidad (Coordinador de Calidad de Titulaciones)"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 239,
+    "fields": {
+        "nombre": "Responsable de Arquitectura de Desarrollo"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 240,
+    "fields": {
+        "nombre": "Responsable de Biblioteca"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 241,
+    "fields": {
+        "nombre": "Responsable de Carreras Profesionales"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 242,
+    "fields": {
+        "nombre": "Responsable de Carreras Profesionales de Posgrado"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 243,
+    "fields": {
+        "nombre": "Responsable de Comunicación"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 244,
+    "fields": {
+        "nombre": "Responsable de Comunicación Digital"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 245,
+    "fields": {
+        "nombre": "Responsable de Contabilidad"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 246,
+    "fields": {
+        "nombre": "Responsable de Intensive Program"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 247,
+    "fields": {
+        "nombre": "Responsable de la Oficina Relaciones Internacionales"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 248,
+    "fields": {
+        "nombre": "Responsable de la OTRI"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 249,
+    "fields": {
+        "nombre": "Responsable de la Unidad de Atención a la Discapacidad"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 250,
+    "fields": {
+        "nombre": "Responsable de Marketing de Posgrado"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 251,
+    "fields": {
+        "nombre": "Responsable de Marketing y Comercial"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 252,
+    "fields": {
+        "nombre": "Responsable de Personas"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 253,
+    "fields": {
+        "nombre": "Responsable de Posgrado de Facultad"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 254,
+    "fields": {
+        "nombre": "Responsable de Servicios Generales"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 255,
+    "fields": {
+        "nombre": "Responsable de Tecnologías de la Información"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 256,
+    "fields": {
+        "nombre": "Responsable de Unidad de Posgrado"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 257,
+    "fields": {
+        "nombre": "Responsable del archivo multimedia"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 258,
+    "fields": {
+        "nombre": "Responsable del Servicio de Asesoramiento Universitario"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 259,
+    "fields": {
+        "nombre": "Responsable del Servicio Farmacia de Hospital"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 260,
+    "fields": {
+        "nombre": "Responsable Secretaría General"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 261,
+    "fields": {
+        "nombre": "Responsable Servicio y Promoción de Lenguas"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 262,
+    "fields": {
+        "nombre": "Secretaria Académica"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 263,
+    "fields": {
+        "nombre": "Secretaria Académica Centro de Castellón"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 264,
+    "fields": {
+        "nombre": "Secretaria Académica Facultad de Ciencias de la Salud"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 265,
+    "fields": {
+        "nombre": "Secretaria Académica Facultad de Derecho, Empresa y Ciencias Políticas"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 266,
+    "fields": {
+        "nombre": "Secretaria Académica Facultad de Veterinaria"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 267,
+    "fields": {
+        "nombre": "Secretaria Campus (Alfara)"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 268,
+    "fields": {
+        "nombre": "Secretaria Campus (Castellón)"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 269,
+    "fields": {
+        "nombre": "Secretaria Campus (Elche)"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 270,
+    "fields": {
+        "nombre": "Secretaria de Campus (Alfara)"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 271,
+    "fields": {
+        "nombre": "Secretaría de CEINDO"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 272,
+    "fields": {
+        "nombre": "Secretaria de Decano"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 273,
+    "fields": {
+        "nombre": "Secretaria de Departamento"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 274,
+    "fields": {
+        "nombre": "Secretaria de la Escuela Superior de Enseñanzas Técnicas"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 275,
+    "fields": {
+        "nombre": "Secretaria de Secretaría General"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 276,
+    "fields": {
+        "nombre": "Secretaria Decanato Derecho, Empresa y Ciencias Políticas"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 277,
+    "fields": {
+        "nombre": "Secretaria Decanato Facultad de Ciencias de la Salud"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 278,
+    "fields": {
+        "nombre": "Secretaria Decanato Facultad de Humanidades y Ciencias de la Comunicación"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 279,
+    "fields": {
+        "nombre": "Secretaria Decanato Facultad de Veterinaria"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 280,
+    "fields": {
+        "nombre": "Secretaria Departamento"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 281,
+    "fields": {
+        "nombre": "Secretaria Dirección de Centro Castellón"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 282,
+    "fields": {
+        "nombre": "Secretaría General"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 283,
+    "fields": {
+        "nombre": "Secretaria Gerencia"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 284,
+    "fields": {
+        "nombre": "Secretaria Rectorado Universidad Cardenal Herrera CEU"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 285,
+    "fields": {
+        "nombre": "Secretaria Vicerrectorado"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 286,
+    "fields": {
+        "nombre": "Secretaria Vicerrectorado de Estudiantes y Vida Universitaria"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 287,
+    "fields": {
+        "nombre": "Secretaría Vicerrectorado Ordenación Académica y Profesorado"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 288,
+    "fields": {
+        "nombre": "Secretaria Vicerrectorados"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 289,
+    "fields": {
+        "nombre": "Secretario Académico Centro de Elche"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 290,
+    "fields": {
+        "nombre": "Secretario Académico Escuela Superior de Enseñanzas Técnicas"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 291,
+    "fields": {
+        "nombre": "Secretario Académico Facultad de Humanidades y Ciencias de la Comunicación"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 292,
+    "fields": {
+        "nombre": "Secretario Campus Castellón"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 293,
+    "fields": {
+        "nombre": "Secretario Campus Elche"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 294,
+    "fields": {
+        "nombre": "Secretario de Departamento"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 295,
+    "fields": {
+        "nombre": "Secretario de Vicerrector de Relaciones Internacionales y Secretaria General"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 296,
+    "fields": {
+        "nombre": "Secretario de Vicerrectorado de Estudiantes y Vida Universitaria"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 297,
+    "fields": {
+        "nombre": "Secretario Decanato Derecho, Empresa y Ciencias Políticas"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 298,
+    "fields": {
+        "nombre": "Secretario Decanato Facultad de Ciencias de la Salud"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 299,
+    "fields": {
+        "nombre": "Secretario Decanato Facultad de Humanidades y Ciencias de la Comunicación"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 300,
+    "fields": {
+        "nombre": "Secretario Decanato Facultad de Veterinaria"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 301,
+    "fields": {
+        "nombre": "Secretario General"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 302,
+    "fields": {
+        "nombre": "Secretario Hospital Clínico Veterinario"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 303,
+    "fields": {
+        "nombre": "Secretario Vicerrectorados"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 304,
+    "fields": {
+        "nombre": "Soporte Administrativo de Administración de Alumnos"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 305,
+    "fields": {
+        "nombre": "Soporte Administrativo de Posgrado"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 306,
+    "fields": {
+        "nombre": "Soporte Administrativo Senior de Administración de Alumnos - Posgrado"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 307,
+    "fields": {
+        "nombre": "Soporte Administrativo Senior de Asignación Docente de Posgrado"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 308,
+    "fields": {
+        "nombre": "Soporte Técnico"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 309,
+    "fields": {
+        "nombre": "Soporte Técnico de Contabilidad"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 310,
+    "fields": {
+        "nombre": "Soporte Técnico de Laboratorio"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 311,
+    "fields": {
+        "nombre": "Soporte Técnico Senior de Laboratorio"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 312,
+    "fields": {
+        "nombre": "Soporte Técnico Senior de OTRI"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 313,
+    "fields": {
+        "nombre": "Subdirector (Architecture)"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 314,
+    "fields": {
+        "nombre": "Subdirectora (Ingeniería en Diseño Industrial y Desarrollo de Productos)"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 315,
+    "fields": {
+        "nombre": "Supervisor Recursos Materiales y Mantenimiento"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 316,
+    "fields": {
+        "nombre": "Técnico Administración OTRI"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 317,
+    "fields": {
+        "nombre": "Técnico Administrador de Correo y Sistemas O365"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 318,
+    "fields": {
+        "nombre": "Técnico administrativo en Atención al Alumno"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 319,
+    "fields": {
+        "nombre": "Técnico CAU"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 320,
+    "fields": {
+        "nombre": "Técnico CEU Repositorio Institucional"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 321,
+    "fields": {
+        "nombre": "Técnico de Administración"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 322,
+    "fields": {
+        "nombre": "Técnico de Administración de Personal"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 323,
+    "fields": {
+        "nombre": "Técnico de Apoyo Carreras Profesionales"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 324,
+    "fields": {
+        "nombre": "Técnico de Comunicación"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 325,
+    "fields": {
+        "nombre": "Técnico de Comunicación Digital"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 326,
+    "fields": {
+        "nombre": "Técnico de Contabilidad"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 327,
+    "fields": {
+        "nombre": "Técnico de Formación y Desarrollo"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 328,
+    "fields": {
+        "nombre": "Técnico de Gestión Académica de Grado"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 329,
+    "fields": {
+        "nombre": "Técnico de investigación y producción Multimedia"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 330,
+    "fields": {
+        "nombre": "Técnico de Laboratorio"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 331,
+    "fields": {
+        "nombre": "Técnico de Marketing y Comercial"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 332,
+    "fields": {
+        "nombre": "Técnico de OTRI"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 333,
+    "fields": {
+        "nombre": "Técnico de Periódico Rotativo"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 334,
+    "fields": {
+        "nombre": "Técnico de Personas"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 335,
+    "fields": {
+        "nombre": "Técnico de Producción Audiovisual"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 336,
+    "fields": {
+        "nombre": "Técnico de Promoción de la Salud, Seguridad y Bienestar Laboral de Universidad"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 337,
+    "fields": {
+        "nombre": "Técnico de Protocolo"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 338,
+    "fields": {
+        "nombre": "Técnico de Proyectos TI"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 339,
+    "fields": {
+        "nombre": "Técnico de Relaciones Institucionales"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 340,
+    "fields": {
+        "nombre": "Técnico de Reporting & Datos"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 341,
+    "fields": {
+        "nombre": "Técnico de Selección y Evaluación"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 342,
+    "fields": {
+        "nombre": "Técnico de Subvención y Convenios"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 343,
+    "fields": {
+        "nombre": "Técnico de Transformación Digital"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 344,
+    "fields": {
+        "nombre": "Técnico en Atención al Alumno"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 345,
+    "fields": {
+        "nombre": "Técnico en Microcredenciales"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 346,
+    "fields": {
+        "nombre": "Técnico en Nuevos Proyectos"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 347,
+    "fields": {
+        "nombre": "Técnico Relaciones Internacionales-Admisión Internacional"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 348,
+    "fields": {
+        "nombre": "Técnico Relaciones Internacionales-Comunicación"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 349,
+    "fields": {
+        "nombre": "Técnico Relaciones Internacionales-Engagement"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 350,
+    "fields": {
+        "nombre": "Técnico Relaciones Internacionales-Hospitality"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 351,
+    "fields": {
+        "nombre": "Técnico Relaciones Internacionales-Marketing"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 352,
+    "fields": {
+        "nombre": "Técnico Relaciones Internacionales-Movilidad"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 353,
+    "fields": {
+        "nombre": "Técnico Senior de Comunicación Digital"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 354,
+    "fields": {
+        "nombre": "Técnico TI Atención Usuario"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 355,
+    "fields": {
+        "nombre": "Técnico UDEC"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 356,
+    "fields": {
+        "nombre": "Técnico Unidad de Adquisiciones e Intercambio Científico"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 357,
+    "fields": {
+        "nombre": "Traductor"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 358,
+    "fields": {
+        "nombre": "Tribunal TFG, TFM o de evaluación actividad alumnos"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 359,
+    "fields": {
+        "nombre": "Tutor de alumnos"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 360,
+    "fields": {
+        "nombre": "Tutor de prácticas"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 361,
+    "fields": {
+        "nombre": "Tutor de prácticas externas"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 362,
+    "fields": {
+        "nombre": "Tutor de prácticas hospitalarias"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 363,
+    "fields": {
+        "nombre": "Tutora de Alumnos"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 364,
+    "fields": {
+        "nombre": "Tutora de ciclo formativo"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 365,
+    "fields": {
+        "nombre": "Tutora de prácticas"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 366,
+    "fields": {
+        "nombre": "Tutora de prácticas externas"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 367,
+    "fields": {
+        "nombre": "Veterinaria"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 368,
+    "fields": {
+        "nombre": "Veterinario"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 369,
+    "fields": {
+        "nombre": "Vicedecana"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 370,
+    "fields": {
+        "nombre": "Vicedecana (Ciencias de la Salud)"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 371,
+    "fields": {
+        "nombre": "Vicedecana (Derecho y Ciencias Políticas)"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 372,
+    "fields": {
+        "nombre": "Vicedecana (Derecho, Empresa y CC Políticas)"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 373,
+    "fields": {
+        "nombre": "Vicedecana (Educación)"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 374,
+    "fields": {
+        "nombre": "Vicedecana (Empresa y Marketing)"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 375,
+    "fields": {
+        "nombre": "Vicedecana (Enfermería)"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 376,
+    "fields": {
+        "nombre": "Vicedecana (Farmacia)"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 377,
+    "fields": {
+        "nombre": "Vicedecana (Fisioterapia)"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 378,
+    "fields": {
+        "nombre": "Vicedecana (Medicina)"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 379,
+    "fields": {
+        "nombre": "Vicedecana (Odontología)"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 380,
+    "fields": {
+        "nombre": "Vicedecana (Periodismo)"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 381,
+    "fields": {
+        "nombre": "Vicedecana (Segundo Ciclo)"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 382,
+    "fields": {
+        "nombre": "Vicedecana de Acreditación y Calidad"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 383,
+    "fields": {
+        "nombre": "Vicedecana Facultad de Derecho, Empresa y Ciencias Políticas"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 384,
+    "fields": {
+        "nombre": "Vicedecano (Comunicación Audiovisual)"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 385,
+    "fields": {
+        "nombre": "Vicedecano (Enfermería)"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 386,
+    "fields": {
+        "nombre": "Vicedecano (Gastronomía)"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 387,
+    "fields": {
+        "nombre": "Vicedecano de la Facultad de Humanidades y Ciencias de la Comunicación"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 388,
+    "fields": {
+        "nombre": "Vicedecano Facultad de Humanidades y Ciencias de la Comunicación"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 389,
+    "fields": {
+        "nombre": "Vicedecano Facultad de Veterinaria"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 390,
+    "fields": {
+        "nombre": "Vicerrector de Desarrollo Estratégico y Comunicación"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 391,
+    "fields": {
+        "nombre": "Vicerrector de Internacionalización y Transformación Digital"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 392,
+    "fields": {
+        "nombre": "Vicerrector de Investigación"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 393,
+    "fields": {
+        "nombre": "Vicerrector de Ordenación Académica y Profesorado"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 394,
+    "fields": {
+        "nombre": "Vicerrector del Centro de Elche"
+    }
+},
+{
+    "model": "dbschema.funcion",
+    "pk": 395,
+    "fields": {
+        "nombre": "Vicerrectora de Estudiantes y Vida Universitaria"
+    }
+}
+]

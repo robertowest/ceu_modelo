@@ -33,6 +33,15 @@ import requests
 from dbschema.models import Asignatura, AsignaturaIdioma, Campus, Curso, CursoAsignatura, PlanEstudio, TipoTitulacion, Titulacion, TitulacionIdioma
 
 
+# funciones locales
+def __traducir(texto):
+    cadena1 = [' A ', ' De ', ' E ', ' En ', ' Iii', ' Ii', ' Iv', ' La ', ' Los ', ' Para ', ' Y ']
+    cadena2 = [' a ', ' de ', ' e ', ' en ', ' III', ' II', ' IV', ' la ', ' los ', ' para ', ' y ']
+    for i in range(len(cadena1)):
+        texto = texto.replace(cadena1[i], cadena2[i])
+    return texto
+
+
 # obtenemos los datos de campus
 def obtenerCampus():
     # resp = requests.get('http://desa01.ceu.es/Webservices/Uch/WebApiPlanesEstudiosWeb/api/Campus')
@@ -3756,7 +3765,7 @@ def grabarTitulacion(item):
         tit = tit.first()
     else:
         tit = Titulacion.objects.create(tipo_titulacion_id = tp.id, codigo = item['IdPlanEstudioNK'], nombre = item['NombrePlanEstudio'])
-        ti = TitulacionIdioma.objects.create(titulacion_id = tit.id, nombre = item['NombrePlanEstudio'], idioma = 'es')
+        ti = TitulacionIdioma.objects.create(titulacion_id = tit.id, nombre = __traducir(item['NombrePlanEstudio']), idioma = 'es')
         print('Se agregó titulación: {}'.format(item['NombrePlanEstudio']))
 
     return tit
@@ -3836,7 +3845,7 @@ def grabarAsignatura(item):
 
         if len(item['PeriodosGrupo']) > 0 and len(item['PeriodosGrupo'][0]['IdiomasGrupo']) > 0:
             for i in range( len(item['PeriodosGrupo'][0]['IdiomasGrupo']) ):
-                ai = AsignaturaIdioma.objects.create(asignatura_id=asig.id, idioma=item['PeriodosGrupo'][0]['IdiomasGrupo'][i], nombre=asig.nombre)
+                ai = AsignaturaIdioma.objects.create(asignatura_id=asig.id, idioma=item['PeriodosGrupo'][0]['IdiomasGrupo'][i], nombre=__traducir(asig.nombre))
                 print('Se agregó idioma {} para la asignatura {}'.format(ai.idioma, ai.nombre))
         else:
             ai = AsignaturaIdioma.objects.create(asignatura_id=asig.id, idioma='es', nombre=asig.nombre)                    

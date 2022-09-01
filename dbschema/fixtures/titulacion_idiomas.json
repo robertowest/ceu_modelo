@@ -1,0 +1,1532 @@
+[
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 1,
+    "fields": {
+        "titulacion": 1,
+        "nombre": "Architecture (Grado en Fundamentos de Arquitectura)",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 2,
+    "fields": {
+        "titulacion": 2,
+        "nombre": "Doble Grado Derecho y Ciencias Políticas y de la Administración",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 3,
+    "fields": {
+        "titulacion": 3,
+        "nombre": "Doble Grado Educación Infantil y Educación Primaria",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 4,
+    "fields": {
+        "titulacion": 4,
+        "nombre": "Doble Grado Educación Primaria y Educación Infantil",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 5,
+    "fields": {
+        "titulacion": 5,
+        "nombre": "Doble Grado en Ciencias de la Actividad Física y El Deporte + Educación Primaria",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 6,
+    "fields": {
+        "titulacion": 6,
+        "nombre": "Doble Grado en Ciencias Políticas / Relaciones Internacionales + Periodismo",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 7,
+    "fields": {
+        "titulacion": 7,
+        "nombre": "Doble Grado en Ciencias Políticas y de la Administración y Dirección de Empresas",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 8,
+    "fields": {
+        "titulacion": 8,
+        "nombre": "Doble Grado en Ciencias Políticas/Relaciones Internacionales + Publicidad y Relaciones Públicas",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 9,
+    "fields": {
+        "titulacion": 9,
+        "nombre": "Doble Grado en Comunicación Audiovisual + Periodismo",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 10,
+    "fields": {
+        "titulacion": 10,
+        "nombre": "Doble Grado en Comunicación Audiovisual + Publicidad y Relaciones Públicas",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 11,
+    "fields": {
+        "titulacion": 11,
+        "nombre": "Doble Grado en Derecho + Publicidad y Relaciones Públicas",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 12,
+    "fields": {
+        "titulacion": 12,
+        "nombre": "Doble Grado en Derecho y Dirección de Empresas",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 13,
+    "fields": {
+        "titulacion": 13,
+        "nombre": "Doble Grado en Dirección de Empresas y Derecho",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 14,
+    "fields": {
+        "titulacion": 14,
+        "nombre": "Doble Grado en Dirección de Empresas y Marketing",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 15,
+    "fields": {
+        "titulacion": 15,
+        "nombre": "Doble Grado en Dirección de Empresas y Título de Especialista en Dirección y Gestión Deportiva",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 16,
+    "fields": {
+        "titulacion": 16,
+        "nombre": "Doble Grado en Farmacia y Nutrición Humana y Dietética",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 17,
+    "fields": {
+        "titulacion": 17,
+        "nombre": "Doble Grado en Marketing y Publicidad y RRPP",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 18,
+    "fields": {
+        "titulacion": 18,
+        "nombre": "Doble Grado en Periodismo + Ciencias Políticas / Relaciones Internacionales",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 19,
+    "fields": {
+        "titulacion": 19,
+        "nombre": "Doble Grado en Periodismo + Comunicación Audiovisual",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 20,
+    "fields": {
+        "titulacion": 20,
+        "nombre": "Doble Grado en Periodismo + Publicidad y Relaciones Públicas",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 21,
+    "fields": {
+        "titulacion": 21,
+        "nombre": "Doble Grado en Publicidad y Relaciones Públicas + Comunicación Audiovisual",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 22,
+    "fields": {
+        "titulacion": 22,
+        "nombre": "Doble Grado en Publicidad y Relaciones Públicas + Marketing",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 23,
+    "fields": {
+        "titulacion": 23,
+        "nombre": "Doble Grado en Publicidad y Relaciones Públicas + Periodismo",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 24,
+    "fields": {
+        "titulacion": 24,
+        "nombre": "Doble Grado Fisioterapia y Enfermería",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 25,
+    "fields": {
+        "titulacion": 25,
+        "nombre": "Grado en Arquitectura",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 26,
+    "fields": {
+        "titulacion": 26,
+        "nombre": "Grado en Ciencias de la Actividad Física y El Deporte",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 27,
+    "fields": {
+        "titulacion": 27,
+        "nombre": "Grado en Ciencias Políticas",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 28,
+    "fields": {
+        "titulacion": 28,
+        "nombre": "Grado en Ciencias Políticas + Título de Experto en Marketing y Comunicación Política",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 29,
+    "fields": {
+        "titulacion": 29,
+        "nombre": "Grado en Comunicación Audiovisual",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 30,
+    "fields": {
+        "titulacion": 30,
+        "nombre": "Grado en Comunicación Audiovisual + Título de Especialista en Comunicación de Moda",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 31,
+    "fields": {
+        "titulacion": 31,
+        "nombre": "Grado en Derecho",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 32,
+    "fields": {
+        "titulacion": 32,
+        "nombre": "Grado en Derecho + Título de Especialista en Derecho Internacional y Derecho Europeo",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 33,
+    "fields": {
+        "titulacion": 33,
+        "nombre": "Grado en Derecho + Título de Especialista en Integración Europea y Mercado Exterior",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 34,
+    "fields": {
+        "titulacion": 34,
+        "nombre": "Grado en Dirección de Empresas",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 35,
+    "fields": {
+        "titulacion": 35,
+        "nombre": "Grado en Dirección de Empresas + Título de Especialista en Integración Europea y Mercado Exterior",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 36,
+    "fields": {
+        "titulacion": 36,
+        "nombre": "Grado en Educación Infantil",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 37,
+    "fields": {
+        "titulacion": 37,
+        "nombre": "Grado en Educación Primaria",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 38,
+    "fields": {
+        "titulacion": 38,
+        "nombre": "Grado en Enfermería",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 39,
+    "fields": {
+        "titulacion": 39,
+        "nombre": "Grado en Farmacia",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 40,
+    "fields": {
+        "titulacion": 40,
+        "nombre": "Grado en Farmacia + Título Experto Gestión y Marketing de la Oficina de Farmacia",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 41,
+    "fields": {
+        "titulacion": 41,
+        "nombre": "Grado en Fisioterapia",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 42,
+    "fields": {
+        "titulacion": 42,
+        "nombre": "Grado en Ingeniería en Diseño Industrial y Desarrollo de Productos",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 43,
+    "fields": {
+        "titulacion": 43,
+        "nombre": "Grado en Marketing",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 44,
+    "fields": {
+        "titulacion": 44,
+        "nombre": "Grado en Marketing + Título de Especialista en Integración Europea y Mercado Exterior",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 45,
+    "fields": {
+        "titulacion": 45,
+        "nombre": "Grado en Medicina",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 46,
+    "fields": {
+        "titulacion": 46,
+        "nombre": "Grado en Medicina + Título de Experto en Medicina Integrada",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 47,
+    "fields": {
+        "titulacion": 47,
+        "nombre": "Grado en Nutrición Humana y Dietética (Plan/2016)",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 48,
+    "fields": {
+        "titulacion": 48,
+        "nombre": "Grado en Odontología",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 49,
+    "fields": {
+        "titulacion": 49,
+        "nombre": "Grado en Óptica y Optometría",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 50,
+    "fields": {
+        "titulacion": 50,
+        "nombre": "Grado en Periodismo",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 51,
+    "fields": {
+        "titulacion": 51,
+        "nombre": "Grado en Periodismo + Título de Especialista en Comunicación de Moda",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 52,
+    "fields": {
+        "titulacion": 52,
+        "nombre": "Grado en Periodismo + Título de Experto en Periodismo Deportivo",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 53,
+    "fields": {
+        "titulacion": 53,
+        "nombre": "Grado en Periodismo + Título Experto en Marketing y Comunicación Política",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 54,
+    "fields": {
+        "titulacion": 54,
+        "nombre": "Grado en Publicidad + Título Experto en Marketing y Comunicación Política",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 55,
+    "fields": {
+        "titulacion": 55,
+        "nombre": "Grado en Publicidad y Relaciones Públicas",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 56,
+    "fields": {
+        "titulacion": 56,
+        "nombre": "Grado en Publicidad y RRPP + Título de Especialista en Comunicación de Moda",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 57,
+    "fields": {
+        "titulacion": 57,
+        "nombre": "Grado en Veterinaria",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 58,
+    "fields": {
+        "titulacion": 58,
+        "nombre": "Graduado/a en Gastronomía/Gastronomy",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 59,
+    "fields": {
+        "titulacion": 59,
+        "nombre": "Plan de Estudios de Movilidad",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 60,
+    "fields": {
+        "titulacion": 60,
+        "nombre": "M.U. en Gestión de Instalaciones Energéticas e Internacionalización de Proyectos",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 61,
+    "fields": {
+        "titulacion": 61,
+        "nombre": "Máster Universitario de Especialización en Cuidados de Enfermería",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 62,
+    "fields": {
+        "titulacion": 62,
+        "nombre": "Máster Universitario en Abogacía",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 63,
+    "fields": {
+        "titulacion": 63,
+        "nombre": "Máster Universitario en Abogacía + Máster Propio en Derecho Internacional de los Negocios",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 64,
+    "fields": {
+        "titulacion": 64,
+        "nombre": "Máster Universitario en Arquitectura",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 65,
+    "fields": {
+        "titulacion": 65,
+        "nombre": "Máster Universitario en Comunicación y Branding Digital",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 66,
+    "fields": {
+        "titulacion": 66,
+        "nombre": "Máster Universitario en Diseño de Interiores",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 67,
+    "fields": {
+        "titulacion": 67,
+        "nombre": "Máster Universitario en Diseño de Producto",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 68,
+    "fields": {
+        "titulacion": 68,
+        "nombre": "Máster Universitario en Diseño y Comunicación Gráfica",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 69,
+    "fields": {
+        "titulacion": 69,
+        "nombre": "Máster Universitario en Educación Bilingüe (Inglés y Español)",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 70,
+    "fields": {
+        "titulacion": 70,
+        "nombre": "Máster Universitario en Fisioterapia Deportiva",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 71,
+    "fields": {
+        "titulacion": 71,
+        "nombre": "Máster Universitario en Formación del Profesorado de Educación Secundaria Obligatoria y Bachillerato Formación Profesional y Enseñanzas de Idiomas",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 72,
+    "fields": {
+        "titulacion": 72,
+        "nombre": "Máster Universitario en Gestión Ambiental",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 73,
+    "fields": {
+        "titulacion": 73,
+        "nombre": "Máster Universitario en Gestión de Proyectos e Instalaciones Energéticas",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 74,
+    "fields": {
+        "titulacion": 74,
+        "nombre": "Máster Universitario en Gestión y Dirección de Centros Educativos",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 75,
+    "fields": {
+        "titulacion": 75,
+        "nombre": "Máster Universitario en Ortodoncia y Ortopedia Dentofacial",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 76,
+    "fields": {
+        "titulacion": 76,
+        "nombre": "Máster Universitario en Psicología General Sanitaria",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 77,
+    "fields": {
+        "titulacion": 77,
+        "nombre": "Máster Universitario en Psicología Jurídica y Práctica Forense",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 78,
+    "fields": {
+        "titulacion": 78,
+        "nombre": "Máster Universitario en Seguridad Alimentaria",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 79,
+    "fields": {
+        "titulacion": 79,
+        "nombre": "Máster Universitario en Técnicas Avanzadas Estéticas y Láser",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 80,
+    "fields": {
+        "titulacion": 80,
+        "nombre": "Curso Superior de Posgrado en Animales Exóticos",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 81,
+    "fields": {
+        "titulacion": 81,
+        "nombre": "Curso Superior de Posgrado en Cirugía de Tejidos Blandos en Pequeños Animales",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 82,
+    "fields": {
+        "titulacion": 82,
+        "nombre": "Curso Superior de Posgrado en Cirugía en Pequeños Animales",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 83,
+    "fields": {
+        "titulacion": 83,
+        "nombre": "Curso Superior de Posgrado en Dermatología de Pequeños Animales",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 84,
+    "fields": {
+        "titulacion": 84,
+        "nombre": "Curso Superior de Posgrado en Diagnóstico por Imagen en Pequeños Animales",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 85,
+    "fields": {
+        "titulacion": 85,
+        "nombre": "Curso Superior de Posgrado en Medicina Felina",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 86,
+    "fields": {
+        "titulacion": 86,
+        "nombre": "Curso Superior de Posgrado en Medicina Interna de Pequeños Animales",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 87,
+    "fields": {
+        "titulacion": 87,
+        "nombre": "Curso Superior de Posgrado en Medicina Interna y Urgencias en Pequeños Animales",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 88,
+    "fields": {
+        "titulacion": 88,
+        "nombre": "Curso Superior de Posgrado en Neurología en Pequeños Animales",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 89,
+    "fields": {
+        "titulacion": 89,
+        "nombre": "Curso Superior de Posgrado en Oftalmología de Pequeños Animales",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 90,
+    "fields": {
+        "titulacion": 90,
+        "nombre": "Curso Superior de Posgrado en Traumatología en Pequeños Animales",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 91,
+    "fields": {
+        "titulacion": 91,
+        "nombre": "Curso Superior de Posgrado en Traumatología y Ortopedia. Sistemas de Fijación Externa en Pequeños Animales.",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 92,
+    "fields": {
+        "titulacion": 92,
+        "nombre": "Curso Superior en Audiología Protésica",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 93,
+    "fields": {
+        "titulacion": 93,
+        "nombre": "Curso Superior en Gestión de Riesgos y Seguros",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 94,
+    "fields": {
+        "titulacion": 94,
+        "nombre": "Curso Universitario en Mediación Civil y Mercantil",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 95,
+    "fields": {
+        "titulacion": 95,
+        "nombre": "Diploma Universitario de Especialización en Comunicación de Moda",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 96,
+    "fields": {
+        "titulacion": 96,
+        "nombre": "Diploma Universitario de Especialización en Derecho Internacional y Derecho Europeo",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 97,
+    "fields": {
+        "titulacion": 97,
+        "nombre": "Diploma Universitario de Experto en Cirugía Menor Ambulatoria",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 98,
+    "fields": {
+        "titulacion": 98,
+        "nombre": "Diploma Universitario de Experto en Derecho del Arte",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 99,
+    "fields": {
+        "titulacion": 99,
+        "nombre": "Diploma Universitario de Experto en Dirección y Gestión Deportiva",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 100,
+    "fields": {
+        "titulacion": 100,
+        "nombre": "Diploma Universitario de Experto en Diseño de Producto para El Hábitat",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 101,
+    "fields": {
+        "titulacion": 101,
+        "nombre": "Diploma Universitario de Experto en Diseño Gráfico y Comunicación",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 102,
+    "fields": {
+        "titulacion": 102,
+        "nombre": "Diploma Universitario de Experto en Ecografía Músculo-Esquelética",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 103,
+    "fields": {
+        "titulacion": 103,
+        "nombre": "Diploma Universitario de Experto en Enseñanza Escolar de la Religión Católica",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 104,
+    "fields": {
+        "titulacion": 104,
+        "nombre": "Diploma Universitario de Experto en Gestión de Oficina de Farmacia y Marketing Farmacéutico",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 105,
+    "fields": {
+        "titulacion": 105,
+        "nombre": "Diploma Universitario de Experto en Helicopter Emergency Medical Service y Asistencia Médica Aerotransportada",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 106,
+    "fields": {
+        "titulacion": 106,
+        "nombre": "Diploma Universitario de Experto en Mediación Civil y Mercantil",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 107,
+    "fields": {
+        "titulacion": 107,
+        "nombre": "Diploma Universitario de Experto en Mediación y Resolución de Conflictos",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 108,
+    "fields": {
+        "titulacion": 108,
+        "nombre": "Diploma Universitario de Experto en Neuromodulación Percutánea y Técnicas Invasivas",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 109,
+    "fields": {
+        "titulacion": 109,
+        "nombre": "Diploma Universitario de Experto en Periodismo Deportivo",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 110,
+    "fields": {
+        "titulacion": 110,
+        "nombre": "Diploma Universitario de Experto en Reeducación del Suelo Pélvico. Aplicación Ginecológica Urológica Obstétrica y Coloproctológica.",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 111,
+    "fields": {
+        "titulacion": 111,
+        "nombre": "Diploma Universitario de Experto en Showrunner en Ficción Audiovisual: Guión Dirección y Producción de Series",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 112,
+    "fields": {
+        "titulacion": 112,
+        "nombre": "Diploma Universitario de Formación Avanzada en Fisioterapia Oncológica",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 113,
+    "fields": {
+        "titulacion": 113,
+        "nombre": "European Master in Consumer Relationship Management",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 114,
+    "fields": {
+        "titulacion": 114,
+        "nombre": "M.P. en Cirugía Bucal e Implantología Bucofacial",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 115,
+    "fields": {
+        "titulacion": 115,
+        "nombre": "Máster de Formación Permanente en Cirugía Bucal",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 116,
+    "fields": {
+        "titulacion": 116,
+        "nombre": "Máster de Formación Permanente en Customer Relationship Marketing",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 117,
+    "fields": {
+        "titulacion": 117,
+        "nombre": "Máster de Formación Permanente en Derecho Internacional de los Negocios",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 118,
+    "fields": {
+        "titulacion": 118,
+        "nombre": "Máster de Formación Permanente en Dirección Bursátil y Financiera",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 119,
+    "fields": {
+        "titulacion": 119,
+        "nombre": "Máster de Formación Permanente en Dirección y Monitorización de Ensayos Clínicos",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 120,
+    "fields": {
+        "titulacion": 120,
+        "nombre": "Máster de Formación Permanente en Especialización en Odontología Multidisciplinar Avanzada",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 121,
+    "fields": {
+        "titulacion": 121,
+        "nombre": "Máster de Formación Permanente en Especialización en Ortodoncia",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 122,
+    "fields": {
+        "titulacion": 122,
+        "nombre": "Máster de Formación Permanente en Especialización en Prótesis Avanzada",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 123,
+    "fields": {
+        "titulacion": 123,
+        "nombre": "Máster de Formación Permanente en Odontopediatría Integral",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 124,
+    "fields": {
+        "titulacion": 124,
+        "nombre": "Máster en Formación Permanente en Endodoncia/Master's Degree in Endodontics",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 125,
+    "fields": {
+        "titulacion": 125,
+        "nombre": "Máster en Formación Permanente en Odontología Conservadora y Endodoncia",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 126,
+    "fields": {
+        "titulacion": 126,
+        "nombre": "Master Program in Reasoning and Clinical practice for Physiotherapy",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 127,
+    "fields": {
+        "titulacion": 127,
+        "nombre": "Máster Propio Bursátil y Financiero",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 128,
+    "fields": {
+        "titulacion": 128,
+        "nombre": "Máster Propio en Comercio Internacional y Negocio Digital",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 129,
+    "fields": {
+        "titulacion": 129,
+        "nombre": "Máster Propio en Comunicación y Marketing Digital",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 130,
+    "fields": {
+        "titulacion": 130,
+        "nombre": "Máster Propio en Derecho Internacional de los Negocios",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 131,
+    "fields": {
+        "titulacion": 131,
+        "nombre": "Máster Propio en Dirección y Monitorización de Ensayos Clínicos",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 132,
+    "fields": {
+        "titulacion": 132,
+        "nombre": "Máster Propio en Especialización en Odontología Multidisciplinar Avanzada",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 133,
+    "fields": {
+        "titulacion": 133,
+        "nombre": "Máster Propio en Especialización en Ortodoncia",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 134,
+    "fields": {
+        "titulacion": 134,
+        "nombre": "Máster Propio en Especialización en Prótesis Avanzada",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 135,
+    "fields": {
+        "titulacion": 135,
+        "nombre": "Máster Propio en Implantología Oral",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 136,
+    "fields": {
+        "titulacion": 136,
+        "nombre": "Máster Propio en Neurociencias: Cuidados Médico-Quirúrgicos y Rehabilitación del Paciente Neurológico",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 137,
+    "fields": {
+        "titulacion": 137,
+        "nombre": "Máster Propio en Odontología Conservadora y Endodoncia",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 138,
+    "fields": {
+        "titulacion": 138,
+        "nombre": "Máster Propio en Odontopediatría",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 139,
+    "fields": {
+        "titulacion": 139,
+        "nombre": "Programa de Formación Avanzada en Claves para el Diseño y la Arquitectura",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 140,
+    "fields": {
+        "titulacion": 140,
+        "nombre": "Programa de Formación Avanzada en Derecho Europeo",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 141,
+    "fields": {
+        "titulacion": 141,
+        "nombre": "Programa de Formación Avanzada en Derecho Internacional",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 142,
+    "fields": {
+        "titulacion": 142,
+        "nombre": "Programa de Formación Avanzada en Dirección Deportiva",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 143,
+    "fields": {
+        "titulacion": 143,
+        "nombre": "Programa de Formación Avanzada en Gestión de Riesgos y Seguros",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 144,
+    "fields": {
+        "titulacion": 144,
+        "nombre": "Programa de Formación Avanzada en Gestión Deportiva",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 145,
+    "fields": {
+        "titulacion": 145,
+        "nombre": "Programa de Formación Avanzada en Interiorismo de Espacios Comerciales y Residenciales",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 146,
+    "fields": {
+        "titulacion": 146,
+        "nombre": "Programa Empleabilidad Integral del Maestro",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 147,
+    "fields": {
+        "titulacion": 147,
+        "nombre": "Título de Especialista en Comunicación de Moda",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 148,
+    "fields": {
+        "titulacion": 148,
+        "nombre": "Título de Especialista en Derecho Internacional y Derecho Europeo",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 149,
+    "fields": {
+        "titulacion": 149,
+        "nombre": "Título de Especialista en Dirección y Gestión Deportiva",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 150,
+    "fields": {
+        "titulacion": 150,
+        "nombre": "Título de Especialista en Integración Europea y Mercado Exterior",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 151,
+    "fields": {
+        "titulacion": 151,
+        "nombre": "Titulo de Experto en Diseño de Producto para el Hábitat",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 152,
+    "fields": {
+        "titulacion": 152,
+        "nombre": "Título de Experto en Diseño Gráfico y Comunicación",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 153,
+    "fields": {
+        "titulacion": 153,
+        "nombre": "Título de Experto en Ecografía Músculo-Esquelética",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 154,
+    "fields": {
+        "titulacion": 154,
+        "nombre": "Título de Experto en Enseñanza Escolar de la Religión Católica",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 155,
+    "fields": {
+        "titulacion": 155,
+        "nombre": "Título de Experto en Estatuto Jurídico del Menor. Coordinador de Parentalidad.",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 156,
+    "fields": {
+        "titulacion": 156,
+        "nombre": "Título de Experto en Gestión y Marketing de la Oficina de Farmacia",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 157,
+    "fields": {
+        "titulacion": 157,
+        "nombre": "Título de Experto en Helicopter Emergency Medical Service y Asistencia Médica Aerotransportada",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 158,
+    "fields": {
+        "titulacion": 158,
+        "nombre": "Título de Experto en Interiorismo de Espacios Comerciales y Residenciales",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 159,
+    "fields": {
+        "titulacion": 159,
+        "nombre": "Título de Experto en Marketing y Comunicación Política",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 160,
+    "fields": {
+        "titulacion": 160,
+        "nombre": "Título de Experto en Marketing y Comunicación Política",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 161,
+    "fields": {
+        "titulacion": 161,
+        "nombre": "Título de Experto en Mediación y Resolución de Conflictos",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 162,
+    "fields": {
+        "titulacion": 162,
+        "nombre": "Título de Experto en Medicina Integrada",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 163,
+    "fields": {
+        "titulacion": 163,
+        "nombre": "Título de Experto en Neuromodulación Percutánea y Técnicas Invasivas",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 164,
+    "fields": {
+        "titulacion": 164,
+        "nombre": "Título de Experto en Periodismo Deportivo",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 165,
+    "fields": {
+        "titulacion": 165,
+        "nombre": "Título de Experto en Reeducación del Suelo Pélvico. Aplicación Ginecológica Urológica Obstétrica y Coloproctológica.",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 166,
+    "fields": {
+        "titulacion": 166,
+        "nombre": "Título de Experto Universitario en Cirugía Menor Ambulatoria",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 167,
+    "fields": {
+        "titulacion": 167,
+        "nombre": "Título de Experto Universitario en Derecho Sanitario Internacional",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 168,
+    "fields": {
+        "titulacion": 168,
+        "nombre": "Título de Experto Universitario en Derecho Sanitario: Marco Profesional Español e Internacional",
+        "idioma": "es"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 169,
+    "fields": {
+        "titulacion": 25,
+        "nombre": "Degree in Architecture",
+        "idioma": "en"
+    }
+},
+{
+    "model": "dbschema.titulacionidioma",
+    "pk": 170,
+    "fields": {
+        "titulacion": 1,
+        "nombre": "Grado en Fundamentos de Arquitectura",
+        "idioma": "en"
+    }
+}
+]

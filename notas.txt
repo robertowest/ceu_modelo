@@ -1,4 +1,4 @@
-python3 manage.py dumpdata --indent 4 dbschema.universidad
+python3 manage.py dumpdata --indent 4 --output dbschema/fixtures/personas.json dbschema.persona 
 
 python3 manage.py migrate 
 
@@ -6,6 +6,13 @@ python3 manage.py loaddata universidades
 python3 manage.py loaddata campus
 python3 manage.py loaddata areas
 python3 manage.py loaddata tipos_titulaciones
+python3 manage.py loaddata personas
+python3 manage.py loaddata profesores
+python3 manage.py loaddata funciones
+
+-- se debe traducir por función python
+-- python3 manage.py loaddata titulacion_idiomas
+-- python3 manage.py loaddata asignatura_idiomas
 
 python3 script_cargar_modelo.py
 
@@ -37,3 +44,23 @@ inner join ceu_cursos c on c.plan_estudio_id = pe.id
 inner join ceu_cursos_asignaturas ca on ca.curso_id = c.id
 inner join ceu_asignaturas a on a.id = ca.asignatura_id
 inner join ceu_asignatura_idiomas ai on ai.asignatura_id = a.id
+
+
+
+create a new repository on the command line
+"
+echo "# universidadCEU" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin git@github.com:robertowest/universidadCEU.git
+git push -u origin main
+"
+
+push an existing repository from the command line
+"
+git remote add origin git@github.com:robertowest/universidadCEU.git
+git branch -M main
+git push -u origin main
+"
