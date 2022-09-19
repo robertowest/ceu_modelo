@@ -22,5 +22,10 @@ def index(request):
     return render(request, template, context)
 
 
-def obtenerGrados()
-    resp = requests.get('http://desa01.ceu.es/Webservices/Uch/WebApiPlanesEstudiosWeb/api/Campus')
+def obtenerTitulaciones():
+    resp = requests.get('http://desa01.ceu.es/Webservices/Uch/WebApiPlanesEstudiosWeb/api/PlanesEstudios?soloGradosPostgrados=true&soloPlanesConHitos=false')
+
+
+def obtenerAsignaturas(plan_id):
+    resp = requests.get('http://desa01.ceu.es/Webservices/Uch/WebApiPlanesEstudiosWeb/api/PlanesEstudios/v2/{0}?incluirPeriodos=false&incluirIdiomas=false&incluirHitos=false'.format(plan_id))
+   
