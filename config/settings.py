@@ -76,19 +76,19 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
 DATABASES = {
-    # 'default': {
-    #     'CONN_MAX_AGE': 0,
-    #     'ENGINE': 'django.db.backends.mysql',
-    #     'HOST': 'rds-it-sys-mariadb-ceu-euw1-az1.cojnqagwwglb.eu-west-1.rds.amazonaws.com',
-    #     'PORT': '3306',
-    #     'NAME': 'dev_marketing2',
-    #     'PASSWORD': 'atoRD4NtxUyQ6SpY',
-    #     'USER': 'oiH8jushbf'
-    # },
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+        'CONN_MAX_AGE': 0,
+        'ENGINE': 'django.db.backends.mysql',
+        'HOST': 'rds-it-sys-mariadb-ceu-euw1-az1.cojnqagwwglb.eu-west-1.rds.amazonaws.com',
+        'PORT': '3306',
+        'NAME': 'dev_marketing2',
+        'PASSWORD': 'atoRD4NtxUyQ6SpY',
+        'USER': 'oiH8jushbf'
+    },
+    # 'sqlite': {
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #     'NAME': BASE_DIR / 'db.sqlite3',
+    # }
 }
 
 # Password validation

@@ -107,8 +107,6 @@ class Auditable(models.Model):
         super(Auditable, self).delete(*args,**kwargs)        
 
 
-
-
 class Universidad(Auditable):
     nombre = models.CharField(max_length=50)
 
@@ -138,6 +136,8 @@ class Campus(Auditable):
 
 class Area(Auditable):
     nombre = models.CharField(max_length=50)
+    icono = models.CharField(max_length=25, blank=True, null=True)
+    parent_id = models.ForeignKey('self', models.DO_NOTHING, blank=True, null=True)
 
     class Meta:
         # managed = False
@@ -165,6 +165,7 @@ class TipoTitulacion(Auditable):
 class Titulacion(Auditable):
     TIPO = ( ('A', 'año'), ('M', 'mes'), ('D', 'día'), ('H', 'hora') )
     
+    campus = models.ManyToManyField(Campus, through='CampusTitulacion')
     tipo_titulacion = models.ForeignKey(TipoTitulacion, models.DO_NOTHING, blank=True, null=True)
     area = models.ForeignKey(Area, models.DO_NOTHING, blank=True, null=True)
     duracion = models.IntegerField(blank=True, null=True, help_text='cantidad de (año/mes/dia/hora)')
@@ -247,10 +248,11 @@ class Curso(Auditable):
         verbose_name_plural = 'Cursos'
 
     def __str__(self):
-        return '{} - {}'.format(self.plan_estudio.ciclo_lectivo, self.nombre)
+        return '{} {} - {}'.format(self.plan_estudio.ciclo_lectivo, self.plan_estudio.titulacion, self.nombre)
 
 
 class Asignatura(Auditable):
+    curso = models.ManyToManyField(Curso, through='CursoAsignatura')
     codigo = models.CharField(max_length=9, blank=True, null=True, help_text='código original de referencia')
     nombre = models.CharField(max_length=160, help_text='solo para referencia, utilizar asignatura_idiomas.nombre')
     creditos = models.SmallIntegerField(blank=True, null=True)
@@ -329,6 +331,7 @@ class Profesor(Auditable):
     
 
 class Funcion(Auditable):
+    profesor = models.ManyToManyField(Profesor, through='ProfesorFuncion')
     nombre = models.CharField(max_length=150)
 
     class Meta:
@@ -343,8 +346,8 @@ class Funcion(Auditable):
 
 class CampusTitulacion(Auditable):
     id = models.BigAutoField(primary_key=True)
-    campus = models.ForeignKey(Campus, models.DO_NOTHING, blank=True, null=True)
-    titulacion = models.ForeignKey(Titulacion, models.DO_NOTHING, blank=True, null=True)
+    campus = models.ForeignKey(Campus, models.DO_NOTHING, related_name='campus_titulacion')
+    titulacion = models.ForeignKey(Titulacion, models.DO_NOTHING, related_name='titulacion_campus')
     codigo = models.CharField(max_length=5)
     guid = models.CharField(max_length=36)
     plazas = models.SmallIntegerField(blank=True, null=True)
@@ -365,8 +368,8 @@ class CursoAsignatura(Auditable):
     TIPO = ( ('FB', 'Formación básica'), ('OB', 'Obligatoria'), ('OP', 'Optativa'), ('PR', 'Práctica'), ('TFG', 'Trabajo fin de grado') )
     
     id = models.BigAutoField(primary_key=True)
-    curso = models.ForeignKey(Curso, models.DO_NOTHING, blank=True, null=True)
-    asignatura = models.ForeignKey(Asignatura, models.DO_NOTHING, blank=True, null=True)
+    curso = models.ForeignKey(Curso, models.DO_NOTHING, related_name='curso_asignatura')
+    asignatura = models.ForeignKey(Asignatura, models.DO_NOTHING, related_name='asignatura_curso')
     profesor = models.ForeignKey(Profesor, models.DO_NOTHING, blank=True, null=True)
     periodo = models.CharField(max_length=2, blank=True, null=True, choices=PERIODO)
     creditos = models.SmallIntegerField(blank=True, null=True)
@@ -385,8 +388,8 @@ class CursoAsignatura(Auditable):
 
 class ProfesorFuncion(Auditable):
     id = models.BigAutoField(primary_key=True)
-    profesor = models.ForeignKey(Profesor, models.DO_NOTHING, blank=True, null=True)
-    funcion = models.ForeignKey(Funcion, models.DO_NOTHING, blank=True, null=True)
+    profesor = models.ForeignKey(Profesor, models.DO_NOTHING, related_name='profesor_funcion')
+    funcion = models.ForeignKey(Funcion, models.DO_NOTHING, related_name='funcion_profesor')
     prioridad = models.SmallIntegerField(blank=True, null=True)
     PRINCIPAL = ( (True, 'Sí'), (False, 'No') )
     principal = models.BooleanField(default=False, choices=PRINCIPAL, blank=True, null=True, help_text='función o cargo principal')
@@ -400,3 +403,23 @@ class ProfesorFuncion(Auditable):
     
     def __str__(self):
         return 'id: {} / Profesor: {} / Función: {}'.format(self.id, self.profesor.id, self.funcion.id)
+
+
+class TitulacionesView(models.Model): 
+    id = models.BigIntegerField(primary_key=True)
+    tipo_id = models.BigIntegerField()
+    tipo = models.CharField(max_length=50)
+    campus_id = models.BigIntegerField()
+    campus = models.CharField(max_length=50)
+    area_id = models.BigIntegerField()
+    area = models.CharField(max_length=50)
+    titulacion_id = models.BigIntegerField()
+    codigo = models.CharField(max_length=8)
+    titulacion = models.CharField(max_length=160)
+    duracion = models.IntegerField()
+    duracion_tipo = models.CharField(max_length=1)
+    creditos = models.SmallIntegerField()
+    
+    class Meta:
+        managed = False
+        db_table = 'ceu_titulaciones_view'

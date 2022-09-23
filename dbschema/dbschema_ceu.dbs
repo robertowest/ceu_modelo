@@ -1,0 +1,752 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="dbschema_ceu" id="Project-c50" database="MySql" >
+	<schema name="dbschema_ceu" >
+		<table name="areas" prior="area" >
+			<comment><![CDATA[area de cnocimiento]]></comment>
+			<column name="id" type="INT" jt="4" mandatory="y" >
+				<identity><![CDATA[AUTO_INCREMENT]]></identity>
+			</column>
+			<column name="nombre" type="VARCHAR" length="50" jt="12" mandatory="y" />
+			<index name="pk_area" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<options><![CDATA[engine=InnoDB]]></options>
+		</table>
+		<table name="asignatura_idiomas" prior="asignatura" >
+			<column name="id" type="INT" jt="4" mandatory="y" >
+				<identity><![CDATA[AUTO_INCREMENT]]></identity>
+			</column>
+			<column name="asignatura_id" type="INT" jt="4" />
+			<column name="nombre" type="VARCHAR" length="160" jt="12" mandatory="y" />
+			<column name="idioma" type="CHAR" length="2" jt="1" >
+				<defo><![CDATA['es']]></defo>
+				<comment><![CDATA[idioma en el que se impartirá la asignatura (es, en, fr)]]></comment>
+			</column>
+			<index name="pk_asignatura_idiomas" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<fk name="fk_asignatura_idiomas_asignaturas" to_schema="dbschema_ceu" to_table="asignaturas" update_action="cascade" >
+				<fk_column name="asignatura_id" pk="id" />
+			</fk>
+			<options><![CDATA[engine=InnoDB]]></options>
+		</table>
+		<table name="asignaturas" prior="asignatura" >
+			<column name="id" type="INT" jt="4" mandatory="y" >
+				<identity><![CDATA[AUTO_INCREMENT]]></identity>
+			</column>
+			<column name="codigo" type="VARCHAR" length="8" jt="12" >
+				<comment><![CDATA[código original de referencia]]></comment>
+			</column>
+			<column name="nombre" type="VARCHAR" length="160" jt="12" >
+				<comment><![CDATA[solo para referencia, utilizar asignatura_idiomas.nombre]]></comment>
+			</column>
+			<column name="creditos" type="SMALLINT" jt="5" />
+			<index name="pk_tipo_titulacion_1" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+		</table>
+		<table name="campus" prior="tbl" >
+			<column name="id" type="INT" jt="4" mandatory="y" >
+				<identity><![CDATA[AUTO_INCREMENT]]></identity>
+			</column>
+			<column name="universidad_id" type="INT" jt="4" />
+			<column name="nombre" type="VARCHAR" length="50" jt="12" mandatory="y" />
+			<index name="pk_campus" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<fk name="fk_campus_universidades" to_schema="dbschema_ceu" to_table="universidades" update_action="cascade" >
+				<fk_column name="universidad_id" pk="id" />
+			</fk>
+			<options><![CDATA[engine=InnoDB]]></options>
+		</table>
+		<table name="campus_titulaciones" prior="campus_titulacion" >
+			<column name="id" type="INT" jt="4" mandatory="y" >
+				<identity><![CDATA[AUTO_INCREMENT]]></identity>
+			</column>
+			<column name="campus_id" type="INT" jt="4" />
+			<column name="titulacion_id" type="INT" jt="4" />
+			<column name="codigo" type="VARCHAR" length="5" jt="12" mandatory="y" />
+			<column name="guid" type="VARCHAR" length="36" jt="12" mandatory="y" />
+			<column name="plazas" type="SMALLINT" jt="5" />
+			<index name="pk_campus_titulacion" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<fk name="fk_campus_titulaciones_campus" to_schema="dbschema_ceu" to_table="campus" update_action="cascade" >
+				<fk_column name="campus_id" pk="id" />
+			</fk>
+			<fk name="fk_campus_titulaciones_titulaciones" to_schema="dbschema_ceu" to_table="titulaciones" update_action="cascade" >
+				<fk_column name="titulacion_id" pk="id" />
+			</fk>
+			<options><![CDATA[engine=InnoDB]]></options>
+		</table>
+		<table name="competencias" prior="tbl" >
+			<column name="id" type="INT" jt="4" mandatory="y" >
+				<identity><![CDATA[AUTO_INCREMENT]]></identity>
+			</column>
+			<column name="titulacion_id" type="INT" jt="4" />
+			<column name="grupo" type="VARCHAR" length="30" jt="12" />
+			<column name="texto" type="TEXT" length="50" jt="-1" />
+			<index name="pk_competencias" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<fk name="fk_competencias_titulaciones" to_schema="dbschema_ceu" to_table="titulaciones" update_action="cascade" >
+				<fk_column name="titulacion_id" pk="id" />
+			</fk>
+			<options><![CDATA[engine=InnoDB]]></options>
+		</table>
+		<table name="cursos" prior="curso" >
+			<column name="id" type="INT" jt="4" mandatory="y" >
+				<identity><![CDATA[AUTO_INCREMENT]]></identity>
+			</column>
+			<column name="plan_estudio_id" prior="titulacion_id" type="INT" jt="4" />
+			<column name="codigo" type="VARCHAR" length="8" jt="12" >
+				<comment><![CDATA[código original de referencia]]></comment>
+			</column>
+			<column name="nombre" type="VARCHAR" length="50" jt="12" mandatory="y" />
+			<index name="pk_tipo_titulacion_0" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<fk name="fk_cursos_plan_estudios" to_schema="dbschema_ceu" to_table="planes_estudios" update_action="cascade" >
+				<fk_column name="plan_estudio_id" pk="id" />
+			</fk>
+		</table>
+		<table name="cursos_asignaturas" prior="curso_asignatura" >
+			<column name="id" type="INT" jt="4" mandatory="y" >
+				<identity><![CDATA[AUTO_INCREMENT]]></identity>
+			</column>
+			<column name="curso_id" type="INT" jt="4" />
+			<column name="asignatura_id" type="INT" jt="4" />
+			<column name="profesor_id" type="INT" jt="4" />
+			<column name="periodo" type="CHAR" length="2" jt="1" >
+				<comment><![CDATA[Trimestre / Cuatrimestre / Semestre]]></comment>
+			</column>
+			<column name="creditos" type="SMALLINT" jt="5" />
+			<column name="tipo" type="CHAR" length="3" jt="1" >
+				<comment><![CDATA[Formación Básica / OBligatoria / OPtativa / PRáctica / Trabajo Fin Grado]]></comment>
+			</column>
+			<index name="pk_curso_asinatura" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<fk name="fk_curso_asignatura_asignaturas" to_schema="dbschema_ceu" to_table="asignaturas" update_action="cascade" >
+				<fk_column name="asignatura_id" pk="id" />
+			</fk>
+			<fk name="fk_curso_asignatura_cursos" to_schema="dbschema_ceu" to_table="cursos" update_action="cascade" >
+				<fk_column name="curso_id" pk="id" />
+			</fk>
+			<fk name="fk_cursos_asignaturas_profesores" to_schema="dbschema_ceu" to_table="profesores" update_action="cascade" >
+				<fk_column name="profesor_id" pk="id" />
+			</fk>
+			<options><![CDATA[engine=InnoDB]]></options>
+		</table>
+		<table name="diccionarios" prior="diccionario" >
+			<comment><![CDATA[tabla utilizada como diccionario para los campos descriptivos]]></comment>
+			<column name="id" type="INT" jt="4" mandatory="y" >
+				<identity><![CDATA[AUTO_INCREMENT]]></identity>
+			</column>
+			<column name="tabla" type="VARCHAR" length="30" jt="12" mandatory="y" />
+			<column name="texto" prior="nombre" type="VARCHAR" length="50" jt="12" mandatory="y" />
+			<index name="pk_tipo_titulacion" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<options><![CDATA[engine=InnoDB]]></options>
+		</table>
+		<table name="funciones" prior="tbl" >
+			<comment><![CDATA[funciones y cargos de los docentes]]></comment>
+			<column name="id" type="INT" jt="4" mandatory="y" >
+				<identity><![CDATA[AUTO_INCREMENT]]></identity>
+			</column>
+			<column name="nombre" type="VARCHAR" length="80" jt="12" />
+			<column name="principal" type="BOOLEAN" jt="16" >
+				<comment><![CDATA[función o cargo principal]]></comment>
+			</column>
+			<index name="pk_funciones" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<options><![CDATA[engine=InnoDB]]></options>
+		</table>
+		<table name="personas" prior="persona" >
+			<column name="id" type="INT" jt="4" mandatory="y" >
+				<identity><![CDATA[AUTO_INCREMENT]]></identity>
+			</column>
+			<column name="nombre" type="VARCHAR" length="50" jt="12" />
+			<column name="apellidos" type="VARCHAR" length="50" jt="12" />
+			<index name="pk_persona" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<options><![CDATA[engine=InnoDB]]></options>
+		</table>
+		<table name="planes_estudios" prior="plan_estudios" >
+			<column name="id" type="INT" jt="4" mandatory="y" >
+				<identity><![CDATA[AUTO_INCREMENT]]></identity>
+			</column>
+			<column name="titulacion_id" type="INT" jt="4" />
+			<column name="ciclo_lectivo" type="INT" jt="4" >
+				<comment><![CDATA[año correspondiente al plan de estudio]]></comment>
+			</column>
+			<index name="pk_plan_estudio" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<fk name="fk_plan_estudios_titulaciones" to_schema="dbschema_ceu" to_table="titulaciones" update_action="cascade" >
+				<fk_column name="titulacion_id" pk="id" />
+			</fk>
+			<options><![CDATA[engine=InnoDB]]></options>
+		</table>
+		<table name="profesores" prior="profesor" >
+			<column name="id" type="INT" jt="4" mandatory="y" >
+				<identity><![CDATA[AUTO_INCREMENT]]></identity>
+			</column>
+			<column name="persona_id" type="INT" jt="4" mandatory="y" />
+			<column name="foto" type="VARCHAR" length="50" jt="12" >
+				<comment><![CDATA[ruta de la imagen]]></comment>
+			</column>
+			<index name="pk_profesor" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<index name="unq_profesores" unique="UNIQUE_KEY" >
+				<column name="persona_id" />
+			</index>
+			<fk name="fk_profesores_personas" to_schema="dbschema_ceu" to_table="personas" >
+				<fk_column name="persona_id" pk="id" />
+			</fk>
+			<options><![CDATA[engine=InnoDB]]></options>
+		</table>
+		<table name="profesores_funciones" prior="tbl" >
+			<column name="id" type="INT" jt="4" mandatory="y" >
+				<identity><![CDATA[AUTO_INCREMENT]]></identity>
+			</column>
+			<column name="profesor_id" type="INT" jt="4" />
+			<column name="funcion_id" type="INT" jt="4" />
+			<index name="pk_profesores_funciones" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<fk name="fk_profesores_funciones_profesores" to_schema="dbschema_ceu" to_table="profesores" >
+				<fk_column name="profesor_id" pk="id" />
+			</fk>
+			<fk name="fk_profesores_funciones_funciones" to_schema="dbschema_ceu" to_table="funciones" >
+				<fk_column name="funcion_id" pk="id" />
+			</fk>
+			<options><![CDATA[engine=InnoDB]]></options>
+		</table>
+		<table name="salidas_profesionales" prior="tbl" >
+			<column name="id" type="INT" jt="4" mandatory="y" >
+				<identity><![CDATA[AUTO_INCREMENT]]></identity>
+			</column>
+			<column name="titulacion_id" type="INT" jt="4" />
+			<column name="grupo" type="VARCHAR" length="60" jt="12" />
+			<column name="texto" type="VARCHAR" length="250" jt="12" />
+			<index name="pk_salidas_profesionales" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<fk name="fk_salidas_profesionales_titulaciones" to_schema="dbschema_ceu" to_table="titulaciones" update_action="cascade" >
+				<fk_column name="titulacion_id" pk="id" />
+			</fk>
+			<options><![CDATA[engine=InnoDB]]></options>
+		</table>
+		<table name="tipos_titulaciones" prior="tipos_titulacion" >
+			<column name="id" type="INT" jt="4" mandatory="y" >
+				<identity><![CDATA[AUTO_INCREMENT]]></identity>
+			</column>
+			<column name="nombre" type="VARCHAR" length="50" jt="12" />
+			<index name="pk_tipos_titulacion" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<options><![CDATA[engine=InnoDB]]></options>
+		</table>
+		<table name="titulacion_idiomas" prior="tbl" >
+			<column name="id" type="INT" jt="4" mandatory="y" >
+				<identity><![CDATA[AUTO_INCREMENT]]></identity>
+			</column>
+			<column name="titulacion_id" type="INT" jt="4" />
+			<column name="nombre" prior="nombre_corto" type="VARCHAR" length="160" jt="12" />
+			<column name="idioma" type="CHAR" length="2" jt="1" >
+				<defo><![CDATA['es']]></defo>
+				<comment><![CDATA[idioma en el que se impartirá la titulación (es, en, fr)]]></comment>
+			</column>
+			<index name="pk_titulacion_idiomas" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<fk name="fk_titulacion_idiomas_titulaciones" to_schema="dbschema_ceu" to_table="titulaciones" update_action="cascade" >
+				<fk_column name="titulacion_id" pk="id" />
+			</fk>
+			<options><![CDATA[engine=InnoDB]]></options>
+		</table>
+		<table name="titulaciones" prior="titulacion" >
+			<column name="id" type="INT" jt="4" mandatory="y" >
+				<identity><![CDATA[AUTO_INCREMENT]]></identity>
+			</column>
+			<column name="tipo_titulacion_id" type="INT" jt="4" />
+			<column name="area_id" type="INT" jt="4" >
+				<comment><![CDATA[area de conocimiento]]></comment>
+			</column>
+			<column name="codigo" type="VARCHAR" length="8" jt="12" >
+				<comment><![CDATA[código original de referencia]]></comment>
+			</column>
+			<column name="nombre" type="VARCHAR" length="160" jt="12" >
+				<comment><![CDATA[solo para referencia, utilizar asignatura_idiomas.nombre]]></comment>
+			</column>
+			<column name="duracion" type="TINYINT" jt="-6" >
+				<comment><![CDATA[cantidad de (año/mes/dia/hora)]]></comment>
+			</column>
+			<column name="duracion_tipo" type="CHAR" length="1" jt="1" >
+				<comment><![CDATA[medida de tiempo (año/mes/dia/hora)]]></comment>
+			</column>
+			<column name="creditos" type="SMALLINT" jt="5" >
+				<comment><![CDATA[sumatoria de créditos de todas las materias]]></comment>
+			</column>
+			<column name="insercion_laboral" type="DECIMAL" length="5" decimal="1" jt="3" >
+				<comment><![CDATA[tasa de inserción laboral según ranking BBVA e IVIE]]></comment>
+			</column>
+			<index name="pk_titulacion" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<fk name="fk_titulaciones_tipos_titulacion" to_schema="dbschema_ceu" to_table="tipos_titulaciones" update_action="cascade" >
+				<fk_column name="tipo_titulacion_id" pk="id" />
+			</fk>
+			<fk name="fk_titulaciones_areas" to_schema="dbschema_ceu" to_table="areas" update_action="cascade" >
+				<fk_column name="area_id" pk="id" />
+			</fk>
+			<options><![CDATA[engine=InnoDB]]></options>
+		</table>
+		<table name="universidades" prior="universidad" >
+			<column name="id" type="INT" jt="4" mandatory="y" >
+				<identity><![CDATA[AUTO_INCREMENT]]></identity>
+			</column>
+			<column name="nombre" type="VARCHAR" length="50" jt="12" mandatory="y" />
+			<index name="pk_universidad" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<options><![CDATA[engine=InnoDB]]></options>
+		</table>
+		<view name="planes_estudios_view" >
+			<view_script><![CDATA[create view planes_estudios_view as
+select pe.titulacion_id, pe.ciclo_lectivo, c.nombre plan, ai.nombre asignatura, ai.idioma, ca.periodo, ca.creditos, ca.tipo
+from ceu_planes_estudios pe
+inner join ceu_cursos c on c.plan_estudio_id = pe.id
+inner join ceu_cursos_asignaturas ca on ca.curso_id = c.id
+inner join ceu_asignaturas a on a.id = ca.asignatura_id
+inner join ceu_asignatura_idiomas ai on ai.asignatura_id = a.id
+]]></view_script>
+		</view>
+		<view name="titulacion_asignaturas_view" >
+			<comment><![CDATA[vista de asignaturas por titulación]]></comment>
+			<view_script><![CDATA[CREATE VIEW titulacion_asignaturas_view AS 
+SELECT t.nombre AS titulacion, pe.ciclo_lectivo, c.nombre AS curso, a.codigo, a.nombre AS asignatura, a.idioma, ca.creditos, ca.tipo
+FROM titulaciones t
+INNER JOIN planes_estudios pe ON pe.titulacion_id = t.id
+INNER JOIN cursos c ON c.plan_estudio_id = pe.id
+INNER JOIN cursos_asignaturas ca ON ca.curso_id = c.id
+INNER JOIN asignaturas a ON a.id = ca.asignatura_id;]]></view_script>
+		</view>
+		<view name="titulacion_profesores_view" >
+			<comment><![CDATA[vista de profesores por titulación]]></comment>
+			<view_script><![CDATA[CREATE VIEW titulacion_profesores_view AS 
+SELECT grupo.area, grupo.titulacion, grupo.ciclo_lectivo, pe.nombre, pe.apellidos
+FROM (
+    SELECT distinct a.nombre AS area, t.nombre AS titulacion, pe.ciclo_lectivo, ca.profesor_id
+    FROM titulaciones t
+    INNER JOIN areas a on a.id = t.area_id
+    INNER JOIN planes_estudios pe ON pe.titulacion_id = t.id    
+    INNER JOIN cursos c ON c.plan_estudio_id = pe.id
+    INNER JOIN cursos_asignaturas ca ON ca.curso_id = c.id
+) AS grupo
+INNER JOIN profesores p ON p.id = grupo.profesor_id
+INNER JOIN personas pe ON pe.id = p.persona_id]]></view_script>
+		</view>
+		<view name="titulaciones_cursos_view" >
+			<view_script><![CDATA[create view titulaciones_cursos_view as
+select t.id, t.codigo, ti.nombre titulacion, tt.nombre tipo, 
+       pe.titulacion_id, pe.ciclo_lectivo, pe.plan, pe.asignatura, pe.idioma, pe.periodo, pe.creditos, pe.tipo tipo_asig
+from ceu_titulaciones t
+inner join ceu_titulacion_idiomas ti on ti.titulacion_id = t.id
+inner join ceu_tipos_titulaciones tt on tt.id = t.tipo_titulacion_id
+left join planes_estudios_view pe on pe.titulacion_id = t.id
+where t.codigo = '112' and ti.idioma = 'es' and pe.idioma = 'es']]></view_script>
+		</view>
+	</schema>
+	<connector name="MariaDb" database="MariaDb" host="10.210.200.196" port="3306" user="oiH8jushbf" passwd="YXRvUkQ0TnR4VXlRNlNwWQ==" />
+	<layout name="Default Layout" id="Layout-1f5a" show_relation="columns" >
+		<comment><![CDATA[dbschema_ceu]]></comment>
+		<entity schema="dbschema_ceu" name="areas" color="C1D8EE" x="496" y="80" />
+		<entity schema="dbschema_ceu" name="asignatura_idiomas" color="C1D8EE" x="1280" y="448" />
+		<entity schema="dbschema_ceu" name="asignaturas" color="3986C1" x="1072" y="448" />
+		<entity schema="dbschema_ceu" name="campus" color="C1D8EE" x="256" y="48" />
+		<entity schema="dbschema_ceu" name="campus_titulaciones" color="C1D8EE" x="256" y="240" />
+		<entity schema="dbschema_ceu" name="competencias" color="C1D8EE" x="688" y="464" />
+		<entity schema="dbschema_ceu" name="cursos" color="3986C1" x="1024" y="320" />
+		<entity schema="dbschema_ceu" name="cursos_asignaturas" color="C1D8EE" x="832" y="464" />
+		<entity schema="dbschema_ceu" name="funciones" color="C1D8EE" x="432" y="704" />
+		<entity schema="dbschema_ceu" name="personas" color="C1D8EE" x="1056" y="704" />
+		<entity schema="dbschema_ceu" name="planes_estudios" color="C1D8EE" x="768" y="320" />
+		<entity schema="dbschema_ceu" name="profesores" color="C1D8EE" x="848" y="704" />
+		<entity schema="dbschema_ceu" name="profesores_funciones" color="C1D8EE" x="608" y="704" />
+		<entity schema="dbschema_ceu" name="salidas_profesionales" color="C1D8EE" x="352" y="448" />
+		<entity schema="dbschema_ceu" name="tipos_titulaciones" color="C1D8EE" x="784" y="224" />
+		<entity schema="dbschema_ceu" name="titulacion_idiomas" color="C1D8EE" x="928" y="160" />
+		<entity schema="dbschema_ceu" name="titulaciones" color="C1D8EE" x="512" y="240" />
+		<entity schema="dbschema_ceu" name="universidades" color="C1D8EE" x="48" y="64" />
+		<script name="SQL_Editor" id="Editor-80e" language="SQL" >
+			<string><![CDATA[CREATE SCHEMA dbschema_ceu;
+
+CREATE  TABLE dbschema_ceu.campus_titulaciones ( 
+	id                   INT  NOT NULL  AUTO_INCREMENT  PRIMARY KEY,
+	campus_id            INT  NOT NULL    ,
+	titulacion_id        INT  NOT NULL    ,
+	codigo               VARCHAR(5)  NOT NULL    ,
+	guid                 VARCHAR(36)  NOT NULL    ,
+	plazas               SMALLINT      ,
+	CONSTRAINT unq_campus_titulacion_campus_id UNIQUE ( campus_id ) ,
+	CONSTRAINT unq_campus_titulacion_titulacion_id UNIQUE ( titulacion_id ) 
+ ) engine=InnoDB;
+
+CREATE  TABLE dbschema_ceu.competencias ( 
+	id                   INT  NOT NULL  AUTO_INCREMENT  PRIMARY KEY,
+	titulacion_id        INT      ,
+	grupo                VARCHAR(30)      ,
+	texto                TEXT      ,
+	CONSTRAINT unq_competencias_titulacion_id UNIQUE ( titulacion_id ) 
+ ) engine=InnoDB;
+
+CREATE  TABLE dbschema_ceu.curso_asignatura ( 
+	id                   INT  NOT NULL  AUTO_INCREMENT  PRIMARY KEY,
+	curso_id             INT      ,
+	asignatura_id        INT      ,
+	creditos             SMALLINT      ,
+	tipo                 VARCHAR(2)      ,
+	CONSTRAINT unq_curso_asignatura_curso_id UNIQUE ( curso_id ) ,
+	CONSTRAINT unq_curso_asignatura_asignatura_id UNIQUE ( asignatura_id ) 
+ ) engine=InnoDB;
+
+CREATE  TABLE dbschema_ceu.cursos ( 
+	id                   INT  NOT NULL  AUTO_INCREMENT  PRIMARY KEY,
+	plan_estudio_id      INT      ,
+	nombre               VARCHAR(50)  NOT NULL    ,
+	CONSTRAINT unq_curso_titulacion_id UNIQUE ( plan_estudio_id ) ,
+	CONSTRAINT fk_cursos_curso_asignatura FOREIGN KEY ( id ) REFERENCES dbschema_ceu.curso_asignatura( curso_id ) ON DELETE CASCADE ON UPDATE CASCADE
+ );
+
+CREATE  TABLE dbschema_ceu.diccionarios ( 
+	id                   INT  NOT NULL  AUTO_INCREMENT  PRIMARY KEY,
+	tabla                VARCHAR(30)  NOT NULL    ,
+	texto                VARCHAR(50)  NOT NULL    
+ ) engine=InnoDB;
+
+CREATE  TABLE dbschema_ceu.funciones ( 
+	id                   INT  NOT NULL  AUTO_INCREMENT  PRIMARY KEY,
+	profesor_id          INT      ,
+	nombre               VARCHAR(80)      ,
+	principal            BOOLEAN      ,
+	CONSTRAINT unq_funciones_profesor_id UNIQUE ( profesor_id ) 
+ ) engine=InnoDB;
+
+CREATE  TABLE dbschema_ceu.plan_estudios ( 
+	id                   INT  NOT NULL  AUTO_INCREMENT  PRIMARY KEY,
+	titulacion_id        INT      ,
+	ciclo_lectivo        INT      ,
+	CONSTRAINT unq_plan_estudio_titulacion_id UNIQUE ( titulacion_id ) ,
+	CONSTRAINT fk_plan_estudio_cursos FOREIGN KEY ( id ) REFERENCES dbschema_ceu.cursos( plan_estudio_id ) ON DELETE CASCADE ON UPDATE CASCADE
+ ) engine=InnoDB;
+
+CREATE  TABLE dbschema_ceu.salidas_profesionales ( 
+	id                   INT  NOT NULL  AUTO_INCREMENT  PRIMARY KEY,
+	titulacion_id        INT      ,
+	grupo                VARCHAR(30)      ,
+	texto                TEXT      ,
+	CONSTRAINT unq_salidas_profesionales_titulacion_id UNIQUE ( titulacion_id ) 
+ ) engine=InnoDB;
+
+CREATE  TABLE dbschema_ceu.titulacion_competencia ( 
+ );
+
+CREATE  TABLE dbschema_ceu.titulaciones ( 
+	id                   INT  NOT NULL  AUTO_INCREMENT  PRIMARY KEY,
+	tipo_titulacion_id   INT      ,
+	area_id              INT      ,
+	nombre               VARCHAR(80)  NOT NULL    ,
+	nombre_largo         VARCHAR(160)      ,
+	duracion             TINYINT      ,
+	duracion_tipo        TINYINT      ,
+	creditos             SMALLINT      ,
+	idioma               VARCHAR(2)      ,
+	insercion_laboral    DECIMAL(5,1)      ,
+	CONSTRAINT unq_titulaciones_tipo_titulacion_id UNIQUE ( tipo_titulacion_id ) ,
+	CONSTRAINT unq_titulaciones_area_id UNIQUE ( area_id ) ,
+	CONSTRAINT fk_titulaciones_campus_titulacion FOREIGN KEY ( id ) REFERENCES dbschema_ceu.campus_titulaciones( titulacion_id ) ON DELETE NO ACTION ON UPDATE NO ACTION,
+	CONSTRAINT fk_titulaciones_plan_estudio FOREIGN KEY ( id ) REFERENCES dbschema_ceu.plan_estudios( titulacion_id ) ON DELETE NO ACTION ON UPDATE NO ACTION,
+	CONSTRAINT fk_titulaciones_competencias FOREIGN KEY ( id ) REFERENCES dbschema_ceu.competencias( titulacion_id ) ON DELETE CASCADE ON UPDATE CASCADE,
+	CONSTRAINT fk_titulaciones_salidas_profesionales FOREIGN KEY ( id ) REFERENCES dbschema_ceu.salidas_profesionales( titulacion_id ) ON DELETE CASCADE ON UPDATE CASCADE
+ ) engine=InnoDB;
+
+CREATE  TABLE dbschema_ceu.areas ( 
+	id                   INT  NOT NULL  AUTO_INCREMENT  PRIMARY KEY,
+	nombre               VARCHAR(50)  NOT NULL    ,
+	CONSTRAINT fk_area_titulaciones FOREIGN KEY ( id ) REFERENCES dbschema_ceu.titulaciones( area_id ) ON DELETE NO ACTION ON UPDATE NO ACTION
+ ) engine=InnoDB;
+
+CREATE  TABLE dbschema_ceu.asignaturas ( 
+	id                   INT  NOT NULL  AUTO_INCREMENT  PRIMARY KEY,
+	profesor_id          INT      ,
+	codigo               VARCHAR(9)      ,
+	nombre               VARCHAR(50)  NOT NULL    ,
+	creditos             SMALLINT      ,
+	idioma               VARCHAR(2)      ,
+	CONSTRAINT unq_asignatura_profesor_id UNIQUE ( profesor_id ) ,
+	CONSTRAINT fk_asignaturas_curso_asignatura FOREIGN KEY ( id ) REFERENCES dbschema_ceu.curso_asignatura( asignatura_id ) ON DELETE CASCADE ON UPDATE CASCADE
+ );
+
+CREATE  TABLE dbschema_ceu.campus ( 
+	id                   INT  NOT NULL  AUTO_INCREMENT  PRIMARY KEY,
+	universidad_id       INT      ,
+	nombre               VARCHAR(50)  NOT NULL    ,
+	CONSTRAINT unq_campus_universidad_id UNIQUE ( universidad_id ) ,
+	CONSTRAINT fk_campus_campus_titulacion FOREIGN KEY ( id ) REFERENCES dbschema_ceu.campus_titulaciones( campus_id ) ON DELETE NO ACTION ON UPDATE NO ACTION
+ ) engine=InnoDB;
+
+CREATE  TABLE dbschema_ceu.profesores ( 
+	id                   INT  NOT NULL  AUTO_INCREMENT  PRIMARY KEY,
+	persona_id           INT      ,
+	foto                 VARCHAR(50)      ,
+	CONSTRAINT unq_profesor_persona_id UNIQUE ( persona_id ) ,
+	CONSTRAINT fk_profesor_asignatura FOREIGN KEY ( id ) REFERENCES dbschema_ceu.asignaturas( profesor_id ) ON DELETE NO ACTION ON UPDATE NO ACTION,
+	CONSTRAINT fk_profesores_funciones FOREIGN KEY ( id ) REFERENCES dbschema_ceu.funciones( profesor_id ) ON DELETE NO ACTION ON UPDATE NO ACTION
+ ) engine=InnoDB;
+
+CREATE  TABLE dbschema_ceu.tipos_titulacion ( 
+	id                   INT  NOT NULL  AUTO_INCREMENT  PRIMARY KEY,
+	nombre               VARCHAR(50)      ,
+	CONSTRAINT fk_tipos_titulacion_titulaciones FOREIGN KEY ( id ) REFERENCES dbschema_ceu.titulaciones( tipo_titulacion_id ) ON DELETE NO ACTION ON UPDATE CASCADE
+ ) engine=InnoDB;
+
+CREATE  TABLE dbschema_ceu.universidades ( 
+	id                   INT  NOT NULL  AUTO_INCREMENT  PRIMARY KEY,
+	nombre               VARCHAR(50)  NOT NULL    ,
+	CONSTRAINT fk_universidad_campus FOREIGN KEY ( id ) REFERENCES dbschema_ceu.campus( universidad_id ) ON DELETE NO ACTION ON UPDATE NO ACTION
+ ) engine=InnoDB;
+
+CREATE  TABLE dbschema_ceu.personas ( 
+	id                   INT  NOT NULL  AUTO_INCREMENT  PRIMARY KEY,
+	nombre               VARCHAR(50)      ,
+	apellidos            VARCHAR(50)      ,
+	CONSTRAINT fk_persona_profesor FOREIGN KEY ( id ) REFERENCES dbschema_ceu.profesores( persona_id ) ON DELETE NO ACTION ON UPDATE NO ACTION
+ ) engine=InnoDB;
+
+ALTER TABLE dbschema_ceu.curso_asignatura MODIFY tipo VARCHAR(2)     COMMENT 'obligatoria / opcional / etc';
+
+ALTER TABLE dbschema_ceu.diccionarios COMMENT 'tabla utilizada como diccionario para los campos descriptivos';
+
+ALTER TABLE dbschema_ceu.funciones COMMENT 'funciones y cargos de los docentes';
+
+ALTER TABLE dbschema_ceu.funciones MODIFY principal BOOLEAN     COMMENT 'función o cargo principal';
+
+ALTER TABLE dbschema_ceu.plan_estudios MODIFY ciclo_lectivo INT     COMMENT 'año correspondiente al plan de estudio';
+
+ALTER TABLE dbschema_ceu.titulaciones MODIFY area_id INT     COMMENT 'area de conocimiento';
+
+ALTER TABLE dbschema_ceu.titulaciones MODIFY duracion TINYINT     COMMENT 'cantidad de (año/mes/dia/hora)';
+
+ALTER TABLE dbschema_ceu.titulaciones MODIFY duracion_tipo TINYINT     COMMENT 'medida de tiempo (año/mes/dia/hora)';
+
+ALTER TABLE dbschema_ceu.titulaciones MODIFY creditos SMALLINT     COMMENT 'sumatoria de créditos de todas las materias';
+
+ALTER TABLE dbschema_ceu.titulaciones MODIFY idioma VARCHAR(2)     COMMENT 'idioma en el que se impartirá la titulación (es, en, fr)';
+
+ALTER TABLE dbschema_ceu.titulaciones MODIFY insercion_laboral DECIMAL(5,1)     COMMENT 'tasa de inserción laboral según ranking BBVA e IVIE';
+
+ALTER TABLE dbschema_ceu.areas COMMENT 'area de cnocimiento';
+
+ALTER TABLE dbschema_ceu.asignaturas MODIFY idioma VARCHAR(2)     COMMENT 'idioma en el que se impartirá la asignatura (es, en, fr)';
+
+ALTER TABLE dbschema_ceu.profesores MODIFY foto VARCHAR(50)     COMMENT 'ruta de la imagen';
+]]></string>
+		</script>
+		<script name="SQL_Editor_001" id="Editor-ac9" language="SQL" >
+			<string><![CDATA[CREATE SCHEMA dbschema_ceu;
+
+CREATE  TABLE dbschema_ceu.universidades ( 
+	id                   INT  NOT NULL  AUTO_INCREMENT  PRIMARY KEY,
+	nombre               VARCHAR(50)  NOT NULL    
+ ) engine=InnoDB;
+
+CREATE  TABLE dbschema_ceu.campus ( 
+	id                   INT  NOT NULL  AUTO_INCREMENT  PRIMARY KEY,
+	universidad_id       INT      ,
+	nombre               VARCHAR(50)  NOT NULL    ,
+	CONSTRAINT unq_campus_universidad_id UNIQUE ( universidad_id ) ,
+	CONSTRAINT fk_campus_universidades FOREIGN KEY ( universidad_id ) REFERENCES dbschema_ceu.universidades( id ) ON DELETE NO ACTION ON UPDATE CASCADE
+ ) engine=InnoDB;
+]]></string>
+		</script>
+		<script name="SQL_Editor_002" id="Editor-edb" language="SQL" >
+			<string><![CDATA[CREATE SCHEMA dbschema_ceu;
+
+CREATE  TABLE dbschema_ceu.areas ( 
+	id                   INT  NOT NULL  AUTO_INCREMENT  PRIMARY KEY,
+	nombre               VARCHAR(50)  NOT NULL    
+ ) engine=InnoDB;
+
+CREATE  TABLE dbschema_ceu.asignaturas ( 
+	id                   INT  NOT NULL  AUTO_INCREMENT  PRIMARY KEY,
+	codigo               VARCHAR(9)      ,
+	nombre               VARCHAR(50)  NOT NULL    ,
+	creditos             SMALLINT      ,
+	idioma               CHAR(2)      
+ );
+
+CREATE  TABLE dbschema_ceu.diccionarios ( 
+	id                   INT  NOT NULL  AUTO_INCREMENT  PRIMARY KEY,
+	tabla                VARCHAR(30)  NOT NULL    ,
+	texto                VARCHAR(50)  NOT NULL    
+ ) engine=InnoDB;
+
+CREATE  TABLE dbschema_ceu.personas ( 
+	id                   INT  NOT NULL  AUTO_INCREMENT  PRIMARY KEY,
+	nombre               VARCHAR(50)      ,
+	apellidos            VARCHAR(50)      
+ ) engine=InnoDB;
+
+CREATE  TABLE dbschema_ceu.profesores ( 
+	id                   INT  NOT NULL  AUTO_INCREMENT  PRIMARY KEY,
+	persona_id           INT      ,
+	foto                 VARCHAR(50)      ,
+	CONSTRAINT fk_profesores_personas FOREIGN KEY ( persona_id ) REFERENCES dbschema_ceu.personas( id ) ON DELETE NO ACTION ON UPDATE CASCADE
+ ) engine=InnoDB;
+
+CREATE  TABLE dbschema_ceu.tipos_titulaciones ( 
+	id                   INT  NOT NULL  AUTO_INCREMENT  PRIMARY KEY,
+	nombre               VARCHAR(50)      
+ ) engine=InnoDB;
+
+CREATE  TABLE dbschema_ceu.titulaciones ( 
+	id                   INT  NOT NULL  AUTO_INCREMENT  PRIMARY KEY,
+	tipo_titulacion_id   INT      ,
+	area_id              INT      ,
+	nombre               VARCHAR(80)  NOT NULL    ,
+	nombre_largo         VARCHAR(160)      ,
+	duracion             TINYINT      ,
+	duracion_tipo        CHAR(1)      ,
+	creditos             SMALLINT      ,
+	idioma               CHAR(2)      ,
+	insercion_laboral    DECIMAL(5,1)      ,
+	CONSTRAINT fk_titulaciones_tipos_titulacion FOREIGN KEY ( tipo_titulacion_id ) REFERENCES dbschema_ceu.tipos_titulaciones( id ) ON DELETE NO ACTION ON UPDATE CASCADE,
+	CONSTRAINT fk_titulaciones_areas FOREIGN KEY ( area_id ) REFERENCES dbschema_ceu.areas( id ) ON DELETE NO ACTION ON UPDATE CASCADE
+ ) engine=InnoDB;
+
+CREATE  TABLE dbschema_ceu.universidades ( 
+	id                   INT  NOT NULL  AUTO_INCREMENT  PRIMARY KEY,
+	nombre               VARCHAR(50)  NOT NULL    
+ ) engine=InnoDB;
+
+CREATE  TABLE dbschema_ceu.campus ( 
+	id                   INT  NOT NULL  AUTO_INCREMENT  PRIMARY KEY,
+	universidad_id       INT      ,
+	nombre               VARCHAR(50)  NOT NULL    ,
+	CONSTRAINT fk_campus_universidades FOREIGN KEY ( universidad_id ) REFERENCES dbschema_ceu.universidades( id ) ON DELETE NO ACTION ON UPDATE CASCADE
+ ) engine=InnoDB;
+
+CREATE  TABLE dbschema_ceu.campus_titulaciones ( 
+	id                   INT  NOT NULL  AUTO_INCREMENT  PRIMARY KEY,
+	campus_id            INT      ,
+	titulacion_id        INT      ,
+	codigo               VARCHAR(5)  NOT NULL    ,
+	guid                 VARCHAR(36)  NOT NULL    ,
+	plazas               SMALLINT      ,
+	CONSTRAINT fk_campus_titulaciones_campus FOREIGN KEY ( campus_id ) REFERENCES dbschema_ceu.campus( id ) ON DELETE NO ACTION ON UPDATE CASCADE,
+	CONSTRAINT fk_campus_titulaciones_titulaciones FOREIGN KEY ( titulacion_id ) REFERENCES dbschema_ceu.titulaciones( id ) ON DELETE NO ACTION ON UPDATE CASCADE
+ ) engine=InnoDB;
+
+CREATE  TABLE dbschema_ceu.competencias ( 
+	id                   INT  NOT NULL  AUTO_INCREMENT  PRIMARY KEY,
+	titulacion_id        INT      ,
+	grupo                VARCHAR(30)      ,
+	texto                TEXT      ,
+	CONSTRAINT fk_competencias_titulaciones FOREIGN KEY ( titulacion_id ) REFERENCES dbschema_ceu.titulaciones( id ) ON DELETE NO ACTION ON UPDATE CASCADE
+ ) engine=InnoDB;
+
+CREATE  TABLE dbschema_ceu.funciones ( 
+	id                   INT  NOT NULL  AUTO_INCREMENT  PRIMARY KEY,
+	profesor_id          INT      ,
+	nombre               VARCHAR(80)      ,
+	principal            BOOLEAN      ,
+	CONSTRAINT fk_funciones_profesores FOREIGN KEY ( profesor_id ) REFERENCES dbschema_ceu.profesores( id ) ON DELETE NO ACTION ON UPDATE CASCADE
+ ) engine=InnoDB;
+
+CREATE  TABLE dbschema_ceu.planes_estudios ( 
+	id                   INT  NOT NULL  AUTO_INCREMENT  PRIMARY KEY,
+	titulacion_id        INT      ,
+	ciclo_lectivo        INT      ,
+	CONSTRAINT fk_plan_estudios_titulaciones FOREIGN KEY ( titulacion_id ) REFERENCES dbschema_ceu.titulaciones( id ) ON DELETE NO ACTION ON UPDATE CASCADE
+ ) engine=InnoDB;
+
+CREATE  TABLE dbschema_ceu.salidas_profesionales ( 
+	id                   INT  NOT NULL  AUTO_INCREMENT  PRIMARY KEY,
+	titulacion_id        INT      ,
+	grupo                VARCHAR(30)      ,
+	texto                TEXT      ,
+	CONSTRAINT fk_salidas_profesionales_titulaciones FOREIGN KEY ( titulacion_id ) REFERENCES dbschema_ceu.titulaciones( id ) ON DELETE NO ACTION ON UPDATE CASCADE
+ ) engine=InnoDB;
+
+CREATE  TABLE dbschema_ceu.cursos ( 
+	id                   INT  NOT NULL  AUTO_INCREMENT  PRIMARY KEY,
+	plan_estudio_id      INT      ,
+	nombre               VARCHAR(50)  NOT NULL    ,
+	CONSTRAINT fk_cursos_plan_estudios FOREIGN KEY ( plan_estudio_id ) REFERENCES dbschema_ceu.planes_estudios( id ) ON DELETE NO ACTION ON UPDATE CASCADE
+ );
+
+CREATE  TABLE dbschema_ceu.cursos_asignaturas ( 
+	id                   INT  NOT NULL  AUTO_INCREMENT  PRIMARY KEY,
+	curso_id             INT      ,
+	asignatura_id        INT      ,
+	profesor_id          INT      ,
+	creditos             SMALLINT      ,
+	tipo                 CHAR(2)      ,
+	CONSTRAINT fk_curso_asignatura_asignaturas FOREIGN KEY ( asignatura_id ) REFERENCES dbschema_ceu.asignaturas( id ) ON DELETE NO ACTION ON UPDATE CASCADE,
+	CONSTRAINT fk_curso_asignatura_cursos FOREIGN KEY ( curso_id ) REFERENCES dbschema_ceu.cursos( id ) ON DELETE NO ACTION ON UPDATE CASCADE,
+	CONSTRAINT fk_cursos_asignaturas_profesores FOREIGN KEY ( profesor_id ) REFERENCES dbschema_ceu.profesores( id ) ON DELETE NO ACTION ON UPDATE CASCADE
+ ) engine=InnoDB;
+
+CREATE VIEW titulacion_asignaturas_view AS 
+SELECT t.nombre AS titulacion, pe.ciclo_lectivo, c.nombre AS curso, a.codigo, a.nombre AS asignatura, a.idioma, ca.creditos, ca.tipo
+FROM titulaciones t
+INNER JOIN planes_estudios pe ON pe.titulacion_id = t.id
+INNER JOIN cursos c ON c.plan_estudio_id = pe.id
+INNER JOIN cursos_asignaturas ca ON ca.curso_id = c.id
+INNER JOIN asignaturas a ON a.id = ca.asignatura_id;;
+
+CREATE VIEW titulacion_asignaturas_view AS 
+SELECT t.nombre AS titulacion, pe.ciclo_lectivo, c.nombre AS curso, a.codigo, a.nombre AS asignatura, a.idioma, ca.creditos, ca.tipo
+FROM titulaciones t
+INNER JOIN planes_estudios pe ON pe.titulacion_id = t.id
+INNER JOIN cursos c ON c.plan_estudio_id = pe.id
+INNER JOIN cursos_asignaturas ca ON ca.curso_id = c.id
+INNER JOIN asignaturas a ON a.id = ca.asignatura_id;;
+
+ALTER TABLE dbschema_ceu.areas COMMENT 'area de cnocimiento';
+
+ALTER TABLE dbschema_ceu.asignaturas MODIFY idioma CHAR(2)     COMMENT 'idioma en el que se impartirá la asignatura (es, en, fr)';
+
+ALTER TABLE dbschema_ceu.diccionarios COMMENT 'tabla utilizada como diccionario para los campos descriptivos';
+
+ALTER TABLE dbschema_ceu.profesores MODIFY foto VARCHAR(50)     COMMENT 'ruta de la imagen';
+
+ALTER TABLE dbschema_ceu.titulaciones MODIFY area_id INT     COMMENT 'area de conocimiento';
+
+ALTER TABLE dbschema_ceu.titulaciones MODIFY duracion TINYINT     COMMENT 'cantidad de (año/mes/dia/hora)';
+
+ALTER TABLE dbschema_ceu.titulaciones MODIFY duracion_tipo CHAR(1)     COMMENT 'medida de tiempo (año/mes/dia/hora)';
+
+ALTER TABLE dbschema_ceu.titulaciones MODIFY creditos SMALLINT     COMMENT 'sumatoria de créditos de todas las materias';
+
+ALTER TABLE dbschema_ceu.titulaciones MODIFY idioma CHAR(2)     COMMENT 'idioma en el que se impartirá la titulación (es, en, fr)';
+
+ALTER TABLE dbschema_ceu.titulaciones MODIFY insercion_laboral DECIMAL(5,1)     COMMENT 'tasa de inserción laboral según ranking BBVA e IVIE';
+
+ALTER TABLE dbschema_ceu.funciones COMMENT 'funciones y cargos de los docentes';
+
+ALTER TABLE dbschema_ceu.funciones MODIFY principal BOOLEAN     COMMENT 'función o cargo principal';
+
+ALTER TABLE dbschema_ceu.planes_estudios MODIFY ciclo_lectivo INT     COMMENT 'año correspondiente al plan de estudio';
+
+ALTER TABLE dbschema_ceu.cursos_asignaturas MODIFY tipo CHAR(2)     COMMENT 'Formación Básica / OBligatoria / OPtativa / PRáctica / Trabajo Fin Grado';
+]]></string>
+		</script>
+	</layout>
+</project>

@@ -1,4 +1,4 @@
-python3 manage.py dumpdata --indent 4 --output dbschema/fixtures/personas.json dbschema.persona 
+python3 manage.py dumpdata --indent 4 --output dbschema/fixtures/areas.json dbschema.area
 
 python3 manage.py migrate 
 
@@ -64,3 +64,93 @@ git remote add origin git@github.com:robertowest/universidadCEU.git
 git branch -M main
 git push -u origin main
 "
+
+
+
+
+python3 manage.py runserver 10.83.18.170:8000
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--- Many To Many ---
+Los afiliados tienen muchos servicios, pero cada usuario servicio tiene características particulares
+
+
+class Afiliado(Auditable):
+    TIPO = (('T', 'Titular'), ('C', 'Conyuge'), ('H', 'Hijo/a'))
+
+    persona = models.OneToOneField(Persona, on_delete=models.CASCADE, unique=True, null=False, limit_choices_to={'active': True} )
+    fecha_alta = models.DateField(blank=True, null=True, default=date.today)
+    servicios = models.ManyToManyField(Servicio, through='AfiliadosServicios')
+    imagen = models.ImageField(upload_to=cargar_foto_afiliado, blank=True, null=True, verbose_name="Foto", default='afiliado/default.svg')
+    afiliado = models.ForeignKey('self', on_delete=models.CASCADE,  blank=True, null=True, related_name='afiliado_adherentes', verbose_name='Responsable', limit_choices_to={'active': True})
+    tipo = models.CharField('Tipo', max_length=1, choices=TIPO, default='T')
+
+    class Meta:
+        db_table = 'afiliados'
+        verbose_name = 'Afiliado'
+        verbose_name_plural = 'Afiliados'
+
+    def __str__(self) -> str:
+        return self.persona.apellido_nombre
+
+    @property
+    def vigencia_sepelio(self):
+        # la vigencia depende de la edad al momento de darse de alta
+        return None
+
+
+class Servicio(Auditable):
+    # ESTA TABLA ES UNA ESPECIE DE DICCIONARIO
+    # LOS SERVICIOS SON TRATADOS COMO HARD-CODE
+    nombre = models.CharField(max_length=45)
+    valor1 = models.DecimalField(verbose_name='<50', max_digits=12, decimal_places=2, blank=True, null=True)  #  1 a 49
+    valor2 = models.DecimalField(verbose_name='<60', max_digits=12, decimal_places=2, blank=True, null=True)  # 50 a 59
+    valor3 = models.DecimalField(verbose_name='<70', max_digits=12, decimal_places=2, blank=True, null=True)  # 60 a 69
+    valor4 = models.DecimalField(verbose_name='<80', max_digits=12, decimal_places=2, blank=True, null=True)  # 70 a 79
+    valor5 = models.DecimalField(verbose_name='>80', max_digits=12, decimal_places=2, blank=True, null=True)  # >80
+
+    class Meta:
+        default_related_name = 'servicios'
+        db_table = 'servicios'
+        verbose_name = 'Servicio'
+        verbose_name_plural = 'Servicios'
+
+    def __str__(self) -> str:
+        return self.nombre
+
+
+# ALTER TABLE afiliados_servicios ADD vigencia DATE;
+class AfiliadosServicios(models.Model):
+    afiliado = models.ForeignKey(Afiliado, models.DO_NOTHING, related_name='afiliados_servicios')
+    servicio = models.ForeignKey(Servicio, models.DO_NOTHING, related_name='servicios_afiliados')
+    vigencia = models.DateField(blank=True, null=True, default=date.today)
+    valor = models.DecimalField(max_digits=12, decimal_places=2, blank=True, null=True)
+
+    class Meta:
+        # managed = False
+        db_table = 'afiliados_servicios'
+        verbose_name = 'Servicio de Afiliado'
+        verbose_name_plural = 'Servicios de Afiliados'
+        unique_together = (('afiliado', 'servicio'),)

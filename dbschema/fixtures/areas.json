@@ -3,77 +3,89 @@
         "model": "dbschema.area",
         "pk": 1,
         "fields": {
-            "nombre": "Ciencias de la Salud"
+            "nombre": "Ciencias de la Salud",
+            "icono": "i-salud"
         }
     },
     {
         "model": "dbschema.area",
         "pk": 2,
         "fields": {
-            "nombre": "Comunicación"
+            "nombre": "Comunicación",
+            "icono": "i-comunicacion"
         }
     },
     {
         "model": "dbschema.area",
         "pk": 3,
         "fields": {
-            "nombre": "Derecho y Política"
+            "nombre": "Derecho y Política",
+            "icono": "i-derecho"
         }
     },
     {
         "model": "dbschema.area",
         "pk": 4,
         "fields": {
-            "nombre": "Diseño"
+            "nombre": "Diseño",
+            "icono": "i-diseno"
         }
     },
     {
         "model": "dbschema.area",
         "pk": 5,
         "fields": {
-            "nombre": "Educación"
+            "nombre": "Educación",
+            "icono": "i-educacion"
         }
     },
     {
         "model": "dbschema.area",
         "pk": 6,
         "fields": {
-            "nombre": "Empresa y Marketing"
+            "nombre": "Empresa y Marketing",
+            "icono": "i-marketing"
         }
     },
     {
         "model": "dbschema.area",
         "pk": 7,
         "fields": {
-            "nombre": "Deporte"
+            "nombre": "Deporte",
+            "icono": "i-deporte"
         }
     },
     {
         "model": "dbschema.area",
         "pk": 8,
         "fields": {
-            "nombre": "Ingeniería"
+            "nombre": "Ingeniería",
+            "icono": "i-ingenieria"
         }
     },
     {
         "model": "dbschema.area",
         "pk": 9,
         "fields": {
-            "nombre": "Arquitectura"
+            "nombre": "Arquitectura",
+            "icono": "i-arquitectura"
         }
     },
     {
         "model": "dbschema.area",
         "pk": 10,
         "fields": {
-            "nombre": "Veterinaria"
+            "nombre": "Veterinaria",
+            "icono": "i-veterinaria"
         }
     },
     {
         "model": "dbschema.area",
         "pk": 11,
         "fields": {
-            "nombre": "Gastronomía"
+            "nombre": "Gastronomía",
+            "icono": "i-gastronomia"
         }
     }
 ]
+    

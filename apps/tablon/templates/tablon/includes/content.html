@@ -1,0 +1,95 @@
+<section class="module gray">
+    <div class="center">
+        <ul class="breadcrumb">
+            <li><a href="https://www.uchceu.es" aria-label="home"><span class="icon icon-28"></span></a></li>
+            <li><span>Estudios</span></li>
+        </ul>
+
+        <h2 class="title mb0">Áreas de conocimiento</h2>
+
+        <!-- selectores -->
+        <div class="search-fields">
+            <form action="" method="POST">
+                <fieldset class="form-section">
+                    <select name="selected_tipo" id="selected_tipo" class="form-ctrl" onchange="lanzarAjax(this)">
+                        <option value="">Seleccione Tipo ...</option>
+                        {% for obj in tipos %}
+                            <option value="{{obj.id}}">{{obj.nombre}}</option>
+                        {% endfor %}
+                    </select>
+                </fieldset>
+                <fieldset class="form-section">
+                    <select name="selected_campus" id="selected_campus" class="form-ctrl" onchange="lanzarAjax(this)">
+                        <option value="">Seleccione Campus ...</option>
+                        {% for obj in campus %}
+                            <option value="{{obj.id}}">{{obj.nombre}}</option>
+                        {% endfor %}
+                    </select>
+                </fieldset>
+                <fieldset class="form-section" style="display:none;">
+                    <select name="selected_area" id="selected_area" class="form-ctrl" onchange="lanzarAjax(this)">
+                        <option value="">Seleccione Area ...</option>
+                        {% for obj in areas %}
+                            <option value="{{obj.id}}">{{obj.nombre}}</option>
+                        {% endfor %}
+                    </select>
+                </fieldset>
+                <fieldset class="form-section">
+                    <input type="text" class="form-ctrl form-search" placeholder="Buscar">
+                    <button class="ctrl-submit"></button>
+                </fieldset>
+            </form>
+        </div>
+
+        <!-- selección por areas -->
+        <div class="areas">
+            <ul>
+                {% for area in areas %}
+                <li id="circulo_area_{{area.id}}" data-area="{{area.id}}" onclick="seleccionarArea(this)">
+                    <div class="logo">
+                        <span class="icon {% if area.icono %}{{area.icono}}{% else %}i-ingenieria{% endif %}"></span>
+                    </div>
+                    <span class="name">{{area.nombre}}</span>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <!-- contenido de la búsqueda -->
+        <h1>aquí estará el contenido de la búsqueda</h1>
+        {% comment "" %}
+        <div class="areas-content">
+            <div data-area="detalles" style="display:block">
+                <div class=" cover-acordeon">
+                    <div class="acordeon">
+                        <h3>subarea del area principal</h3>
+                        <div>
+                            <ul class="list-info list-info-none">
+                                <li>
+                                    <span class="description">&nbsp;</span>
+                                    <strong class="lang">Idioma docencia</strong>
+                                    <strong class="years">Duración</strong>
+                                    <strong class="etcs">Créditos</strong>
+                                </li>
+                            </ul>
+                            <ul class="list-info">
+                                <li>
+                                    <span class="description">description</span>                                    
+                                    <span class="lang">lang</span>
+                                    <span class="years">years</span>
+                                    <span class="etcs">etcs</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+        {% endcomment %}
+
+    </div>
+
+</section>

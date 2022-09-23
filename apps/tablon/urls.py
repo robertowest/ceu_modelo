@@ -19,5 +19,11 @@ from . import views
 
 urlpatterns = [
     # path('', views.home, name='home')
-    path('', views.index, name='index')
+    # path('', views.index, name='index')
+    
+    path('', views.base, name='base'),
+    
+    path('tablon/', views.tablon, name='tablon'),
+    
+    path('tablon_buscar_ajax/', views.tablon_buscar_ajax),
 ]

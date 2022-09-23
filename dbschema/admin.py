@@ -1,3 +1,4 @@
+from dataclasses import fields
 import string
 from django.contrib import admin
 
@@ -50,25 +51,47 @@ class FirstLetterListFilter(admin.SimpleListFilter):
             return queryset.filter(nombre__istartswith=self.value())
     
 
+# ---------------------------------------------------------------------------------------
+
 @admin.register(Universidad)
 class UniversidadAdmin(admin.ModelAdmin):
-    pass
+    fields = ['nombre', 'deleted']
 
+# ---------------------------------------------------------------------------------------
 
 @admin.register(Campus)
 class CampusAdmin(admin.ModelAdmin):
-    pass
+    fields = ['universidad', 'nombre', 'deleted']
+
+# ---------------------------------------------------------------------------------------
+
+class ParentIdListFilter(admin.SimpleListFilter):
+    # https://docs.djangoproject.com/en/4.1/ref/contrib/admin/filters/
+    title = 'Area principal'
+    parameter_name = 'id'
+
+    def lookups(self, request, model_admin):
+        return Area.objects.filter(parent_id__isnull=True).values_list('id', 'nombre')
+
+    def queryset(self, request, queryset):
+        return queryset.filter(parent_id=self.value())
 
 
 @admin.register(Area)
 class AreaAdmin(admin.ModelAdmin):
+    fields = ['nombre', 'icono', 'deleted']
+    list_display = ['id', 'nombre', 'icono', 'deleted']
+    list_display_links = ['nombre']
+    list_filter = [ParentIdListFilter]
     ordering = ['nombre']
 
+# ---------------------------------------------------------------------------------------
 
 @admin.register(TipoTitulacion)
 class TipoTitulacionAdmin(admin.ModelAdmin):
-    pass
+    fields = ['nombre', 'deleted']
 
+# ---------------------------------------------------------------------------------------
 
 class TitulacionIdiomaInLine(admin.StackedInline):
     # TabularInline):
@@ -112,12 +135,14 @@ class PlanEstudioProfesionalInLine(admin.TabularInline):
 
 @admin.register(Titulacion)
 class TitulacionAdmin(admin.ModelAdmin):
+    fields = ['tipo_titulacion', 'area', 'codigo', 'nombre', 'duracion', 'duracion_tipo', 'creditos', 'insercion_laboral', 'deleted']
     list_display = ['id', 'nombre']
     list_display_links = ['nombre']
     search_fields = ['nombre']
     ordering = ['nombre']
     inlines = [TitulacionIdiomaInLine, CompetenciaInLine, SalidaProfesionalInLine, PlanEstudioProfesionalInLine]
 
+# ---------------------------------------------------------------------------------------
 
 class CursoInLine(admin.TabularInline):
     model = Curso
@@ -129,12 +154,33 @@ class CursoInLine(admin.TabularInline):
 
 @admin.register(PlanEstudio)
 class PlanEstudioAdmin(admin.ModelAdmin):
+    fields = ['titulacion', 'ciclo_lectivo', 'deleted']
     inlines = [CursoInLine]
 
+# ---------------------------------------------------------------------------------------
+
+# # class CursoAsignaturaInLine(admin.TabularInline):
+# #     model = CursoAsignatura
+# #     fields = ['id', 'curso', 'asignatura', 'profesor', 'periodo', 'creditos', 'tipo']
+# #     # ordering = ['nombre']
+# #     extra = 0
+# #     can_delete = False
+# #     view_on_site = True
+
+# @admin.register(Curso)
+# class CursoAdmin(admin.ModelAdmin):
+#     # inlines = [CursoAsignaturaInLine]
+#     list_display = ['id', 'nombre', 'get_asignatura']
+
+# def get_asignatura(self, obj):
+#     # return [asignatura.nombre for asignatura in obj.asignatura.all()]
+#     return "hola"
+
+# ---------------------------------------------------------------------------------------
 
 class AsignaturaIdiomaInLine(admin.StackedInline):
     model = AsignaturaIdioma
-    fields = ['nombre', 'idioma']
+    fields = ['nombre', 'idioma', 'deleted']
     # readonly_fields = fields
     ordering = ['nombre']
     extra = 0
@@ -144,18 +190,21 @@ class AsignaturaIdiomaInLine(admin.StackedInline):
 
 @admin.register(Asignatura)
 class AsignaturaAdmin(admin.ModelAdmin):
+    fields = ['nombre', 'codigo', 'creditos', 'deleted']
     list_display = ['id', 'nombre', 'codigo', 'creditos']
     list_display_links = ['nombre']
     search_fields = ['nombre', 'codigo']
     ordering = ['nombre']
     inlines = [AsignaturaIdiomaInLine]
 
+# ---------------------------------------------------------------------------------------
 
 @admin.register(Persona)
 class PersonaAdmin(admin.ModelAdmin):
     def apellidos_nombre(self, obj):
         return '{0}, {1}'.format(obj.apellidos, obj.nombre)
     
+    fields = ['nombre', 'apellidos', 'dni', 'sexo', 'deleted']
     list_display = ['id', 'apellidos_nombre']
     list_display_links = ['apellidos_nombre']
     search_fields = ['nombre', 'apellidos']
@@ -166,6 +215,7 @@ class PersonaAdmin(admin.ModelAdmin):
         form.base_fields['apellidos'].widget.attrs['style'] = 'width: 35em;'
         return form
 
+# ---------------------------------------------------------------------------------------
 
 class FuncionesInLine(admin.TabularInline):
     # def get_formset(self, request, obj=None, **kwargs):
@@ -174,12 +224,11 @@ class FuncionesInLine(admin.TabularInline):
     #     return form
 
     model = ProfesorFuncion
-    # fields = ['id', 'funcion', 'prioridad', 'principal']
+    fields = ['id', 'funcion', 'prioridad', 'principal', 'deleted']
     ordering = ['prioridad']
     extra = 0
     can_delete = False
     view_on_site = True
-
 
 @admin.register(Profesor)
 class ProfesorAdmin(admin.ModelAdmin):
@@ -194,6 +243,7 @@ class ProfesorAdmin(admin.ModelAdmin):
     nombre_apellidos.short_description = 'Nombre'
     readonly_fields = ('foto_preview',)
 
+    fields = ['persona', 'foto', readonly_fields, 'deleted']
     list_display = ['id', 'nombre_apellidos']
     list_display_links = ['nombre_apellidos']
     search_fields = ['persona__nombre', 'persona__apellidos']
@@ -208,9 +258,11 @@ class ProfesorAdmin(admin.ModelAdmin):
     class Media:
         css = { 'all': ['/static/admin/css/custom_admin.css'], }
 
+# ---------------------------------------------------------------------------------------
 
 @admin.register(Funcion)
 class FuncionAdmin(admin.ModelAdmin):
+    fields = ['nombre', 'deleted']
     list_display = ['id', 'nombre']
     list_display_links = ['nombre']
     list_filter = [FirstLetterListFilter]
