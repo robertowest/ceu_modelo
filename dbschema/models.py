@@ -344,6 +344,11 @@ class Funcion(Auditable):
         return self.nombre
     
 
+# -----------------------------------------------------------------------------
+# relaciones ManyToMany
+# -----------------------------------------------------------------------------
+
+
 class CampusTitulacion(Auditable):
     id = models.BigAutoField(primary_key=True)
     campus = models.ForeignKey(Campus, models.DO_NOTHING, related_name='campus_titulacion')

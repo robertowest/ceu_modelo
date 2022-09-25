@@ -53,9 +53,19 @@ class FirstLetterListFilter(admin.SimpleListFilter):
 
 # ---------------------------------------------------------------------------------------
 
+class CampusInLine(admin.TabularInline):
+    model = Campus
+    readonly_fields = ['nombre', 'deleted']
+    ordering = ['nombre']
+    extra = 0
+    can_delete = False
+    view_on_site = False
+    show_change_link = True
+
 @admin.register(Universidad)
 class UniversidadAdmin(admin.ModelAdmin):
     fields = ['nombre', 'deleted']
+    inlines = [CampusInLine]
 
 # ---------------------------------------------------------------------------------------
 
@@ -76,6 +86,15 @@ class ParentIdListFilter(admin.SimpleListFilter):
     def queryset(self, request, queryset):
         return queryset.filter(parent_id=self.value())
 
+class TitulacionInLine(admin.TabularInline):
+    model = Titulacion
+    fields = ['tipo_titulacion', 'nombre', 'codigo', 'duracion', 'duracion_tipo', 'creditos']
+    readonly_fields = ['tipo_titulacion', 'nombre', 'codigo', 'duracion', 'duracion_tipo', 'creditos']
+    ordering = ['nombre']
+    extra = 0
+    can_delete = False
+    view_on_site = False
+    show_change_link = True
 
 @admin.register(Area)
 class AreaAdmin(admin.ModelAdmin):
@@ -84,12 +103,14 @@ class AreaAdmin(admin.ModelAdmin):
     list_display_links = ['nombre']
     list_filter = [ParentIdListFilter]
     ordering = ['nombre']
+    inlines = [TitulacionInLine]
 
 # ---------------------------------------------------------------------------------------
 
 @admin.register(TipoTitulacion)
 class TipoTitulacionAdmin(admin.ModelAdmin):
     fields = ['nombre', 'deleted']
+    inlines = [TitulacionInLine]
 
 # ---------------------------------------------------------------------------------------
 
@@ -133,6 +154,17 @@ class PlanEstudioProfesionalInLine(admin.TabularInline):
     can_delete = False
     view_on_site = True
 
+class AreaTitulacionInLine(admin.TabularInline):
+    # TODO: como crear una relacion many2many
+    model = Area    # Titulacion.area_set.related.through
+    # fields = ['nombre', 'deleted']
+    # readonly_fields = ['nombre', 'deleted']
+    # ordering = ['nombre']
+    extra = 0
+    can_delete = False
+    view_on_site = False
+    show_change_link = True
+
 @admin.register(Titulacion)
 class TitulacionAdmin(admin.ModelAdmin):
     fields = ['tipo_titulacion', 'area', 'codigo', 'nombre', 'duracion', 'duracion_tipo', 'creditos', 'insercion_laboral', 'deleted']
@@ -140,7 +172,8 @@ class TitulacionAdmin(admin.ModelAdmin):
     list_display_links = ['nombre']
     search_fields = ['nombre']
     ordering = ['nombre']
-    inlines = [TitulacionIdiomaInLine, CompetenciaInLine, SalidaProfesionalInLine, PlanEstudioProfesionalInLine]
+    inlines = [TitulacionIdiomaInLine, PlanEstudioProfesionalInLine, 
+               CompetenciaInLine, SalidaProfesionalInLine]
 
 # ---------------------------------------------------------------------------------------
 
