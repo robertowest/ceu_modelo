@@ -1,0 +1,108 @@
+{% extends 'estudios/base.html' %}
+
+{% block content %}
+    <section class="module gray">
+        <div class="center">
+            <ul class="breadcrumb">
+                <li><a href="https://www.uchceu.es" aria-label="home"><span class="icon icon-28"></span></a></li>
+                <li><span>Estudios</span></li>
+            </ul>
+
+            <h2 class="title mb0">Áreas de conocimiento</h2>
+
+            <!-- selectores -->
+            <div class="search-fields">
+                <form action="" method="POST">
+                    <fieldset class="form-section">
+                        <select name="selected_tipo" id="selected_tipo" class="form-ctrl" onchange="lanzarAjax(this)">
+                            <option value="">Seleccione Tipo ...</option>
+                            {% for obj in tipos %}
+                                <option value="{{obj.id}}">{{obj.nombre}}</option>
+                            {% endfor %}
+                        </select>
+                    </fieldset>
+                    <fieldset class="form-section">
+                        <select name="selected_campus" id="selected_campus" class="form-ctrl" onchange="lanzarAjax(this)">
+                            <option value="">Seleccione Campus ...</option>
+                            {% for obj in campus %}
+                                <option value="{{obj.id}}">{{obj.nombre}}</option>
+                            {% endfor %}
+                        </select>
+                    </fieldset>
+                    <fieldset class="form-section" style="display:none;">
+                        <select name="selected_area" id="selected_area" class="form-ctrl" onchange="lanzarAjax(this)">
+                            <option value="">Seleccione Area ...</option>
+                            {% for obj in areas %}
+                                <option value="{{obj.id}}">{{obj.nombre}}</option>
+                            {% endfor %}
+                        </select>
+                    </fieldset>
+                    <fieldset class="form-section">
+                        <input type="text" class="form-ctrl form-search" placeholder="Buscar">
+                        <button class="ctrl-submit"></button>
+                    </fieldset>
+                </form>
+            </div>
+
+            <!-- selección por areas -->
+            <div class="areas">
+                <ul>
+                    {% for area in areas %}
+                    <li id="circulo_area_{{area.id}}" data-area="{{area.id}}" onclick="seleccionarArea(this)">
+                        <div class="logo">
+                            <span class="icon {% if area.icono %}{{area.icono}}{% else %}i-ingenieria{% endif %}"></span>
+                        </div>
+                        <span class="name">{{area.nombre}}</span>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+            <div id="titulaciones" class="areas-content">
+                <div class="areas-content">
+                    <div style="display: block;">
+                        <!-- resultado de la búsqueda -->
+
+                    </div>
+                </div>
+            </div>            
+
+        </div>
+
+    </section>
+{% endblock content %}
+
+
+{% block jscript %}
+    <script>
+        function lanzarAjax(selectObject) {
+            // console.log(selectObject.name, selectObject.value);
+            $.ajax({
+                url: '{% url "estudios:estudios_buscar_ajax" %}',
+                data: { 
+                    'tipo': $('#selected_tipo option:selected').val(),
+                    'campus': $('#selected_campus option:selected').val(),
+                    'area': $('#selected_area option:selected').val(),
+                },
+                success: function(data) {
+                    console.log('ajax ejecutado');
+                    $('#titulaciones').html( data );
+                },
+                failure: function () {
+                    console.log('Error en la llamada AJAX!') ;
+                    $('#titulaciones').html( '<p>Error en la llamada AJAX!</p>' );
+                }                 
+            });                
+        }
+
+        function seleccionarArea(selectObject) {
+            if (document.getElementById('selected_area').value == selectObject.dataset.area) {
+                document.getElementById('selected_area').value = '';
+            }
+            else {
+                document.getElementById('selected_area').value = selectObject.dataset.area;
+            }
+            document.getElementById('selected_area').onchange();
+        }
+    </script>
+{% endblock jscript %}

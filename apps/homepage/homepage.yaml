@@ -1,0 +1,9 @@
+- slides:
+  - pk: 1
+      image: https://uchceu.es/img/slides/home/ivec.jpg
+      image_movile: https://uchceu.es/img/slides/home/ivec-mov.jpg
+      image_tablet: https://uchceu.es/img/slides/home/ivec-tablet.jpg
+  - pk: 2
+      image: https://uchceu.es/img/slides/home/peliculas-cav.mp4
+      image_movile: https://uchceu.es/img/slides/home/peliculas-cav-mov.mp4
+      image_tablet: https://uchceu.es/img/slides/home/peliculas-cav-tablet.mp4

@@ -1,0 +1,19 @@
+[
+{
+    "model": "dbschema.titulacion",
+    "pk": 1,
+    "fields": {
+        "created_on": "2022-10-03T13:21:45.861Z",
+        "updated_on": "2022-10-03T15:18:31.980Z",
+        "deleted": false,
+        "tipo_titulacion": 5,
+        "duracion": 4,
+        "duracion_tipo": "A",
+        "nombre": "Grado en Educación Infantil",
+        "creditos": 240,
+        "modalidad": "P",
+        "insercion_laboral": null,
+        "sigma": 127
+    }
+}
+]

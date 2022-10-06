@@ -1,5 +1,9 @@
 #!/bin/bash
 git add .
+
+git reset -- config/__init__.py
+git reset -- config/settings.py
+
 git commit -m "modificado por Roberto"
 git branch -M main
 echo "¿Quiere subir los cambios?"

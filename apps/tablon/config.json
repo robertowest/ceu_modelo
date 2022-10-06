@@ -1,0 +1,45 @@
+{
+  "encabezado": {
+    "imagen": "https://www.uchceu.es/img/estudios/grado/cabeceras/educacion-magisterio.jpg",
+    "texto": "Tablón de titulaciones",
+    "subtexto": "texto descriptivo",
+    "slides": [
+      {
+        "imagen": "https://www.uchceu.es/img/estudios/grado/cabeceras/architecture.jpg",
+        "texto": "texto de la imagen", 
+        "subtexto": ""
+      },
+      {
+        "imagen": "https://www.uchceu.es/img/estudios/grado/cabeceras/area-derecho-politicas.jpg",
+        "texto": "texto de la imagen", 
+        "subtexto": "" 
+      },
+      {
+        "imagen": "https://www.uchceu.es/img/estudios/grado/cabeceras/area-empresas-marketing.jpg",
+        "texto": "texto de la imagen", 
+        "subtexto": "" 
+      }
+    ]
+  },  
+  "slogan": "texto del slogan",
+  "sector1": {
+    "columnas": [
+      "texto columna 1",
+      "texto columna 2",
+      "texto columna 3"
+    ]
+  },
+  "salida_profesional": {
+    "titulo": "Salida Profesional",
+    "parrafo": [
+      "texto párrafo 1",
+      "texto párrafo 2",
+      "texto párrafo 3"
+    ],
+    "items": [
+      "texto item 1",
+      "texto item 2",
+      "texto item 3"
+    ]
+  }
+}

@@ -1,0 +1,18 @@
+texto: Tablón de grado
+imagen: https://www.uchceu.es/img/estudios/grado/cabeceras/educacion-magisterio.jpg
+slogan: Guiar, motivar, educar. Los maestros son los que dan forma a nuestro futuro y están detrás del verbo más hermoso que existe:
+sector1:
+  - columnas:
+    texto: texto columna 1
+    texto: texto columna 2
+    texto: texto columna 3
+salida_profesional:
+  titulo: Salida Profesional
+  - parrafo:
+    texto: texto párrafo 1
+    texto: texto párrafo 2
+    texto: texto párrafo 3
+  - items:
+    texto: texto item 1
+    texto: texto item 2
+    texto: texto item 3

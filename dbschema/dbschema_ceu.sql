@@ -262,12 +262,16 @@ left join planes_estudios_view pe on pe.titulacion_id = t.id
 
 Create View ceu_titulaciones_view As
 Select 
-    tt.id tipo_id, tt.nombre tipo, 
+	ct.id,
+    t.id titulacion_id, t.nombre titulacion, t.duracion, t.duracion_tipo, t.creditos,
+    tt.id tipo_titulacion_id, tt.nombre tipo_titulacion,
     c.id campus_id, c.nombre campus,
-    a.id area_id, a.nombre area, 
-	t.id titulacion_id, t.codigo, t.nombre titulacion, t.duracion, t.duracion_tipo, t.creditos
-From ceu_titulaciones t
+    a.parent_id area_id, (select nombre from ceu_areas where id=a.parent_id) area,
+    a.id subarea_id, a.nombre subarea, 
+	ct.citrix, t.sigma
+From ceu_titulaciones t 
 Inner Join ceu_tipos_titulaciones tt On tt.id = t.tipo_titulacion_id
-Inner Join ceu_areas a On a.id = t.area_id
 Inner Join ceu_campus_titulaciones ct On ct.titulacion_id = t.id
 Inner Join ceu_campus c On c.id = ct.campus_id
+Inner Join ceu_areas_titulaciones arti On arti.titulacion_id = t.id
+Inner Join ceu_areas a On a.id = arti.area_id

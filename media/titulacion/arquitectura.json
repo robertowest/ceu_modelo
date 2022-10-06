@@ -1,0 +1,67 @@
+{
+    "encabezado": {
+      "imagen": "https://www.uchceu.es/img/estudios/grado/cabeceras/fundamentos-arquitectura-architecture.jpg",
+      "texto": "Arquitectura",
+      "subtexto": "Grado en Fundamentos de Arquitectura",
+      "slides_XXX": [
+        {
+          "imagen": "https://www.uchceu.es/img/estudios/grado/cabeceras/area-derecho-politicas.jpg",
+          "texto": "texto de la imagen", 
+          "subtexto": "" 
+        },
+        {
+          "imagen": "https://www.uchceu.es/img/estudios/grado/cabeceras/area-empresas-marketing.jpg",
+          "texto": "texto de la imagen", 
+          "subtexto": "" 
+        }
+      ]
+    },  
+    "slogan": "Una experiencia inmersiva internacional única, impulsada por el conocimiento técnico y los viajes formativos. 40 asignaturas, 10 destinos, 5 años y una herramienta compartida: viajar.",
+    "columnas": [
+      {
+        "titulo": "Dirigido a",
+        "texto": "Estudiantes que combinan una mentalidad práctica y científica con un fuerte sentido estético, junto con interés por los procesos tecnológicos así como por los movimientos artísticos. Interpretan y crean lo que les rodea."
+      },
+      {
+        "titulo": "Con un enfoque",
+        "texto": "Innovador a través del viaje como herramienta de aprendizaje. El viaje en sí se transforma en una asignatura troncal propia del grado, uniendo todas las áreas de estudio y asegurando que los estudiantes adquieren los valores de las culturas, lugares y edificios visitados."
+      },
+      {
+        "titulo": "Para que te conviertas",
+        "texto": "En un arquitecto global preparado para desarrollar tu carrera a nivel internacional y con un profundo sentido de la sostenibilidad como factor clave para transformar el mundo."
+      }
+    ],
+    "salida_profesional": [
+        {
+            "titulo": "Salidas profesionales",
+            "parrafo": [
+                "Aunque tradicionalmente la actividad de arquitecto se asocia al desarrollo de proyectos en un estudio propio, en la actualidad existe un amplio abanico de posibilidades de trabajo."
+            ],
+            "items": [
+                "Desarrollo de proyectos de edificación: desde las ideas propias hasta la ejecución y dirección de la obra. ",
+                "Desarrollo de proyectos urbanos: desde pequeñas reformas urbanas hasta estudios medioambientales, proyectos de paisajismo y planes de ordenación del territorio.",
+                "Gestión y actividad inmobiliaria: estudios de viabilidad de proyectos, gestión de trámites administrativos y actividad pericial."
+            ],
+            "parrafo_posterior": [
+                "Las actividades descritas se pueden realizar en un estudio propio o compartido (junto con arquitectos, ingenieros o diseñadores industriales), trabajando para una empresa (promotora, constructora, consultora, inmobiliaria...) o contratado por las administraciones públicas (estatales, autonómicas o municipales).",
+                "El título que se presenta no habilita para ninguna profesión regulada, pero constituye requisito académico de acceso para el Título Oficial de Máster en Arquitectura, que es el título habilitante para el ejercicio de la profesión regulada de Arquitecto, según se fija en el Real Decreto 861/2010, de 2 de julio."
+            ]
+        },
+        {
+            "titulo": "COMPETENCIAS del ARQUITECTO [IDM1] (según Ley 7/1997, de 14 de abril y Ley 38/1999, de 5 de noviembre)",
+            "parrafo": [
+                "Elaboración de los proyectos y dirección de obras de edificación de toda clase y, en particular, las siguientes:"
+            ],
+            "items": [
+                "Edificación agropecuaria",
+                "Edificación industrial y de almacenaje",
+                "Edificación del transporte"
+            ],
+            "parrafo_posterior": [
+                "En este campo son de la exclusiva competencia de los Arquitectos el proyecto y dirección de las obras de edificación destinadas a alguno de lossiguientes usos: administrativo, sanitario, religioso, residencial en todas sus formas, docente y cultural. (Ley 38/1999, de 5 de noviembre, de Ordenación de la Edificación, Arts.10.2.a y 12.3.a) Urbanismo"
+            ]
+        }
+    ],
+    "fin": "fin"
+  }
+  

@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="es-es">
     <head>
         <meta charset="UTF-8">
@@ -8,62 +9,29 @@
 
         <title>{% block titlepage %}Universidad Cardenal Herrera{% endblock titlepage %}</title>
 
-        <link href="https://www.uchceu.es/css/jquery-ui.min.css" rel="stylesheet"/>
-        <link href="https://www.uchceu.es/css/slick.css" rel="stylesheet"/>
-        <link href="https://www.uchceu.es/css/main.css" rel="stylesheet"/>
-        <link href="https://www.uchceu.es/css/child.css" rel="stylesheet">
+        <!-- hojas de estilos -->
+        <link href="{% static 'assets/css/jquery-ui.min.css' %}" rel="stylesheet"/>
+        <link href="{% static 'assets/css/slick.css' %}" rel="stylesheet"/>
+        <link href="{% static 'assets/css/main.css' %}" rel="stylesheet"/>
+        <link href="{% static 'assets/css/child.css' %}" rel="stylesheet">
 
-        <!-- jQuery JS-->
-        <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-        <script src="https://www.uchceu.es/js/main.js"></script>
-        <script src="https://www.uchceu.es/js/imagesloaded.pkgd.min.js"></script>
-        <script src="https://www.uchceu.es/js/masonry.pkgd.min.js"></script>
-        <script src="https://www.uchceu.es/js/jquery-ui.min.js"></script>
-        <script src="https://www.uchceu.es/js/iscroll.js"></script>
-        <script src="https://www.uchceu.es/js/slick.min.js"></script>
+        <!-- javascript -->
+        <script src="{% static 'assets/js/jquery-1.11.3.min.js' %}"></script>
+        <script src="{% static 'assets/js/main.js' %}"></script>
+        <script src="{% static 'assets/js/imagesloaded.pkgd.min.js' %}"></script>
+        <script src="{% static 'assets/js/masonry.pkgd.min.js' %}"></script>
+        <script src="{% static 'assets/js/jquery-ui.min.js' %}"></script>
+        <script src="{% static 'assets/js/iscroll.js' %}"></script>
+        <script src="{% static 'assets/js/slick.min.js' %}"></script>
     </head>
     <body>
         <div class="wrapper">
-            <!-- menú -->
-            {% include 'tablon/includes/menu.html' %}
-
-            <!-- contenido -->
-            {% include 'tablon/includes/content.html' %}
-
-            <!-- pié de página -->
-            {% include 'tablon/includes/footer.html' %}
-
+            {% block content %}{% endblock content %}
         </div>
 
-        <!-- JQuery -->
-        <script src="https://www.uchceu.es/js/child.js"></script>
-        <script>
-            function lanzarAjax(selectObject) {
-                // console.log(selectObject.name, selectObject.value);
-                $.ajax({
-                    url: '/tablon/tablon_buscar_ajax/',
-                    data: { 
-                        'tipo': $('#selected_tipo option:selected').val(),
-                        'campus': $('#selected_campus option:selected').val(),
-                        'area': $('#selected_area option:selected').val(),
-                    },
-                    success: function( data ) {
-                        console.log(data);
-                        $('#mensaje').html( data.mensaje );
-                    }
-                });                
-            }
-
-            function seleccionarArea(selectObject) {
-                if (document.getElementById('selected_area').value == selectObject.dataset.area) {
-                    document.getElementById('selected_area').value = '';
-                }
-                else {
-                    document.getElementById('selected_area').value = selectObject.dataset.area;
-                }
-                document.getElementById('selected_area').onchange();
-            }
-        </script>
+        <!-- javascript -->
+        <script src="{% static 'assets/js/child.js' %}"></script>
+        {% block jscript %}{% endblock jscript %}
 
     </body>
 

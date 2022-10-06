@@ -1,83 +1,25 @@
-<html>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+{% extends 'homepage/base.html' %}
 
-    <!-- Font Awesome CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+{% block header %}
+    {% include 'homepage/includes/header.html' %}
+{% endblock header %}            
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-chained/1.0.1/jquery.chained.min.js"></script>    
-</html>
-<body>
-    <div class="container-fluid">
-        <h1>Áreas de Conocimiento</h1>
 
-        <form method="post">
-            {% csrf_token %}
-            <div class="row align-items-end">
-                <div class="col-4">
-                    <select id="tipostitulaciones" name="tipostitulaciones" class="form-select" aria-label="Default select example">
-                        {% for tipo in tipostitulaciones %}
-                            <option value="{{tipo.NombreTipoEstudio}}">{{tipo.NombreTipoEstudio}}</option>
-                        {% endfor %}
-                    </select>
-                </div>
-            </div>
+{% block content %}
 
-            <div class="row align-items-end mt-2">
-                <div class="col-10">
-                    <select id="titulaciones" name="titulaciones" class="form-select" aria-label="Default select example">
-                        {% for titulacion in titulaciones %}
-                            {% comment "" %}
-                            <option value="{{titulacion.IdPlanEstudioNK}}" {% if titulacion.IdPlanEstudioNK == '2011' %}selected{% endif %}>{{titulacion.NombrePlanEstudio}}</option>
-                            {% endcomment %}
-                            <option value="{{titulacion.IdPlanEstudioNK}}" class="{{titulacion.NombreTipoEstudio}}">{{titulacion.NombrePlanEstudio}}</option>
-                        {% endfor %}
-                    </select>
-                </div>
-            </div>
-
-            <div class="row align-items-end mt-2">
-                <div class="col-10">
-                    <button type="submit" class="btn btn-outline-primary">Cargar asignaturas</button>
-                </div>
-            </div>
-
-        </form>
-
-        <div class="row align-items-end mt-4">
-            <div class="col-10">
-                <table class="table table-striped">
-                    <thead>
-                        <tr>
-                            <th scope="col">Curso</td>
-                            <th scope="col">Código</td>
-                            <th scope="col">Asignatura</td>
-                            <th scope="col">Tipo</td>
-                            <th scope="col">Créditos</td>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {% for asignatura in asignaturas %}
-                        <tr>
-                            <td>{{asignatura.Curso}}</td>
-                            <td>{{asignatura.IdAsignaturaNK}}</td>
-                            <td>{{asignatura.NombreAsignatura}}</td>
-                            <td>{{asignatura.CodigoClaseAsignatura}}</td>
-                            <td>{{asignatura.Creditos}}</td>
-                        </tr>
-                        {% endfor %}
-                    </tbody>
-                </table>
-            </div>
+    <div class="fix-col-inline-block">
+        <div class="lg_4 inline-block padding">
+            <h3>Texto simple</h3>
+            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare dolor, quis ullamcorper ligula sodales at. Nulla tellus elit, varius non commodo eget, mattis vel eros. In sed ornare nulla.</p>
+            <p> Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula ut id elit. </p>
+            <p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec sed odio dui. </p>
         </div>
-    
-    </div>    
+        <div class="lg_4 inline-block padding">
+            columna lg_4
+        </div>
+        <div class="lg_4 inline-block padding">
+            columna lg_4
+        </div>
+    </div> 
 
-
-    <script type="text/javascript">
-        $(function() {
-            $("#titulaciones").chained("#tipostitulaciones");
-        });
-    </script>
-</body>
+{% endblock content %}

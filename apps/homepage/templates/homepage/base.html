@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="es-es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, minimum-scale=1.0">
+        <meta name="author" content="Universidad CEU Cardenal Herrera">
+        <meta name="description" content="Recibirás formación con prácticas para trabajar y desarrollar tu profesión en Empresas y Agencias de Comunicación y Publicidad con un perfil internacional.">
+
+        <title>{% block titlepage %}Universidad Cardenal Herrera{% endblock titlepage %}</title>
+
+        <!-- hojas de estilos -->
+        <link href="{% static 'assets/css/jquery-ui.min.css' %}" rel="stylesheet"/>
+        <link href="{% static 'assets/css/slick.css' %}" rel="stylesheet"/>
+        <link href="{% static 'assets/css/main.css' %}" rel="stylesheet"/>
+        <link href="{% static 'assets/css/child.css' %}" rel="stylesheet">
+
+        <!-- javascript -->
+        <script src="{% static 'assets/js/jquery-1.11.3.min.js' %}"></script>
+        <script src="{% static 'assets/js/main.js' %}"></script>
+        <script src="{% static 'assets/js/imagesloaded.pkgd.min.js' %}"></script>
+        <script src="{% static 'assets/js/masonry.pkgd.min.js' %}"></script>
+        <script src="{% static 'assets/js/jquery-ui.min.js' %}"></script>
+        <script src="{% static 'assets/js/iscroll.js' %}"></script>
+        <script src="{% static 'assets/js/slick.min.js' %}"></script>
+    </head>
+    <body>
+        <div class="wrapper">
+            
+            <!-- menú -->
+            {% include 'homepage/includes/menu.html' %}
+            {% block header %}
+                {% include 'homepage/includes/header.html' %}
+            {% endblock header %}
+
+            <!-- contenido -->
+            {% block content %}
+                {% include 'homepage/includes/content.html' %}
+            {% endblock content %}
+
+            <!-- pié de página -->
+            {% include 'homepage/includes/footer.html' %}
+
+        </div>
+
+        <!-- javascript -->
+        <script src="{% static 'assets/js/child.js' %}"></script>
+        {% block jscript %}{% endblock jscript %}
+
+    </body>
+
+</html>

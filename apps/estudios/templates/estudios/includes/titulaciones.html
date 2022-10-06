@@ -1,0 +1,54 @@
+{% load estudios_extras %}
+
+{% if titulaciones %}
+
+    <div class="cover-acordeon">
+        
+        {% with 0 as corte_control %}
+            {% for obj in titulaciones %}
+                {% if corte_control != obj.subarea_id %}
+                    {% if control_cut != 0 %}
+                        {# cerramos el acordeon anterior antes de abrir otro #}
+                            </ul><br>
+                        </div>
+                    </div>
+                    {% endif %}
+
+                    {# abrimos un nuevo acordeon #}
+                    <div class="acordeon">
+                        <h3 class="tag">{{obj.subarea}}</h3>
+                        <div class="acordeon-box">
+                            <ul class="list-info list-info-none">
+                                <li>
+                                    <span class="description">&nbsp;</span>
+                                    <strong class="lang">Idioma</strong>
+                                    <strong class="years">Duración</strong>
+                                    <strong class="etcs">Créditos</strong>
+                                </li>
+                            </ul>
+                            <ul class="list-info">                    
+                    
+                    {# actualizamos la variable de control #}
+                    {% update_variable obj.subarea_id as corte_control %}
+
+                {% endif %}
+
+                {# iteracion #}
+                <li>
+                    <span class="description">{{obj.titulacion}}</span>
+                    <strong class="lang">¿?</strong>
+                    <strong class="years">{{obj.duracion}} {{obj.duracion_tipo}}</strong>
+                    <strong class="etcs">{{obj.creditos}} ETCS</strong>
+                </li>                                    
+
+            {% endfor %}
+            {# cerramos el ultimo acordeon #}
+                    </ul><br>
+                </div>
+            </div>
+
+        {% endwith %}            
+
+    </div>
+
+{% endif %}

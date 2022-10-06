@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<django-objects version="1.0">
+    <object model="dbschema.titulacion" pk="1">
+        <field name="created_on" type="DateTimeField">2022-10-03T13:21:45.861293+00:00</field>
+        <field name="updated_on" type="DateTimeField">2022-10-03T15:18:31.980371+00:00</field>
+        <field name="deleted" type="BooleanField">False</field>
+        <field name="tipo_titulacion" rel="ManyToOneRel" to="dbschema.tipotitulacion">5</field>
+        <field name="duracion" type="IntegerField">4</field>
+        <field name="duracion_tipo" type="CharField">A</field>
+        <field name="nombre" type="CharField">Grado en Educación Infantil</field>
+        <field name="creditos" type="SmallIntegerField">240</field>
+        <field name="modalidad" type="CharField">P</field>
+        <field name="insercion_laboral" type="DecimalField"><None></None></field>
+        <field name="sigma" type="BigIntegerField">127</field>
+    </object>
+</django-objects>

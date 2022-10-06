@@ -1,14 +1,18 @@
+from email.policy import default
+from tabnanny import verbose
 from django.conf import settings
 from django.db import models
 from django.urls import reverse
 from django.utils.html import mark_safe
 from django.utils.translation import ugettext_lazy as _
 
+from ckeditor.fields import RichTextField
+
 
 class Auditable(models.Model):
     created_on = models.DateTimeField('Creado', auto_now_add=True, editable=False, null=True, blank=True)
     updated_on = models.DateTimeField('Modificado', auto_now=True, editable=False, null=True, blank=True)
-    deleted = models.BooleanField('Eliminado', default=False)
+    is_deleted = models.BooleanField('Eliminado', default=False)
 
     exclude_fields = ['created_on', 'updated_on']
 
@@ -137,7 +141,7 @@ class Campus(Auditable):
 class Area(Auditable):
     nombre = models.CharField(max_length=50)
     icono = models.CharField(max_length=25, blank=True, null=True)
-    parent_id = models.ForeignKey('self', models.DO_NOTHING, blank=True, null=True)
+    parent = models.ForeignKey('self', models.DO_NOTHING, blank=True, null=True)
 
     class Meta:
         # managed = False
@@ -164,16 +168,20 @@ class TipoTitulacion(Auditable):
 
 class Titulacion(Auditable):
     TIPO = ( ('A', 'año'), ('M', 'mes'), ('D', 'día'), ('H', 'hora') )
+    MODALIDAD = ( ('P', 'Presencial'), ('S', 'Semipresencial'), ('O', 'Online') )
     
     campus = models.ManyToManyField(Campus, through='CampusTitulacion')
+    area = models.ManyToManyField(Area, through='AreaTitulacion',)
     tipo_titulacion = models.ForeignKey(TipoTitulacion, models.DO_NOTHING, blank=True, null=True)
-    area = models.ForeignKey(Area, models.DO_NOTHING, blank=True, null=True)
     duracion = models.IntegerField(blank=True, null=True, help_text='cantidad de (año/mes/dia/hora)')
     duracion_tipo = models.CharField(max_length=1, blank=True, null=True, choices=TIPO)
-    codigo = models.CharField(max_length=8, help_text='código original de referencia')
     nombre = models.CharField(max_length=160, help_text='solo para referencia, utilizar asignatura_idiomas.nombre')
     creditos = models.SmallIntegerField(blank=True, null=True, help_text='sumatoria de créditos de todas las materias')
+    modalidad = models.CharField(max_length=1, blank=True, null=True, choices=MODALIDAD)
     insercion_laboral = models.DecimalField(max_digits=5, decimal_places=1, blank=True, null=True, help_text='tasa de inserción laboral según ranking BBVA e IVIE')
+    citrix = models.CharField(max_length=5, blank=True, null=True, help_text='código referencia CITRIX', verbose_name='Cód. CITRIX', unique=True)
+    sigma = models.BigIntegerField(blank=True, null=True, help_text='código referencia SIGMA', verbose_name='Cód. SIGMA', unique=True)
+
 
     class Meta:
         # managed = False
@@ -186,41 +194,20 @@ class Titulacion(Auditable):
 
 
 class TitulacionIdioma(Auditable):
+    IDIOMA = ( ('es', 'Español'), ('en', 'Inglés'), ('fr', 'Francés') )
+    
     titulacion = models.ForeignKey(Titulacion, models.DO_NOTHING, blank=True, null=True)
     nombre = models.CharField(max_length=160)
-    idioma = models.CharField(max_length=2, blank=True, null=True, help_text='idioma en el que se impartirá la asignatura (es, en, fr)')
+    idioma = models.CharField(max_length=2, default='es', choices=IDIOMA, blank=True, null=True, help_text='idioma en el que se impartirá la asignatura (es, en, fr)')
 
     class Meta:
         db_table = 'ceu_titulacion_idiomas'
         verbose_name = 'Titulación Idioma'
         verbose_name_plural = 'Titulación Idiomas'
+        unique_together = ['titulacion', 'idioma']
 
     def __str__(self):
         return self.nombre
-
-
-class Competencia(Auditable):
-    titulacion = models.ForeignKey(Titulacion, models.DO_NOTHING, blank=True, null=True)
-    grupo = models.CharField(max_length=30, blank=True, null=True)
-    texto = models.TextField(blank=True, null=True)
-
-    class Meta:
-        # managed = False
-        db_table = 'ceu_competencias'
-        verbose_name = 'Competencia'
-        verbose_name_plural = 'Competancias'
-
-
-class SalidaProfesional(Auditable):
-    titulacion = models.ForeignKey(Titulacion, models.DO_NOTHING, blank=True, null=True)
-    grupo = models.CharField(max_length=60, blank=True, null=True)
-    texto = models.TextField(blank=True, null=True)
-
-    class Meta:
-        # managed = False
-        db_table = 'ceu_salidas_profesionales'
-        verbose_name = 'Salida Profesional'
-        verbose_name_plural = 'Salidas Profesionales'
 
 
 class PlanEstudio(Auditable):
@@ -232,6 +219,7 @@ class PlanEstudio(Auditable):
         db_table = 'ceu_planes_estudios'
         verbose_name = 'Plan de Estudio'
         verbose_name_plural = 'Planes de Estudios'
+        unique_together = ['titulacion', 'ciclo_lectivo']
 
     def __str__(self):
         return '{} - {}'.format(self.ciclo_lectivo, self.titulacion.nombre)
@@ -239,6 +227,7 @@ class PlanEstudio(Auditable):
 
 class Curso(Auditable):
     plan_estudio = models.ForeignKey(PlanEstudio, models.DO_NOTHING, blank=True, null=True)
+    curso = models.SmallIntegerField()
     nombre = models.CharField(max_length=50)
 
     class Meta:
@@ -246,6 +235,7 @@ class Curso(Auditable):
         db_table = 'ceu_cursos'
         verbose_name = 'Curso'
         verbose_name_plural = 'Cursos'
+        unique_together = ['plan_estudio', 'curso']
 
     def __str__(self):
         return '{} {} - {}'.format(self.plan_estudio.ciclo_lectivo, self.plan_estudio.titulacion, self.nombre)
@@ -253,9 +243,10 @@ class Curso(Auditable):
 
 class Asignatura(Auditable):
     curso = models.ManyToManyField(Curso, through='CursoAsignatura')
-    codigo = models.CharField(max_length=9, blank=True, null=True, help_text='código original de referencia')
     nombre = models.CharField(max_length=160, help_text='solo para referencia, utilizar asignatura_idiomas.nombre')
-    creditos = models.SmallIntegerField(blank=True, null=True)
+    creditos = models.DecimalField(max_digits=5, decimal_places=1, blank=True, null=True)
+    citrix = models.CharField(max_length=5, blank=True, null=True, help_text='código referencia CITRIX', verbose_name='Cód. CITRIX', unique=True)
+    sigma = models.BigIntegerField(blank=True, null=True, help_text='código referencia SIGMA', verbose_name='Cód. SIGMA', unique=True)
 
     class Meta:
         # managed = False
@@ -277,6 +268,7 @@ class AsignaturaIdioma(Auditable):
         db_table = 'ceu_asignatura_idiomas'
         verbose_name = 'Asignatura Idioma'
         verbose_name_plural = 'Asignatura Idiomas'
+        unique_together = ['asignatura', 'idioma']
 
     def __str__(self):
         # return '{} / {}'.format(self.asignatura.id, self.idioma)
@@ -299,6 +291,14 @@ class Persona(Auditable):
 
     def __str__(self):
         return '{}, {}'.format(self.apellidos, self.nombre)
+
+    @property
+    def nombre_apellidos(self):
+        return '{} {}'.format(self.persona.nombre, self.persona.apellidos)
+
+    @property
+    def apellidos_nombre(self):
+        return '{}, {}'.format(self.persona.apellidos, self.persona.nombre)
     
 
 class Profesor(Auditable):
@@ -353,9 +353,10 @@ class CampusTitulacion(Auditable):
     id = models.BigAutoField(primary_key=True)
     campus = models.ForeignKey(Campus, models.DO_NOTHING, related_name='campus_titulacion')
     titulacion = models.ForeignKey(Titulacion, models.DO_NOTHING, related_name='titulacion_campus')
-    codigo = models.CharField(max_length=5)
-    guid = models.CharField(max_length=36)
+    guid = models.CharField(max_length=36, blank=True, null=True)
     plazas = models.SmallIntegerField(blank=True, null=True)
+    url_calendario = models.CharField(max_length=160, blank=True, null=True, verbose_name='URL Calendario')
+    url_horario = models.CharField(max_length=160, blank=True, null=True, verbose_name='URL Horario')
 
     class Meta:
         # managed = False
@@ -368,6 +369,22 @@ class CampusTitulacion(Auditable):
         return 'id: {} / Campus: {} / Titulación: {}'.format(self.id, self.campus.id, self.titulacion.id)
 
 
+class AreaTitulacion(Auditable):
+    id = models.BigAutoField(primary_key=True)
+    area = models.ForeignKey(Area, models.DO_NOTHING, related_name='area_titulacion', limit_choices_to={'parent_id__isnull': False})
+    titulacion = models.ForeignKey(Titulacion, models.DO_NOTHING, related_name='titulacion_area')
+
+    class Meta:
+        # managed = False
+        db_table = 'ceu_areas_titulaciones'
+        verbose_name = 'Area Titulación'
+        verbose_name_plural = 'Areas Titulaciones'
+        unique_together = ['area', 'titulacion']
+
+    def __str__(self):
+        return 'id: {} / Area: {} / Titulación: {}'.format(self.id, self.area.id, self.titulacion.id)
+
+
 class CursoAsignatura(Auditable):
     PERIODO = ( ('T', 'Trimestre'), ('C', 'Cuatrimestre'), ('S', 'Semestre') )
     TIPO = ( ('FB', 'Formación básica'), ('OB', 'Obligatoria'), ('OP', 'Optativa'), ('PR', 'Práctica'), ('TFG', 'Trabajo fin de grado') )
@@ -377,8 +394,9 @@ class CursoAsignatura(Auditable):
     asignatura = models.ForeignKey(Asignatura, models.DO_NOTHING, related_name='asignatura_curso')
     profesor = models.ForeignKey(Profesor, models.DO_NOTHING, blank=True, null=True)
     periodo = models.CharField(max_length=2, blank=True, null=True, choices=PERIODO)
-    creditos = models.SmallIntegerField(blank=True, null=True)
+    creditos = models.DecimalField(max_digits=5, decimal_places=1, blank=True, null=True)
     tipo = models.CharField(max_length=3, blank=True, null=True, choices=TIPO)
+    url_guia = models.CharField(max_length=160, blank=True, null=True)
 
     class Meta:
         # managed = False
@@ -410,21 +428,129 @@ class ProfesorFuncion(Auditable):
         return 'id: {} / Profesor: {} / Función: {}'.format(self.id, self.profesor.id, self.funcion.id)
 
 
+# -----------------------------------------------------------------------------
+# tablas relacionadas con las tablas ManyToMany
+# -----------------------------------------------------------------------------
+
+class JPA(Auditable):
+    TIPO = ( ('O', 'Online'), ('P', 'Presencial'), ('S', 'Semipresencial') )
+
+    campus_titulacion = models.ForeignKey(CampusTitulacion, models.DO_NOTHING, blank=True, null=True)
+    fecha = models.DateField()
+    tipo = models.CharField(max_length=1, default='P', choices=TIPO, blank=True, null=True, help_text='Online, Presencial, Semipresencial)')
+    es_nacional = models.BooleanField('¿Nacional?', default=True)
+
+    class Meta:
+        db_table = 'ceu_jpa'
+        verbose_name = 'Jornada a Puerta Abierta'
+        verbose_name_plural = 'Jornadas de Puertas Abiertas'
+
+    def __str__(self):
+        return self.id
+
+
+class JPAIdiomas(Auditable):
+    IDIOMA = ( ('es', 'Español'), ('en', 'Inglés'), ('fr', 'Francés') )
+    
+    jpa = models.ForeignKey(JPA, models.DO_NOTHING, blank=True, null=True)
+    idioma = models.CharField(max_length=2, default='es', choices=IDIOMA, blank=True, null=True, help_text='idioma en el que se impartirá la asignatura (es, en, fr)')
+
+    class Meta:
+        db_table = 'ceu_jpa_idiomas'
+        verbose_name = 'JPA Idioma'
+        verbose_name_plural = 'JPA Idiomas'
+        unique_together = ['jpa', 'idioma']
+
+    def __str__(self):
+        return self.id
+
+
+
+# -----------------------------------------------------------------------------
+# vistas
+# -----------------------------------------------------------------------------
+
+
 class TitulacionesView(models.Model): 
-    id = models.BigIntegerField(primary_key=True)
-    tipo_id = models.BigIntegerField()
-    tipo = models.CharField(max_length=50)
+    id = models.BigIntegerField(primary_key=True)   # campo unico para la vista   ceu_areas_titulaciones.['area', 'titulacion']
+    
     campus_id = models.BigIntegerField()
     campus = models.CharField(max_length=50)
+
     area_id = models.BigIntegerField()
     area = models.CharField(max_length=50)
+    subarea_id = models.BigIntegerField()
+    subarea = models.CharField(max_length=50)
+    
+    tipo_titulacion_id = models.BigIntegerField()
+    tipo_titulacion = models.CharField(max_length=50)
+
     titulacion_id = models.BigIntegerField()
-    codigo = models.CharField(max_length=8)
     titulacion = models.CharField(max_length=160)
+    sigma = models.BigIntegerField()
+    citrix = models.CharField(max_length=5)
+
     duracion = models.IntegerField()
-    duracion_tipo = models.CharField(max_length=1)
+    TIPO = ( ('A', 'año'), ('M', 'mes'), ('D', 'día'), ('H', 'hora') )
+    duracion_tipo = models.CharField(max_length=1, blank=True, null=True, choices=TIPO)
     creditos = models.SmallIntegerField()
     
     class Meta:
         managed = False
         db_table = 'ceu_titulaciones_view'
+
+
+
+
+
+# -----------------------------------------------------------------------------
+# pruebas, posiblemente no serán necesarias
+# -----------------------------------------------------------------------------
+
+
+class TitulacionAux(Auditable):
+    TIPO = ( ('F', 'Fijo'), ('M', 'Móvil') )
+    
+    titulacion = models.ForeignKey(Titulacion, models.DO_NOTHING, blank=True, null=True)
+    tipo_encabezado = models.CharField(max_length=1, choices=TIPO, default='F')
+    
+    url_imagen_1 = models.CharField(max_length=160)
+    text_imagen_1 = models.CharField(max_length=160)
+    subtext_imagen_1 = models.CharField(max_length=160)
+
+    url_imagen_2 = models.CharField(max_length=160, blank=True, null=True)
+    text_imagen_2 = models.CharField(max_length=160, blank=True, null=True)
+    subtext_imagen_2 = models.CharField(max_length=160, blank=True, null=True)
+
+    url_imagen_3 = models.CharField(max_length=160, blank=True, null=True)
+    text_imagen_3 = models.CharField(max_length=160, blank=True, null=True)
+    subtext_imagen_3 = models.CharField(max_length=160, blank=True, null=True)
+
+    class Meta:
+        db_table = 'ceu_titulacion_aux'
+        verbose_name = 'Titulación AUX'
+        verbose_name_plural = 'Titulaciones AUX'
+
+
+class TitulacionHTML(Auditable):
+    titulacion = models.ForeignKey(Titulacion, models.DO_NOTHING, blank=True, null=True)
+    grupo = models.CharField(max_length=80, blank=True, null=True)
+    titulo = models.CharField(max_length=80, blank=True, null=True) 
+    texto = RichTextField(blank=True, null=True)
+
+    class Meta:
+        db_table = 'ceu_titulacion_html'
+        verbose_name = 'Titulación HTML'
+        verbose_name_plural = 'Titulaciones HTML'
+
+
+class TitulacionURL(Auditable):
+    titulacion = models.ForeignKey(Titulacion, models.DO_NOTHING, blank=True, null=True)
+    grupo = models.CharField(max_length=80, blank=True, null=True)
+    url = models.CharField(max_length=180, blank=True, null=True) 
+    texto = models.CharField(max_length=80, blank=True, null=True) 
+
+    class Meta:
+        db_table = 'ceu_titulacion_url'
+        verbose_name = 'Titulación URL'
+        verbose_name_plural = 'Titulaciones URL'

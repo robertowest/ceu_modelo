@@ -86,6 +86,173 @@
             "nombre": "Gastronomía",
             "icono": "i-gastronomia"
         }
-    }
-]
+    },
+    {
+        "model": "dbschema.area",
+        "pk": 12,
+        "fields": {
+            "nombre": "Enfermería",
+            "parent_id": 1
+        }
+    },    
+    {
+        "model": "dbschema.area",
+        "pk": 13,
+        "fields": {
+            "nombre": "Farmacia",
+            "parent_id": 1
+        }
+    },
+    {
+        "model": "dbschema.area",
+        "pk": 14,
+        "fields": {
+            "nombre": "Fisioterapia",
+            "parent_id": 1
+        }
+    },
+    {
+        "model": "dbschema.area",
+        "pk": 15,
+        "fields": {
+            "nombre": "Medicina",
+            "parent_id": 1
+        }
+    },
+    {
+        "model": "dbschema.area",
+        "pk": 16,
+        "fields": {
+            "nombre": "Nutrición",
+            "parent_id": 1
+        }
+    },
+    {
+        "model": "dbschema.area",
+        "pk": 17,
+        "fields": {
+            "nombre": "Odontología",
+            "parent_id": 1
+        }
+    },
+    {
+        "model": "dbschema.area",
+        "pk": 18,
+        "fields": {
+            "nombre": "Óptica",
+            "parent_id": 1
+        }
+    },
+    {
+        "model": "dbschema.area",
+        "pk": 19,
+        "fields": {
+            "nombre": "Comunicación Audiovisual",
+            "parent_id": 2
+        }
+    },
+    {
+        "model": "dbschema.area",
+        "pk": 20,
+        "fields": {
+            "nombre": "Periodismo",
+            "parent_id": 2
+        }
+    },
+    {
+        "model": "dbschema.area",
+        "pk": 21,
+        "fields": {
+            "nombre": "Publicidad",
+            "parent_id": 2
+        }
+    },
+    {
+        "model": "dbschema.area",
+        "pk": 21,
+        "fields": {
+            "nombre": "Ciencias Políticas",
+            "parent_id": 3
+        }
+    },
+    {
+        "model": "dbschema.area",
+        "pk": 22,
+        "fields": {
+            "nombre": "Derecho",
+            "parent_id": 3
+        }
+    },
+    {
+        "model": "dbschema.area",
+        "pk": 23,
+        "fields": {
+            "nombre": "Diseño",
+            "parent_id": 4
+        }
+    },
+    {
+        "model": "dbschema.area",
+        "pk": 24,
+        "fields": {
+            "nombre": "Educación",
+            "parent_id": 5
+        }
+    },
+    {
+        "model": "dbschema.area",
+        "pk": 25,
+        "fields": {
+            "nombre": "Empresa",
+            "parent_id": 6
+        }
+    },
+    {
+        "model": "dbschema.area",
+        "pk": 26,
+        "fields": {
+            "nombre": "Marketing",
+            "parent_id": 6
+        }
+    },
+    {
+        "model": "dbschema.area",
+        "pk": 27,
+        "fields": {
+            "nombre": "Deporte",
+            "parent_id": 7
+        }
+    },
+    {
+        "model": "dbschema.area",
+        "pk": 28,
+        "fields": {
+            "nombre": "Ingeniería",
+            "parent_id": 8
+        }
+    },
+    {
+        "model": "dbschema.area",
+        "pk": 29,
+        "fields": {
+            "nombre": "Arquitectura",
+            "parent_id": 9
+        }
+    },
+    {
+        "model": "dbschema.area",
+        "pk": 30,
+        "fields": {
+            "nombre": "Veterinaria",
+            "parent_id": 10
+        }
+    },
+    {
+        "model": "dbschema.area",
+        "pk": 31,
+        "fields": {
+            "nombre": "Gastronomía",
+            "parent_id": 11
+        }
+    }]
     

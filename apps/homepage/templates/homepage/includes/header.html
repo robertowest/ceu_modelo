@@ -1,0 +1,33 @@
+{% load static %}
+
+{% if config.encabezado.slides|length %}
+    <!-- encabezado con varias imágenes -->
+    <div class="gallery">
+        {% for slide in config.encabezado.slides %}
+        <div class="slide">
+            <img src="{{slide.imagen}}" alt="">
+            <div class="box-info">
+                <div class="center">
+                    <h2 class="title">{{slide.texto}}</h2>
+                    <p>{{slide.subtexto}}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+{% else %}
+    <!-- encabezado con una sola imágen -->
+    <div class="gallery">
+        <div class="slide">
+            <img src="{{config.encabezado.imagen}}" alt="">
+            <div class="box-info">
+                <div class="center">
+                    <h2 class="title">{{config.encabezado.texto}}</h2>
+                    <p>{{config.encabezado.subtexto}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+{% endif %}    

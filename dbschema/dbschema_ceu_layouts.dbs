@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="dbSchema" id="Project-15cb" database="MySql" >
+	<schema name="public" >
+		<table name="areas" spec="" >
+			<column name="id" type="INT" jt="4" mandatory="y" />
+			<column name="nombre" type="VARCHAR" length="50" jt="12" mandatory="y" />
+			<column name="icono" type="VARCHAR" length="25" jt="12" />
+			<column name="parent_id" type="INT" jt="4" />
+			<index name="pk_areas" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<index name="areas_parent_id_eda475aa" unique="NORMAL" >
+				<column name="parent_id" />
+			</index>
+			<fk name="fk_areas areas" to_schema="public" to_table="areas" options="" >
+				<fk_column name="parent_id" pk="id" />
+			</fk>
+		</table>
+		<table name="areas_titulaciones" spec="" >
+			<column name="id" type="INT" jt="4" mandatory="y" />
+			<column name="area_id" type="INT" jt="4" mandatory="y" />
+			<column name="titulacion_id" type="INT" jt="4" mandatory="y" />
+			<index name="pk_areas_titulaciones" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<index name="unq_areas_titulaciones" unique="UNIQUE_KEY" >
+				<column name="area_id" />
+				<column name="titulacion_id" />
+			</index>
+			<fk name="fk_areas_titulaciones areas" to_schema="public" to_table="areas" >
+				<fk_column name="area_id" pk="id" />
+			</fk>
+			<fk name="fk_areas_titulaciones titulaciones" to_schema="public" to_table="titulaciones" >
+				<fk_column name="titulacion_id" pk="id" />
+			</fk>
+		</table>
+		<table name="asignatura_idiomas" spec="" >
+			<column name="id" type="INT" jt="4" mandatory="y" />
+			<column name="asignatura_id" type="INT" jt="4" />
+			<column name="nombre" type="VARCHAR" length="160" jt="12" mandatory="y" />
+			<column name="idioma" type="VARCHAR" length="2" jt="12" />
+			<index name="pk_asignatura_idiomas" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<fk name="fk_asignatura_idiomas asignaturas" to_schema="public" to_table="asignaturas" >
+				<fk_column name="asignatura_id" pk="id" />
+			</fk>
+		</table>
+		<table name="asignaturas" spec="" >
+			<column name="id" type="INT" jt="4" mandatory="y" />
+			<column name="nombre" type="VARCHAR" length="160" jt="12" mandatory="y" />
+			<column name="creditos" type="DECIMAL" jt="3" />
+			<column name="citrix" type="VARCHAR" length="6" jt="12" />
+			<column name="sigma" type="BIGINT" jt="-5" />
+			<index name="pk_asignaturas" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<index name="unq_asignaturas_citrix" unique="UNIQUE_KEY" >
+				<column name="citrix" />
+			</index>
+			<index name="unq_asignaturas_sigma" unique="UNIQUE_KEY" >
+				<column name="sigma" />
+			</index>
+		</table>
+		<table name="campus" spec="" >
+			<column name="id" type="INT" jt="4" mandatory="y" />
+			<column name="universidad_id" type="INT" jt="4" />
+			<column name="nombre" type="VARCHAR" length="50" jt="12" mandatory="y" />
+			<index name="pk_campus" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<fk name="fk_campus universidades" to_schema="public" to_table="universidades" >
+				<fk_column name="universidad_id" pk="id" />
+			</fk>
+		</table>
+		<table name="campus_titulaciones" spec="" >
+			<column name="id" type="INT" jt="4" mandatory="y" />
+			<column name="campus_id" type="INT" jt="4" mandatory="y" />
+			<column name="titulacion_id" type="INT" jt="4" mandatory="y" />
+			<column name="guid" type="VARCHAR" length="36" jt="12" />
+			<column name="plazas" type="SMALLINT" jt="5" />
+			<column name="url_calendario" type="VARCHAR" length="160" jt="12" />
+			<column name="url_horario" type="VARCHAR" length="160" jt="12" />
+			<column name="citrix" type="VARCHAR" length="5" jt="12" />
+			<column name="sigma" type="BIGINT" jt="-5" />
+			<index name="pk_campus_titulaciones" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<index name="unq_camtit_sigma" unique="UNIQUE_KEY" >
+				<column name="sigma" />
+			</index>
+			<index name="unq_camtit_citrix" unique="UNIQUE_KEY" >
+				<column name="citrix" />
+			</index>
+			<index name="unq_campus_titulaciones" unique="UNIQUE_KEY" >
+				<column name="campus_id" />
+				<column name="titulacion_id" />
+			</index>
+			<fk name="fk_campus_titulaciones campus" to_schema="public" to_table="campus" >
+				<fk_column name="campus_id" pk="id" />
+			</fk>
+			<fk name="fk_campus_titulaciones titulaciones" to_schema="public" to_table="titulaciones" >
+				<fk_column name="titulacion_id" pk="id" />
+			</fk>
+		</table>
+		<table name="cursos" spec="" >
+			<column name="id" type="INT" jt="4" mandatory="y" />
+			<column name="plan_estudio_id" type="INT" jt="4" />
+			<column name="curso" type="SMALLINT" jt="5" mandatory="y" >
+				<comment><![CDATA[número de curso [1, 2, 3 ... n]]]></comment>
+			</column>
+			<column name="nombre" type="VARCHAR" length="50" jt="12" mandatory="y" />
+			<index name="pk_cursos" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<index name="unq_cursos" unique="UNIQUE_KEY" >
+				<column name="plan_estudio_id" />
+				<column name="curso" />
+			</index>
+			<fk name="fk_cursos planes_estudios" to_schema="public" to_table="planes_estudios" >
+				<fk_column name="plan_estudio_id" pk="id" />
+			</fk>
+		</table>
+		<table name="cursos_asignaturas" spec="" >
+			<column name="id" type="INT" jt="4" mandatory="y" />
+			<column name="curso_id" type="INT" jt="4" mandatory="y" />
+			<column name="asignatura_id" type="INT" jt="4" mandatory="y" />
+			<column name="profesor_id" type="INT" jt="4" />
+			<column name="periodo" type="VARCHAR" length="2" jt="12" />
+			<column name="creditos" type="DECIMAL" jt="3" />
+			<column name="tipo" type="VARCHAR" length="3" jt="12" />
+			<column name="url_guia" type="VARCHAR" length="160" jt="12" />
+			<index name="pk_cursos_asignaturas" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<index name="unq_cursos_asignaturas" unique="UNIQUE_KEY" >
+				<column name="curso_id" />
+				<column name="asignatura_id" />
+			</index>
+			<fk name="fk_cursos_asignaturas asignaturas" to_schema="public" to_table="asignaturas" >
+				<fk_column name="asignatura_id" pk="id" />
+			</fk>
+			<fk name="fk_cursos_asignaturas cursos" to_schema="public" to_table="cursos" >
+				<fk_column name="curso_id" pk="id" />
+			</fk>
+			<fk name="fk_cursos_asignaturas profesores" to_schema="public" to_table="profesores" >
+				<fk_column name="profesor_id" pk="id" />
+			</fk>
+		</table>
+		<table name="funciones" spec="" >
+			<column name="id" type="INT" jt="4" mandatory="y" />
+			<column name="nombre" type="VARCHAR" length="150" jt="12" mandatory="y" />
+			<index name="pk_funciones" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+		</table>
+		<table name="jpa" prior="tbl" >
+			<comment><![CDATA[calendario para jornadas de puertas abiertas]]></comment>
+			<column name="id" type="INT" jt="4" mandatory="y" />
+			<column name="campus_titulacion_id" type="INT" jt="4" />
+			<column name="fecha" type="DATE" jt="91" />
+			<column name="tipo" type="CHAR" length="1" jt="1" >
+				<defo><![CDATA['P']]></defo>
+				<comment><![CDATA[Online, Presencial, Semipresencial]]></comment>
+			</column>
+			<column name="es_nacional" type="BOOLEAN" jt="16" >
+				<comment><![CDATA[nacional / internacional]]></comment>
+			</column>
+			<index name="pk_jpa" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<fk name="fk_jpa_campus_titulaciones" to_schema="public" to_table="campus_titulaciones" >
+				<fk_column name="campus_titulacion_id" pk="id" />
+			</fk>
+			<options><![CDATA[engine=InnoDB]]></options>
+		</table>
+		<table name="jpa_idiomas" prior="jpa_" >
+			<column name="id" type="INT" jt="4" mandatory="y" />
+			<column name="jpa_id" prior="campus_titulacion_id" type="INT" jt="4" />
+			<column name="idioma" type="VARCHAR" length="2" jt="12" >
+				<comment><![CDATA[es / en / fr]]></comment>
+			</column>
+			<index name="pk_jpa_idiomas" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<index name="unq_jpa_idiomas" unique="UNIQUE_KEY" >
+				<column name="jpa_id" />
+				<column name="idioma" />
+			</index>
+			<fk name="fk_jpa_idiomas_jpa" to_schema="public" to_table="jpa" >
+				<fk_column name="jpa_id" pk="id" />
+			</fk>
+			<options><![CDATA[engine=InnoDB]]></options>
+		</table>
+		<table name="personas" spec="" >
+			<column name="id" type="INT" jt="4" mandatory="y" />
+			<column name="nombre" type="VARCHAR" length="50" jt="12" />
+			<column name="apellidos" type="VARCHAR" length="50" jt="12" />
+			<column name="dni" type="VARCHAR" length="9" jt="12" />
+			<column name="sexo" type="VARCHAR" length="1" jt="12" />
+			<index name="pk_personas" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<index name="unq_personas_dni" unique="UNIQUE_KEY" >
+				<column name="dni" />
+			</index>
+		</table>
+		<table name="planes_estudios" spec="" >
+			<column name="id" type="INT" jt="4" mandatory="y" />
+			<column name="titulacion_id" type="INT" jt="4" />
+			<column name="ciclo_lectivo" type="INT" jt="4" />
+			<index name="pk_planes_estudios" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<index name="unq_planes_estudios" unique="UNIQUE_KEY" >
+				<column name="titulacion_id" />
+				<column name="ciclo_lectivo" />
+			</index>
+			<fk name="fk_planes_estudios titulaciones" to_schema="public" to_table="titulaciones" >
+				<fk_column name="titulacion_id" pk="id" />
+			</fk>
+		</table>
+		<table name="profesores" spec="" >
+			<column name="id" type="INT" jt="4" mandatory="y" />
+			<column name="persona_id" type="INT" jt="4" mandatory="y" />
+			<column name="foto" type="VARCHAR" length="100" jt="12" />
+			<index name="pk_profesores" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<fk name="fk_profesores personas" to_schema="public" to_table="personas" >
+				<fk_column name="persona_id" pk="id" />
+			</fk>
+		</table>
+		<table name="profesores_funciones" spec="" >
+			<column name="id" type="INT" jt="4" mandatory="y" />
+			<column name="profesor_id" type="INT" jt="4" mandatory="y" />
+			<column name="funcion_id" type="INT" jt="4" mandatory="y" />
+			<column name="prioridad" type="SMALLINT" jt="5" />
+			<column name="principal" type="BOOLEAN" jt="16" />
+			<index name="pk_profesores_funciones" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<index name="unq_profesores_funciones" unique="UNIQUE_KEY" >
+				<column name="profesor_id" />
+				<column name="funcion_id" />
+			</index>
+			<fk name="fk_profesores_funciones funciones" to_schema="public" to_table="funciones" >
+				<fk_column name="funcion_id" pk="id" />
+			</fk>
+			<fk name="fk_profesores_funciones profesores" to_schema="public" to_table="profesores" >
+				<fk_column name="profesor_id" pk="id" />
+			</fk>
+		</table>
+		<table name="tipos_titulaciones" spec="" >
+			<column name="id" type="INT" jt="4" mandatory="y" />
+			<column name="nombre" type="VARCHAR" length="50" jt="12" />
+			<index name="pk_tipos_titulaciones" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+		</table>
+		<table name="titulacion_idiomas" spec="" >
+			<column name="id" type="INT" jt="4" mandatory="y" />
+			<column name="titulacion_id" type="INT" jt="4" />
+			<column name="nombre" type="VARCHAR" length="160" jt="12" mandatory="y" />
+			<column name="idioma" type="VARCHAR" length="2" jt="12" >
+				<comment><![CDATA[es / en / fr]]></comment>
+			</column>
+			<index name="pk_titulacion_idiomas" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<index name="unq_titulacion_idiomas" unique="UNIQUE_KEY" >
+				<column name="titulacion_id" />
+				<column name="idioma" />
+			</index>
+			<fk name="fk_titulacion_idiomas titulaciones" to_schema="public" to_table="titulaciones" >
+				<fk_column name="titulacion_id" pk="id" />
+			</fk>
+		</table>
+		<table name="titulaciones" spec="" >
+			<column name="id" type="INT" jt="4" mandatory="y" />
+			<column name="tipo_titulacion_id" type="INT" jt="4" />
+			<column name="duracion" type="INT" jt="4" />
+			<column name="duracion_tipo" type="VARCHAR" length="1" jt="12" />
+			<column name="nombre" type="VARCHAR" length="160" jt="12" mandatory="y" />
+			<column name="creditos" type="SMALLINT" jt="5" />
+			<column name="modalidad" type="VARCHAR" length="1" jt="12" />
+			<column name="insercion_laboral" type="DECIMAL" jt="3" />
+			<column name="sigma" type="BIGINT" jt="-5" mandatory="y" />
+			<index name="pk_titulaciones" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<index name="titulaciones_tipo_titulacion_id_9b9746ba" unique="NORMAL" >
+				<column name="tipo_titulacion_id" />
+			</index>
+			<fk name="fk_titulaciones tipos_titulaciones" to_schema="public" to_table="tipos_titulaciones" >
+				<fk_column name="tipo_titulacion_id" pk="id" />
+			</fk>
+		</table>
+		<table name="universidades" spec="" >
+			<column name="id" type="INT" jt="4" mandatory="y" />
+			<column name="nombre" type="VARCHAR" length="50" jt="12" mandatory="y" />
+			<index name="pk_universidades" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+		</table>
+	</schema>
+	<connector name="Sqlite" database="Sqlite" host="localhost" port="7210" instance="/home/roberto/Programación/django/CEU/modelo/db.sqlite3" useSystemProxy="false" />
+	<layout name="Parsed Script Layout" id="Layout-2363" show_relation="columns" >
+		<entity schema="public" name="areas" color="999900" x="1056" y="448" />
+		<entity schema="public" name="areas_titulaciones" color="999900" x="816" y="512" />
+		<entity schema="public" name="asignatura_idiomas" color="B31A1A" x="128" y="768" />
+		<entity schema="public" name="asignaturas" color="B31A1A" x="64" y="576" />
+		<entity schema="public" name="campus" color="C4E0F9" x="256" y="224" />
+		<entity schema="public" name="campus_titulaciones" color="C4E0F9" x="480" y="160" />
+		<entity schema="public" name="cursos" color="80B380" x="304" y="384" />
+		<entity schema="public" name="cursos_asignaturas" color="80B380" x="48" y="336" />
+		<entity schema="public" name="funciones" color="E6E680" x="672" y="592" />
+		<entity schema="public" name="jpa" color="C4E0F9" x="704" y="48" />
+		<entity schema="public" name="jpa_idiomas" color="C4E0F9" x="976" y="80" />
+		<entity schema="public" name="personas" color="E6E680" x="384" y="752" />
+		<entity schema="public" name="planes_estudios" color="80B380" x="576" y="448" />
+		<entity schema="public" name="profesores" color="E6E680" x="208" y="592" />
+		<entity schema="public" name="profesores_funciones" color="E6E680" x="416" y="576" />
+		<entity schema="public" name="tipos_titulaciones" color="8B9900" x="1104" y="208" />
+		<entity schema="public" name="titulacion_idiomas" color="8B9900" x="1040" y="304" />
+		<entity schema="public" name="titulaciones" color="8B9900" x="768" y="224" />
+		<entity schema="public" name="universidades" color="C4E0F9" x="272" y="48" />
+	</layout>
+</project>
