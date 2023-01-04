@@ -37,8 +37,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'dbschema',
-    'apps.tablon',
 ]
 
 MIDDLEWARE = [
@@ -76,19 +74,18 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
 DATABASES = {
-    # 'default': {
-    #     'CONN_MAX_AGE': 0,
-    #     'ENGINE': 'django.db.backends.mysql',
-    #     'HOST': 'rds-it-sys-mariadb-ceu-euw1-az1.cojnqagwwglb.eu-west-1.rds.amazonaws.com',
-    #     'PORT': '3306',
-    #     'NAME': 'dev_marketing2',
-    #     'PASSWORD': 'atoRD4NtxUyQ6SpY',
-    #     'USER': 'oiH8jushbf'
-    # },
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+        'ENGINE': 'django.db.backends.mysql',
+        'HOST': '172.18.0.2',
+        'PORT': '3306',
+        'NAME': 'dbSchemaCEU',
+        'USER': 'root',
+        'PASSWORD': 'roberto'
+    },
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #     'NAME': BASE_DIR / 'db.sqlite3',
+    # }
 }
 
 # Password validation
@@ -128,3 +125,14 @@ STATICFILES_DIRS = [
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = '/home/marketinguch/modelo/media/'
+
+
+# migraciones
+DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
+
+INSTALLED_APPS += [
+    'dbschema',
+    'apps.homepage',
+    'apps.estudios',
+    'apps.tablon',
+]
