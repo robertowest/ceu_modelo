@@ -3,7 +3,7 @@
   fields:
     created_on: 2022-10-03 13:21:45.861293+00:00
     updated_on: 2022-10-03 15:18:31.980371+00:00
-    deleted: false
+    is_deleted: false
     tipo_titulacion: 5
     duracion: 4
     duracion_tipo: A

@@ -4,4 +4,4 @@ Prueba del modelo mediante adminsite
 
 
 # en casa
-source ~/.virtualenv/django31/bin/activate
+source ~/.local/pyenv/ceu/bin/activate

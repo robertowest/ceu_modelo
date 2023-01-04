@@ -39,9 +39,9 @@ def ejemplo_estudios(request):
 
 def index(request):
     contenido = {
-        'tipos': TipoTitulacion.objects.values('id', 'nombre').filter(deleted=False).order_by('nombre'),
-        'campus': Campus.objects.values('id', 'nombre').filter(deleted=False).order_by('nombre'),
-        'areas': Area.objects.values('id', 'nombre', 'icono').filter(deleted=False, parent_id__isnull=True).order_by('nombre')
+        'tipos': TipoTitulacion.objects.values('id', 'nombre').filter(is_deleted=False).order_by('nombre'),
+        'campus': Campus.objects.values('id', 'nombre').filter(is_deleted=False).order_by('nombre'),
+        'areas': Area.objects.values('id', 'nombre', 'icono').filter(is_deleted=False, parent_id__isnull=True).order_by('nombre')
     }
     return render(request, 'estudios/index.html', context=contenido)
 

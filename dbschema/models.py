@@ -104,7 +104,7 @@ class Auditable(models.Model):
         return self._meta.verbose_name_plural
 
     def delete(self):
-        self.deleted = True
+        self.is_deleted = True
         self.save()
 
     def hard_delete(self, *args, **kwargs):
@@ -138,7 +138,35 @@ class Campus(Auditable):
         return self.nombre
 
 
+class Facultad(Auditable):
+    nombre = models.CharField(max_length=80)
+
+    class Meta:
+        # managed = False
+        db_table = 'ceu_facultades'
+        verbose_name = 'Facultad'
+        verbose_name_plural = 'Facultades'
+
+    def __str__(self):
+        return self.nombre
+
+
+class Departamento(Auditable):
+    facultad = models.ForeignKey(Facultad, models.DO_NOTHING)
+    nombre = models.CharField(max_length=120)
+
+    class Meta:
+        # managed = False
+        db_table = 'ceu_departamentos'
+        verbose_name = 'Departamento'
+        verbose_name_plural = 'Departamentos'
+
+    def __str__(self):
+        return self.nombre
+
+
 class Area(Auditable):
+    facultad = models.ForeignKey('Facultades', models.DO_NOTHING, blank=True, null=True)
     nombre = models.CharField(max_length=50)
     icono = models.CharField(max_length=25, blank=True, null=True)
     parent = models.ForeignKey('self', models.DO_NOTHING, blank=True, null=True)
@@ -173,15 +201,14 @@ class Titulacion(Auditable):
     campus = models.ManyToManyField(Campus, through='CampusTitulacion')
     area = models.ManyToManyField(Area, through='AreaTitulacion',)
     tipo_titulacion = models.ForeignKey(TipoTitulacion, models.DO_NOTHING, blank=True, null=True)
+    nombre = models.CharField(max_length=160, help_text='solo para referencia, utilizar asignatura_idiomas.nombre')
     duracion = models.IntegerField(blank=True, null=True, help_text='cantidad de (año/mes/dia/hora)')
     duracion_tipo = models.CharField(max_length=1, blank=True, null=True, choices=TIPO)
-    nombre = models.CharField(max_length=160, help_text='solo para referencia, utilizar asignatura_idiomas.nombre')
     creditos = models.SmallIntegerField(blank=True, null=True, help_text='sumatoria de créditos de todas las materias')
     modalidad = models.CharField(max_length=1, blank=True, null=True, choices=MODALIDAD)
-    insercion_laboral = models.DecimalField(max_digits=5, decimal_places=1, blank=True, null=True, help_text='tasa de inserción laboral según ranking BBVA e IVIE')
+    slug = models.CharField(unique=True, max_length=150, blank=True, null=True)
     citrix = models.CharField(max_length=5, blank=True, null=True, help_text='código referencia CITRIX', verbose_name='Cód. CITRIX', unique=True)
     sigma = models.BigIntegerField(blank=True, null=True, help_text='código referencia SIGMA', verbose_name='Cód. SIGMA', unique=True)
-
 
     class Meta:
         # managed = False
@@ -199,6 +226,7 @@ class TitulacionIdioma(Auditable):
     titulacion = models.ForeignKey(Titulacion, models.DO_NOTHING, blank=True, null=True)
     nombre = models.CharField(max_length=160)
     idioma = models.CharField(max_length=2, default='es', choices=IDIOMA, blank=True, null=True, help_text='idioma en el que se impartirá la asignatura (es, en, fr)')
+    slug = models.CharField(unique=True, max_length=150, blank=True, null=True)
 
     class Meta:
         db_table = 'ceu_titulacion_idiomas'
@@ -245,8 +273,9 @@ class Asignatura(Auditable):
     curso = models.ManyToManyField(Curso, through='CursoAsignatura')
     nombre = models.CharField(max_length=160, help_text='solo para referencia, utilizar asignatura_idiomas.nombre')
     creditos = models.DecimalField(max_digits=5, decimal_places=1, blank=True, null=True)
-    citrix = models.CharField(max_length=5, blank=True, null=True, help_text='código referencia CITRIX', verbose_name='Cód. CITRIX', unique=True)
-    sigma = models.BigIntegerField(blank=True, null=True, help_text='código referencia SIGMA', verbose_name='Cód. SIGMA', unique=True)
+    parent_id = models.IntegerField(blank=True, null=True)
+    # citrix = models.CharField(max_length=5, blank=True, null=True, help_text='código referencia CITRIX', verbose_name='Cód. CITRIX', unique=True)
+    # sigma = models.BigIntegerField(blank=True, null=True, help_text='código referencia SIGMA', verbose_name='Cód. SIGMA', unique=True)
 
     class Meta:
         # managed = False
@@ -302,7 +331,6 @@ class Persona(Auditable):
     
 
 class Profesor(Auditable):
-    # persona = models.ForeignKey(Persona, models.DO_NOTHING, blank=True, null=True)
     persona = models.OneToOneField(Persona, on_delete=models.DO_NOTHING)
     foto = models.ImageField(upload_to='profesor/foto/', blank=True, null=True)
 
@@ -331,7 +359,7 @@ class Profesor(Auditable):
     
 
 class Funcion(Auditable):
-    profesor = models.ManyToManyField(Profesor, through='ProfesorFuncion')
+    # profesor = models.ManyToManyField(Profesor, through='ProfesorFuncion')
     nombre = models.CharField(max_length=150)
 
     class Meta:
@@ -367,6 +395,22 @@ class CampusTitulacion(Auditable):
 
     def __str__(self):
         return 'id: {} / Campus: {} / Titulación: {}'.format(self.id, self.campus.id, self.titulacion.id)
+
+
+class CampusFacultad(Auditable):
+    id = models.BigAutoField(primary_key=True)
+    campus = models.ForeignKey(Campus, models.DO_NOTHING)
+    facultad = models.ForeignKey(Facultad, models.DO_NOTHING)
+
+    class Meta:
+        # managed = False
+        db_table = 'ceu_campus_facultades'
+        verbose_name = 'Cumpus Facultad'
+        verbose_name_plural = 'Cumpus Facultades'
+        unique_together = ['campus', 'titulacion']
+
+    def __str__(self):
+        return 'id: {} / Campus: {} / Facultd: {}'.format(self.id, self.campus.id, self.facultad.id)
 
 
 class AreaTitulacion(Auditable):
@@ -410,11 +454,12 @@ class CursoAsignatura(Auditable):
 
 
 class ProfesorFuncion(Auditable):
+    PRINCIPAL = ( (True, 'Sí'), (False, 'No') )
+
     id = models.BigAutoField(primary_key=True)
     profesor = models.ForeignKey(Profesor, models.DO_NOTHING, related_name='profesor_funcion')
     funcion = models.ForeignKey(Funcion, models.DO_NOTHING, related_name='funcion_profesor')
     prioridad = models.SmallIntegerField(blank=True, null=True)
-    PRINCIPAL = ( (True, 'Sí'), (False, 'No') )
     principal = models.BooleanField(default=False, choices=PRINCIPAL, blank=True, null=True, help_text='función o cargo principal')
 
     class Meta:
@@ -422,7 +467,7 @@ class ProfesorFuncion(Auditable):
         db_table = 'ceu_profesores_funciones'
         verbose_name = 'Profesor Función'
         verbose_name_plural = 'Profesores Funciones'
-        unique_together = ['profesor', 'funcion']
+        unique_together = [('profesor', 'funcion'), ('profesor', 'principal')]
     
     def __str__(self):
         return 'id: {} / Profesor: {} / Función: {}'.format(self.id, self.profesor.id, self.funcion.id)
