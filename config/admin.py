@@ -31,11 +31,14 @@ def my_get_app_list(self, request):
                 'Group': 2
             }
             app['models'].sort(key=lambda x: ordering[x['object_name']])
-        # elif app['app_label'] == 'domicilio':
-        #     ordering = {
-        #         'User': 1,
-        #         'Group': 2
-        #     }
-        #     app['models'].sort(key=lambda x: ordering[x['object_name']])
+        elif app['app_label'] == 'dbschema':
+            ordering = {
+                'Universidad': 1,
+                'Campus': 2,
+                'Facultad': 3,
+                'Departamento': 4,
+                'Area': 5
+            }
+            app['models'].sort(key=lambda x: ordering[x['object_name']])
 
     return app_list

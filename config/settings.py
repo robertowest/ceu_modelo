@@ -78,7 +78,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'HOST': '172.18.0.2',
         'PORT': '3306',
-        'NAME': 'dbSchemaCEU',
+        'NAME': 'modeloUCH',
         'USER': 'root',
         'PASSWORD': 'roberto'
     },
@@ -92,10 +92,10 @@ DATABASES = {
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
-    { 'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator', },
-    { 'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator', },
-    { 'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator', },
-    { 'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator', },
+    # { 'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator', },
+    # { 'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator', },
+    # { 'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator', },
+    # { 'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator', },
 ]
 
 
@@ -117,14 +117,14 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = '/home/marketinguch/modelo/static/'
+STATIC_ROOT = '/home/roberto/Programación/django/CEU/modelo/static/'
 STATICFILES_DIRS = [
     # BASE_DIR / 'static',
     # '/home/marketinguch/modelo/static/',
 ]
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = '/home/marketinguch/modelo/media/'
+MEDIA_ROOT = '/home/roberto/Programación/django/CEU/modelo/media'
 
 
 # migraciones

@@ -116,7 +116,7 @@ class Universidad(Auditable):
 
     class Meta:
         # managed = False
-        db_table = 'ceu_universidades'
+        db_table = 'uch_universidades'
         verbose_name = 'Universidad'
         verbose_name_plural = 'Universidades'
 
@@ -130,7 +130,7 @@ class Campus(Auditable):
 
     class Meta:
         # managed = False
-        db_table = 'ceu_campus'
+        db_table = 'uch_campus'
         verbose_name = 'Campus'
         verbose_name_plural = 'Cumpus'
 
@@ -143,7 +143,7 @@ class Facultad(Auditable):
 
     class Meta:
         # managed = False
-        db_table = 'ceu_facultades'
+        db_table = 'uch_facultades'
         verbose_name = 'Facultad'
         verbose_name_plural = 'Facultades'
 
@@ -157,7 +157,7 @@ class Departamento(Auditable):
 
     class Meta:
         # managed = False
-        db_table = 'ceu_departamentos'
+        db_table = 'uch_departamentos'
         verbose_name = 'Departamento'
         verbose_name_plural = 'Departamentos'
 
@@ -166,14 +166,16 @@ class Departamento(Auditable):
 
 
 class Area(Auditable):
-    facultad = models.ForeignKey('Facultades', models.DO_NOTHING, blank=True, null=True)
+    facultad = models.ForeignKey(Facultad, models.DO_NOTHING, blank=True, null=True)
     nombre = models.CharField(max_length=50)
     icono = models.CharField(max_length=25, blank=True, null=True)
-    parent = models.ForeignKey('self', models.DO_NOTHING, blank=True, null=True)
+    parent = models.ForeignKey('self', models.DO_NOTHING, blank=True, null=True,
+                               limit_choices_to={'parent__isnull': True},
+    )
 
     class Meta:
         # managed = False
-        db_table = 'ceu_areas'
+        db_table = 'uch_areas'
         verbose_name = 'Área'
         verbose_name_plural = 'Áreas'
 
@@ -186,7 +188,7 @@ class TipoTitulacion(Auditable):
 
     class Meta:
         # managed = False
-        db_table = 'ceu_tipos_titulaciones'
+        db_table = 'uch_tipos_titulaciones'
         verbose_name = 'Tipo de Titulación'
         verbose_name_plural = 'Tipos de Titulaciones'
 
@@ -212,7 +214,7 @@ class Titulacion(Auditable):
 
     class Meta:
         # managed = False
-        db_table = 'ceu_titulaciones'
+        db_table = 'uch_titulaciones'
         verbose_name = 'Titulación'
         verbose_name_plural = 'Titulaciones'
 
@@ -229,7 +231,7 @@ class TitulacionIdioma(Auditable):
     slug = models.CharField(unique=True, max_length=150, blank=True, null=True)
 
     class Meta:
-        db_table = 'ceu_titulacion_idiomas'
+        db_table = 'uch_titulacion_idiomas'
         verbose_name = 'Titulación Idioma'
         verbose_name_plural = 'Titulación Idiomas'
         unique_together = ['titulacion', 'idioma']
@@ -244,7 +246,7 @@ class PlanEstudio(Auditable):
 
     class Meta:
         # managed = False
-        db_table = 'ceu_planes_estudios'
+        db_table = 'uch_planes_estudios'
         verbose_name = 'Plan de Estudio'
         verbose_name_plural = 'Planes de Estudios'
         unique_together = ['titulacion', 'ciclo_lectivo']
@@ -260,7 +262,7 @@ class Curso(Auditable):
 
     class Meta:
         # managed = False
-        db_table = 'ceu_cursos'
+        db_table = 'uch_cursos'
         verbose_name = 'Curso'
         verbose_name_plural = 'Cursos'
         unique_together = ['plan_estudio', 'curso']
@@ -279,7 +281,7 @@ class Asignatura(Auditable):
 
     class Meta:
         # managed = False
-        db_table = 'ceu_asignaturas'
+        db_table = 'uch_asignaturas'
         verbose_name = 'Asignatura'
         verbose_name_plural = 'Asignaturas'
 
@@ -294,7 +296,7 @@ class AsignaturaIdioma(Auditable):
 
     class Meta:
         # managed = False
-        db_table = 'ceu_asignatura_idiomas'
+        db_table = 'uch_asignatura_idiomas'
         verbose_name = 'Asignatura Idioma'
         verbose_name_plural = 'Asignatura Idiomas'
         unique_together = ['asignatura', 'idioma']
@@ -314,7 +316,7 @@ class Persona(Auditable):
 
     class Meta:
         # managed = False
-        db_table = 'ceu_personas'
+        db_table = 'uch_personas'
         verbose_name = 'Persona'
         verbose_name_plural = 'Personas'
 
@@ -336,7 +338,7 @@ class Profesor(Auditable):
 
     class Meta:
         # managed = False
-        db_table = 'ceu_profesores'
+        db_table = 'uch_profesores'
         verbose_name = 'Profesor'
         verbose_name_plural = 'Profesores'
 
@@ -364,7 +366,7 @@ class Funcion(Auditable):
 
     class Meta:
         # managed = False
-        db_table = 'ceu_funciones'
+        db_table = 'uch_funciones'
         verbose_name = 'Función'
         verbose_name_plural = 'Funciones'
 
@@ -388,7 +390,7 @@ class CampusTitulacion(Auditable):
 
     class Meta:
         # managed = False
-        db_table = 'ceu_campus_titulaciones'
+        db_table = 'uch_campus_titulaciones'
         verbose_name = 'Cumpus Titulación'
         verbose_name_plural = 'Cumpus Titulaciones'
         unique_together = ['campus', 'titulacion']
@@ -404,10 +406,10 @@ class CampusFacultad(Auditable):
 
     class Meta:
         # managed = False
-        db_table = 'ceu_campus_facultades'
+        db_table = 'uch_campus_facultades'
         verbose_name = 'Cumpus Facultad'
         verbose_name_plural = 'Cumpus Facultades'
-        unique_together = ['campus', 'titulacion']
+        unique_together = ['campus', 'facultad']
 
     def __str__(self):
         return 'id: {} / Campus: {} / Facultd: {}'.format(self.id, self.campus.id, self.facultad.id)
@@ -420,7 +422,7 @@ class AreaTitulacion(Auditable):
 
     class Meta:
         # managed = False
-        db_table = 'ceu_areas_titulaciones'
+        db_table = 'uch_areas_titulaciones'
         verbose_name = 'Area Titulación'
         verbose_name_plural = 'Areas Titulaciones'
         unique_together = ['area', 'titulacion']
@@ -444,7 +446,7 @@ class CursoAsignatura(Auditable):
 
     class Meta:
         # managed = False
-        db_table = 'ceu_cursos_asignaturas'
+        db_table = 'uch_cursos_asignaturas'
         verbose_name = 'Curso Asignatura'
         verbose_name_plural = 'Cursos Asignaturas'
         unique_together = ['curso', 'asignatura']
@@ -464,7 +466,7 @@ class ProfesorFuncion(Auditable):
 
     class Meta:
         # managed = False
-        db_table = 'ceu_profesores_funciones'
+        db_table = 'uch_profesores_funciones'
         verbose_name = 'Profesor Función'
         verbose_name_plural = 'Profesores Funciones'
         unique_together = [('profesor', 'funcion'), ('profesor', 'principal')]
@@ -486,7 +488,7 @@ class JPA(Auditable):
     es_nacional = models.BooleanField('¿Nacional?', default=True)
 
     class Meta:
-        db_table = 'ceu_jpa'
+        db_table = 'uch_jpa'
         verbose_name = 'Jornada a Puerta Abierta'
         verbose_name_plural = 'Jornadas de Puertas Abiertas'
 
@@ -501,7 +503,7 @@ class JPAIdiomas(Auditable):
     idioma = models.CharField(max_length=2, default='es', choices=IDIOMA, blank=True, null=True, help_text='idioma en el que se impartirá la asignatura (es, en, fr)')
 
     class Meta:
-        db_table = 'ceu_jpa_idiomas'
+        db_table = 'uch_jpa_idiomas'
         verbose_name = 'JPA Idioma'
         verbose_name_plural = 'JPA Idiomas'
         unique_together = ['jpa', 'idioma']
@@ -517,7 +519,7 @@ class JPAIdiomas(Auditable):
 
 
 class TitulacionesView(models.Model): 
-    id = models.BigIntegerField(primary_key=True)   # campo unico para la vista   ceu_areas_titulaciones.['area', 'titulacion']
+    id = models.BigIntegerField(primary_key=True)   # campo unico para la vista   uch_areas_titulaciones.['area', 'titulacion']
     
     campus_id = models.BigIntegerField()
     campus = models.CharField(max_length=50)
@@ -542,7 +544,7 @@ class TitulacionesView(models.Model):
     
     class Meta:
         managed = False
-        db_table = 'ceu_titulaciones_view'
+        db_table = 'uch_titulaciones_view'
 
 
 
@@ -572,7 +574,7 @@ class TitulacionAux(Auditable):
     subtext_imagen_3 = models.CharField(max_length=160, blank=True, null=True)
 
     class Meta:
-        db_table = 'ceu_titulacion_aux'
+        db_table = 'uch_titulacion_aux'
         verbose_name = 'Titulación AUX'
         verbose_name_plural = 'Titulaciones AUX'
 
@@ -584,7 +586,7 @@ class TitulacionHTML(Auditable):
     texto = RichTextField(blank=True, null=True)
 
     class Meta:
-        db_table = 'ceu_titulacion_html'
+        db_table = 'uch_titulacion_html'
         verbose_name = 'Titulación HTML'
         verbose_name_plural = 'Titulaciones HTML'
 
@@ -596,6 +598,6 @@ class TitulacionURL(Auditable):
     texto = models.CharField(max_length=80, blank=True, null=True) 
 
     class Meta:
-        db_table = 'ceu_titulacion_url'
+        db_table = 'uch_titulacion_url'
         verbose_name = 'Titulación URL'
         verbose_name_plural = 'Titulaciones URL'
